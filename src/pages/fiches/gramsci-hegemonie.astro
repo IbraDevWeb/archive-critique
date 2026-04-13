@@ -1,0 +1,519 @@
+---
+import FicheLayout from '../../layouts/FicheLayout.astro';
+
+const title = "L'Hégémonie Culturelle — Antonio Gramsci";
+const description = "Comment la classe dominante maintient son pouvoir non pas par la force, mais par le consentement actif des dominés à travers la culture.";
+const fonts = "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap";
+---
+
+<FicheLayout title={title} description={description} fonts={fonts}>
+
+  <nav class="snav">
+    <div class="snav-brand">
+      <div class="snav-kicker">Philosophie politique · 1929</div>
+      <div class="snav-title">L'Hégémonie<br>Culturelle</div>
+      <div class="snav-authors">Antonio Gramsci</div>
+      <div class="snav-year">Cahiers de prison</div>
+    </div>
+
+    <span class="snav-lbl">Introduction</span>
+    <a href="#hero" class="snav-a on"><span class="snav-bullet"></span>Présentation</a>
+    <a href="#contexte" class="snav-a"><span class="snav-bullet"></span>Le mystère de l'Occident</a>
+
+    <div class="snav-div"></div>
+    <span class="snav-lbl">Boîte à outils</span>
+    <a href="#concepts" class="snav-a"><span class="snav-bullet"></span>Concepts fondamentaux</a>
+    <a href="#intellectuels" class="snav-a"><span class="snav-bullet"></span>Les intellectuels organiques</a>
+    <a href="#guerre" class="snav-a"><span class="snav-bullet"></span>Guerre de position</a>
+
+    <div class="snav-div"></div>
+    <span class="snav-lbl">Analyse contemporaine</span>
+    <a href="#medias" class="snav-a"><span class="snav-bullet"></span>Appareils hégémoniques</a>
+    <a href="#aujourdhui" class="snav-a"><span class="snav-bullet"></span>L'hégémonie aujourd'hui</a>
+
+    <div class="snav-div"></div>
+    <span class="snav-lbl">Pédagogie</span>
+    <a href="#reflexion" class="snav-a"><span class="snav-bullet"></span>Pistes de réflexion</a>
+    <a href="#synthese" class="snav-a"><span class="snav-bullet"></span>Synthèse critique</a>
+
+    <div class="snav-score">
+      <div class="snav-score-title">Lecture des concepts</div>
+      <div class="score-label"><span>Progression</span><span id="conceptCount">0/5</span></div>
+      <div class="score-bar"><div class="score-fill" id="conceptFill" style="width:0%;background:var(--gramsci-red)"></div></div>
+    </div>
+  </nav>
+
+  <main class="main">
+
+  <section id="hero" class="hero">
+    <div class="hero-bg-texture"></div>
+    <div>
+      <div class="hero-tag">Marxisme culturel & Sociologie de la domination</div>
+      <h1 class="hero-h1">
+        <span class="line1">L'Hégémonie</span>
+        <span class="line2">Culturelle</span>
+      </h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">
+        Pourquoi les classes populaires ne se révoltent-elles pas contre un système qui les exploite ? Antonio Gramsci répond depuis les prisons fascistes : parce que la bourgeoisie ne gouverne pas seulement par la <strong>coercition policière</strong>, mais par le <strong>consentement culturel</strong>. Elle impose sa vision du monde comme étant le « sens commun ».
+      </p>
+      <div class="hero-chips">
+        <span class="chip chip-red">Théorie politique</span>
+        <span class="chip chip-red">Cahiers de prison</span>
+        <span class="chip chip-dark">Société civile</span>
+        <span class="chip chip-dark">Sens commun</span>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <div class="hero-authors-block">
+        <div class="hb-label">Auteur</div>
+        <div class="hb-names">Antonio <span>Gramsci</span></div>
+        <div class="hb-date">1891 — 1937</div>
+      </div>
+      <div class="hero-thesis">
+        « Le vieux monde se meurt, le nouveau monde tarde à apparaître et dans ce clair-obscur surgissent les monstres. »
+        <cite>— Gramsci, Cahiers de prison</cite>
+      </div>
+    </div>
+  </section>
+
+  <section id="contexte" class="sec alt">
+    <div class="sec-eyebrow r">
+      <span class="sec-num">01 — Genèse</span>
+      <h2 class="sec-h2">Le mystère de <em>l'Occident</em></h2>
+    </div>
+
+    <div class="intro-grid r">
+      <div>
+        <h3 class="grid-h3">L'énigme révolutionnaire</h3>
+        <p class="grid-p">Dans les années 1920, les marxistes font face à un problème majeur : la révolution a réussi en Russie (un pays paysan et arriéré), mais a <strong>échoué partout en Occident</strong> (Allemagne, Italie, France), là où le capitalisme était pourtant le plus avancé.</p>
+        <p class="grid-p">Comment expliquer que les prolétaires occidentaux aient soutenu le fascisme ou le réformisme bourgeois plutôt que la révolution ?</p>
+      </div>
+      <div>
+        <h3 class="grid-h3">L'État comme tranchée avancée</h3>
+        <p class="grid-p">Gramsci, emprisonné par Mussolini en 1926, écrit clandestinement pour résoudre cette énigme. Sa conclusion est vertigineuse : en Russie, l'État était tout, et la société civile n'était rien (il suffisait de prendre le Palais d'Hiver).</p>
+        <p class="grid-p">En Occident, <strong>l'État n'est qu'une tranchée avancée</strong>. Derrière lui se trouve une forteresse robuste : la <em>société civile</em> (médias, école, église, syndicats) qui fabrique l'adhésion mentale des masses au capitalisme.</p>
+      </div>
+    </div>
+
+    <div class="pq red r" style="margin-top:3rem;">
+      <p>« L'État est une hégémonie cuirassée de coercition. »</p>
+      <cite>— Antonio Gramsci</cite>
+    </div>
+  </section>
+
+  <section id="concepts" class="sec">
+    <div class="sec-eyebrow r">
+      <span class="sec-num">02 — Lexique</span>
+      <h2 class="sec-h2">La boîte à outils <em>gramscienne</em></h2>
+    </div>
+    <p class="r" style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--dust);text-transform:uppercase;margin-bottom:2rem;">↓ Cliquez sur les cartes pour déployer l'analyse</p>
+
+    <div class="concept-grid r">
+
+      <div class="concept-card" data-num="01" onclick="toggleCard(this)">
+        <div class="cc-header">
+          <span class="cc-tag">Concept central</span>
+          <div class="cc-title">L'Hégémonie</div>
+        </div>
+        <p class="cc-short">La direction intellectuelle et morale d'une société par une classe dominante.</p>
+        <div class="cc-toggle"><span>Lire la suite</span><span class="cc-arrow">↓</span></div>
+        <div class="cc-expand">
+          <div class="cc-expand-body">
+            <p>Contrairement à la <strong>domination</strong> (qui repose sur la force, la police, l'armée), l'<strong>hégémonie</strong> repose sur le consentement. C'est la capacité d'une classe sociale à imposer sa propre vision du monde, ses propres valeurs et ses propres intérêts à l'ensemble de la société, de telle sorte que ces valeurs soient perçues comme naturelles, universelles et incontestables.</p>
+            <p>Une classe devient hégémonique quand elle réussit à persuader les classes subalternes que ses intérêts particuliers sont en réalité l'intérêt général.</p>
+            <div class="cc-today">Aujourd'hui : L'idée que "la baisse des impôts sur les entreprises favorise l'emploi" est une idée hégémonique. Elle est défendue même par ceux qui n'ont pas d'entreprise, car elle est devenue le "bon sens" économique.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="concept-card" data-num="02" onclick="toggleCard(this)">
+        <div class="cc-header">
+          <span class="cc-tag">Concept clé</span>
+          <div class="cc-title">Sens Commun (Senso Comune)</div>
+        </div>
+        <p class="cc-short">L'ensemble des croyances, superstitions et opinions non questionnées d'une époque.</p>
+        <div class="cc-toggle"><span>Lire la suite</span><span class="cc-arrow">↓</span></div>
+        <div class="cc-expand">
+          <div class="cc-expand-body">
+            <p>Le sens commun n'est pas la "sagesse populaire". Pour Gramsci, c'est un agrégat chaotique d'idées reçues, souvent contradictoires, qui reflètent la vision du monde de la classe dominante, intériorisée par les dominés.</p>
+            <p>Le but du combat politique n'est pas seulement de changer les lois, mais de <strong>transformer le sens commun</strong>. Tant que le sens commun n'est pas brisé, toute révolution politique est condamnée à échouer, car les masses continueront de penser avec les catégories de leurs oppresseurs.</p>
+            <div class="cc-today">Phrases typiques du sens commun : "Il y aura toujours des riches et des pauvres", "C'est la nature humaine d'être égoïste", "On ne peut pas accueillir toute la misère du monde".</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="concept-card" data-num="03" onclick="toggleCard(this)">
+        <div class="cc-header">
+          <span class="cc-tag">Structure</span>
+          <div class="cc-title">La Société Civile</div>
+        </div>
+        <p class="cc-short">Le réseau d'institutions "privées" qui fabrique le consentement culturel.</p>
+        <div class="cc-toggle"><span>Lire la suite</span><span class="cc-arrow">↓</span></div>
+        <div class="cc-expand">
+          <div class="cc-expand-body">
+            <p>Dans la pensée marxiste classique, la société civile est simplement la sphère de l'économie. Gramsci innove radicalement : pour lui, la société civile est la sphère de la <strong>superstructure culturelle</strong> (les écoles, les églises, la presse, la littérature, les associations familiales).</p>
+            <p>C'est le véritable champ de bataille politique. L'État ne fait qu'administrer une hégémonie qui est gagnée (ou perdue) quotidiennement dans la société civile.</p>
+            <div class="cc-today">Les think tanks conservateurs, l'industrie du divertissement (Hollywood), les réseaux sociaux : ce sont les tranchées modernes de la société civile où se gagne l'hégémonie.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="concept-card" data-num="04" onclick="toggleCard(this)">
+        <div class="cc-header">
+          <span class="cc-tag">Stratégie</span>
+          <div class="cc-title">Guerre de position</div>
+        </div>
+        <p class="cc-short">La lutte lente et souterraine pour conquérir l'hégémonie culturelle avant le pouvoir d'État.</p>
+        <div class="cc-toggle"><span>Lire la suite</span><span class="cc-arrow">↓</span></div>
+        <div class="cc-expand">
+          <div class="cc-expand-body">
+            <p>Gramsci oppose la <em>guerre de mouvement</em> (l'attaque frontale, l'insurrection armée, type 1917 en Russie) à la <em>guerre de position</em> (la guerre de tranchées intellectuelle).</p>
+            <p>En Occident, la guerre de mouvement est suicidaire. Il faut d'abord mener une guerre de position : investir la culture, l'éducation, les mots, pour faire basculer le sens commun. <strong>Le pouvoir culturel précède toujours le pouvoir politique.</strong></p>
+            <div class="cc-today">L'extrême-droite contemporaine applique parfaitement Gramsci : avant de gagner les élections, elle a mené une guerre de position acharnée sur les plateaux télés, les réseaux sociaux et l'édition pour imposer ses thèmes (immigration, insécurité) au centre du débat.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="concept-card" data-num="05" onclick="toggleCard(this)">
+        <div class="cc-header">
+          <span class="cc-tag">Concept clé</span>
+          <div class="cc-title">Le Bloc Historique</div>
+        </div>
+        <p class="cc-short">L'unité organique entre la structure économique et la superstructure culturelle.</p>
+        <div class="cc-toggle"><span>Lire la suite</span><span class="cc-arrow">↓</span></div>
+        <div class="cc-expand">
+          <div class="cc-expand-body">
+            <p>Pour Gramsci, l'économie seule ne fait pas l'histoire (critique de l'économisme marxiste vulgaire). Une situation révolutionnaire n'éclate que lorsqu'il y a fusion entre des conditions matérielles objectives (la crise économique) et une conscience culturelle subjective (les idées).</p>
+            <p>Un pouvoir est véritablement solide lorsqu'il forme un "bloc historique" : l'économie et la culture sont parfaitement alignées, cimentées par l'action des intellectuels.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="intellectuels" class="sec dark">
+    <div class="sec-eyebrow r">
+      <span class="sec-num">03 — Acteurs</span>
+      <h2 class="sec-h2" style="color:var(--paper)">Les intellectuels <em>organiques</em></h2>
+    </div>
+
+    <div class="split-cols r">
+      <div class="col-left">
+        <p class="big-text">« Tous les hommes sont des intellectuels, mais tous les hommes n'ont pas dans la société la fonction d'intellectuel. »</p>
+        <p class="sub-text">Pour Gramsci, le rôle de l'intellectuel n'est pas d'être un savant isolé dans sa tour d'ivoire. L'intellectuel est le "commis" de la classe dominante, chargé d'organiser l'hégémonie.</p>
+      </div>
+      <div class="col-right">
+        <div class="accordion">
+          
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)">
+              <span class="acc-title">Les intellectuels traditionnels</span>
+              <span class="acc-icon">+</span>
+            </div>
+            <div class="acc-body">
+              <div class="acc-inner">
+                <p>Ce sont les prêtres, les philosophes, les professeurs. Ils se croient indépendants des classes sociales et au-dessus de la mêlée politique. En réalité, ils perpétuent la vision du monde du bloc historique précédent et justifient l'ordre établi sous couvert d'universalisme.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)">
+              <span class="acc-title">Les intellectuels organiques</span>
+              <span class="acc-icon">+</span>
+            </div>
+            <div class="acc-body">
+              <div class="acc-inner">
+                <p>Chaque classe sociale qui vise le pouvoir doit créer ses propres intellectuels organiques. Ce ne sont pas forcément de grands philosophes. Ce sont des organisateurs, des managers, des journalistes, des techniciens qui structurent la pensée de leur classe sociale et la diffusent dans toute la société.</p>
+                <p>Le drame de la classe ouvrière, selon Gramsci, est qu'elle n'a pas réussi à former ses propres intellectuels organiques pour contrer ceux de la bourgeoisie.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="aujourdhui" class="sec">
+    <div class="sec-eyebrow r">
+      <span class="sec-num">04 — Contemporain</span>
+      <h2 class="sec-h2">Gramsci à l'ère des <em>réseaux sociaux</em></h2>
+    </div>
+
+    <div class="actualite-grid r">
+      <div class="act-card">
+        <span class="act-icon">📱</span>
+        <h3 class="act-title">L'Influenceur comme Intellectuel Organique</h3>
+        <p class="act-body">Les influenceurs lifestyle, les coachs en développement personnel ou les podcasteurs business sont les intellectuels organiques du capitalisme contemporain. Ils ne font pas de politique au sens strict, mais ils diffusent quotidiennement les valeurs hégémoniques : l'individualisme, la méritocratie, la réussite matérielle comme seule mesure du succès.</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon">📺</span>
+        <h3 class="act-title">La bataille des chaînes d'information</h3>
+        <p class="act-body">La stratégie d'empires médiatiques (comme Fox News aux USA ou le groupe Bolloré en France) est une application pure de la "Guerre de position" gramscienne. Il ne s'agit pas de donner de l'information neutre, mais de modifier le "sens commun" (faire accepter des thèses sécuritaires ou identitaires) pour rendre ensuite la victoire politique inéluctable.</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon">🎬</span>
+        <h3 class="act-title">Pop Culture et Désamorçage</h3>
+        <p class="act-body">Le capitalisme moderne maintient son hégémonie en absorbant la contestation. Une série Netflix critiquant le capitalisme (comme *Squid Game*) génère des millions de profits pour la plateforme. La rébellion est transformée en marchandise culturelle. L'hégémonie est si forte qu'elle nous vend notre propre critique.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reflexion" class="sec alt">
+    <div class="sec-eyebrow r">
+      <span class="sec-num">05 — Pédagogie</span>
+      <h2 class="sec-h2">Pistes de <em>réflexion</em></h2>
+    </div>
+
+    <div class="qstack r">
+      <div class="qi">
+        <span class="qi-n">Q.01</span>
+        <div>
+          <p class="qi-t">Identifiez trois expressions du langage courant contemporain qui relèvent, selon vous, du "sens commun" (au sens gramscien) et analysez quelle vision idéologique elles dissimulent.</p>
+          <div class="qi-tags"><span class="qi-tag">Sens Commun</span><span class="qi-tag">Idéologie</span></div>
+        </div>
+      </div>
+      <div class="qi">
+        <span class="qi-n">Q.02</span>
+        <div>
+          <p class="qi-t">En quoi le concept d'Hégémonie de Gramsci complète-t-il (ou corrige-t-il) l'approche marxiste traditionnelle selon laquelle "l'infrastructure économique détermine mécaniquement la superstructure idéologique" ?</p>
+          <div class="qi-tags"><span class="qi-tag">Marxisme</span><span class="qi-tag">Déterminisme</span></div>
+        </div>
+      </div>
+      <div class="qi">
+        <span class="qi-n">Q.03</span>
+        <div>
+          <p class="qi-t">Bourdieu parle de "violence symbolique" et Gramsci d'"hégémonie culturelle". Quelles sont les similitudes et les différences entre ces deux concepts dans leur explication de la soumission des classes dominées ?</p>
+          <div class="qi-tags"><span class="qi-tag">Bourdieu comparé</span><span class="qi-tag">Consentement</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="synthese" class="sec blood">
+    <div class="sec-eyebrow r">
+      <span class="sec-num" style="color:rgba(255,255,255,0.4);background:transparent;">06 — Conclusion</span>
+      <h2 class="sec-h2" style="color:#fff;">Synthèse <em>critique</em></h2>
+    </div>
+    
+    <div class="synth-grid r">
+      <div class="sc">
+        <div class="sc-title">L'apport majeur</div>
+        <p class="sc-body">Gramsci a sauvé le marxisme de son déterminisme économique mortifère en réhabilitant le rôle des idées, de la culture et de la psychologie des masses dans le processus historique.</p>
+      </div>
+      <div class="sc">
+        <div class="sc-title">La postérité stratégique</div>
+        <p class="sc-body">Paradoxalement, c'est la Nouvelle Droite (la "métapolitique") qui a le mieux compris et appliqué Gramsci depuis 40 ans : conquérir les esprits avant de conquérir les urnes.</p>
+      </div>
+      <div class="sc">
+        <div class="sc-title">L'optimisme de la volonté</div>
+        <p class="sc-body">Face au désespoir (le fascisme triomphant, la prison), Gramsci oppose le "pessimisme de l'intelligence, optimisme de la volonté". L'hégémonie n'est jamais totale, elle doit être défendue tous les jours, donc elle peut être attaquée tous les jours.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Antonio Gramsci<br>Cahiers de prison, 1929-1935<br>Éditions Gallimard</span>
+    <div class="fc">GRM</div>
+    <div>
+      <a href="#hero">↑ Retour au début</a>
+      <span style="margin-top:.5rem;display:block;text-align:right;">Philosophie politique · Critique<br>Fiche pédagogique interactive</span>
+    </div>
+  </footer>
+
+  </main>
+
+  <style is:global>
+    :root {
+      --paper: #f4f1ea;
+      --paper-dark: #e8e4d9;
+      --charcoal: #1a1a1a;
+      --charcoal-light: #2c2c2c;
+      --gramsci-red: #a61c1c;
+      --gramsci-red-dark: #7a1212;
+      --dust: #827c73;
+      --sidebar: 280px;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--charcoal);
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* Curseur */
+    .cur { border: 2px solid var(--gramsci-red) !important; background: transparent !important; }
+    .cur.expand { background: rgba(166, 28, 28, 0.1) !important; }
+    #prog { background: var(--gramsci-red) !important; }
+
+    /* Sidebar */
+    .snav { position: fixed; width: var(--sidebar); top: 0; bottom: 0; left: 0; background: var(--charcoal); color: var(--paper); display: flex; flex-direction: column; overflow-y: auto; }
+    .snav-brand { padding: 2.5rem 2rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .snav-kicker { font-family: 'Space Mono', monospace; font-size: 0.55rem; color: var(--gramsci-red); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; }
+    .snav-title { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; }
+    .snav-authors { font-style: italic; font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+    .snav-lbl { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.2); padding: 1.5rem 2rem 0.5rem; }
+    .snav-a { display: flex; align-items: center; gap: 0.8rem; padding: 0.5rem 2rem; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.5); text-decoration: none; text-transform: uppercase; transition: all 0.2s; border-left: 2px solid transparent; }
+    .snav-a:hover { color: #fff; background: rgba(255,255,255,0.02); }
+    .snav-a.on { color: #fff; border-left-color: var(--gramsci-red); background: rgba(166,28,28,0.1); }
+    .snav-bullet { width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+    .snav-div { height: 1px; background: rgba(255,255,255,0.05); margin: 0.5rem 2rem; }
+    .snav-score { margin-top: auto; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    .snav-score-title { font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1rem; }
+    .score-label { display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 0.6rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
+    .score-bar { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; }
+    .score-fill { height: 100%; transition: width 0.4s ease; }
+
+    /* Main & Hero */
+    .main { margin-left: var(--sidebar); }
+    .hero { min-height: 100vh; padding: 6rem; position: relative; display: grid; grid-template-rows: 1fr auto; background: var(--charcoal); color: var(--paper); overflow: hidden; }
+    .hero-bg-texture { position: absolute; inset: 0; opacity: 0.05; background-image: radial-gradient(var(--paper) 1px, transparent 1px); background-size: 20px 20px; pointer-events: none; }
+    .hero-tag { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--gramsci-red); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 2rem; }
+    .hero-h1 { font-family: 'Cinzel', serif; font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 800; line-height: 1; margin-bottom: 1.5rem; }
+    .hero-h1 .line2 { color: var(--gramsci-red); display: block; }
+    .hero-rule { width: 80px; height: 3px; background: var(--gramsci-red); margin-bottom: 2rem; }
+    .hero-sub { font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 700px; line-height: 1.6; font-style: italic; }
+    .hero-sub strong { color: #fff; font-style: normal; }
+    .hero-chips { display: flex; gap: 0.8rem; margin-top: 2rem; flex-wrap: wrap; }
+    .chip { font-family: 'Space Mono', monospace; font-size: 0.55rem; padding: 0.3rem 0.8rem; border: 1px solid; text-transform: uppercase; letter-spacing: 0.1em; }
+    .chip-red { border-color: var(--gramsci-red); color: var(--gramsci-red); background: rgba(166,28,28,0.1); }
+    .chip-dark { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); }
+    .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 3rem; margin-top: 4rem; position: relative; z-index: 1; }
+    .hb-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--dust); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .hb-names { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 600; }
+    .hb-names span { color: var(--gramsci-red); }
+    .hb-date { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+    .hero-thesis { max-width: 400px; text-align: right; font-style: italic; color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.6; }
+    .hero-thesis cite { display: block; margin-top: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.55rem; color: var(--gramsci-red); font-style: normal; text-transform: uppercase; }
+
+    /* Sections */
+    .sec { padding: 6rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .sec.alt { background: var(--paper-dark); }
+    .sec.dark { background: var(--charcoal); color: var(--paper); border-color: rgba(255,255,255,0.05); }
+    .sec.blood { background: var(--gramsci-red); color: var(--paper); }
+    
+    .sec-eyebrow { display: flex; align-items: center; gap: 1rem; margin-bottom: 4rem; }
+    .sec-num { font-family: 'Space Mono', monospace; font-size: 0.7rem; background: var(--gramsci-red); color: #fff; padding: 0.3rem 0.8rem; }
+    .sec-h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 800; color: var(--charcoal); }
+    .sec-h2 em { color: var(--gramsci-red); font-style: normal; }
+
+    /* Grids & Text */
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .grid-h3 { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem; color: var(--gramsci-red); }
+    .grid-p { margin-bottom: 1rem; }
+    .pq { padding: 3rem; border-left: 4px solid var(--gramsci-red); background: #fff; }
+    .pq.red { background: var(--charcoal); color: #fff; }
+    .pq p { font-size: 1.4rem; font-style: italic; line-height: 1.5; }
+    .pq cite { display: block; font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; margin-top: 1rem; color: var(--dust); font-style: normal; }
+
+    /* Concepts Cards */
+    .concept-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+    .concept-card { background: #fff; border: 1px solid rgba(0,0,0,0.05); padding: 2rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+    .concept-card:hover { border-color: var(--gramsci-red); transform: translateY(-3px); box-shadow: 0 10px 15px rgba(0,0,0,0.05); }
+    .cc-header { margin-bottom: 1rem; }
+    .cc-tag { font-family: 'Space Mono', monospace; font-size: 0.55rem; color: var(--gramsci-red); text-transform: uppercase; letter-spacing: 0.1em; }
+    .cc-title { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 600; margin-top: 0.5rem; }
+    .cc-short { font-size: 0.9rem; color: var(--dust); margin-bottom: 1rem; line-height: 1.6; }
+    .cc-toggle { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; color: var(--gramsci-red); display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1rem; }
+    .cc-arrow { transition: transform 0.3s; }
+    .concept-card.open .cc-arrow { transform: rotate(180deg); }
+    .cc-expand { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease; opacity: 0; }
+    .concept-card.open .cc-expand { max-height: 800px; opacity: 1; }
+    .cc-expand-body { padding-top: 1rem; font-size: 0.85rem; color: var(--charcoal); }
+    .cc-today { margin-top: 1rem; padding: 1rem; background: var(--paper); border-left: 2px solid var(--dust); font-style: italic; font-size: 0.8rem; }
+
+    /* Accordion (Intellectuels) */
+    .split-cols { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+    .big-text { font-family: 'Cinzel', serif; font-size: 1.6rem; line-height: 1.4; color: var(--gramsci-red); margin-bottom: 1.5rem; }
+    .sub-text { color: rgba(255,255,255,0.7); }
+    .accordion { border-top: 1px solid rgba(255,255,255,0.1); }
+    .acc-item { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .acc-head { padding: 1.5rem 0; display: flex; justify-content: space-between; cursor: pointer; color: #fff; transition: color 0.2s; }
+    .acc-head:hover { color: var(--gramsci-red); }
+    .acc-title { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 600; }
+    .acc-icon { font-size: 1.5rem; color: var(--gramsci-red); transition: transform 0.3s; }
+    .acc-item.open .acc-icon { transform: rotate(45deg); }
+    .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .acc-item.open .acc-body { max-height: 500px; }
+    .acc-inner { padding-bottom: 1.5rem; color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+
+    /* Actualité Grid */
+    .actualite-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .act-card { background: #fff; padding: 2.5rem; border-top: 3px solid var(--charcoal); }
+    .act-icon { font-size: 2.5rem; display: block; margin-bottom: 1.5rem; }
+    .act-title { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--gramsci-red); line-height: 1.3; }
+    .act-body { font-size: 0.9rem; color: var(--dust); }
+
+    /* Pédagogie (QStack) */
+    .qstack { display: flex; flex-direction: column; gap: 1rem; }
+    .qi { display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem; background: #fff; padding: 2rem; border-left: 3px solid transparent; transition: border-color 0.2s; }
+    .qi:hover { border-color: var(--gramsci-red); }
+    .qi-n { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--gramsci-red); }
+    .qi-t { font-size: 1.05rem; font-style: italic; color: var(--charcoal); margin-bottom: 1rem; }
+    .qi-tags { display: flex; gap: 0.5rem; }
+    .qi-tag { font-family: 'Space Mono', monospace; font-size: 0.55rem; background: var(--paper); padding: 0.3rem 0.6rem; color: var(--dust); text-transform: uppercase; }
+
+    /* Synthèse */
+    .synth-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .sc { background: rgba(0,0,0,0.15); padding: 2rem; border-top: 2px solid rgba(255,255,255,0.3); }
+    .sc-title { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
+    .sc-body { font-size: 0.95rem; color: rgba(255,255,255,0.9); }
+
+    /* Footer */
+    footer { background: var(--charcoal-light); color: rgba(255,255,255,0.4); padding: 4rem 6rem; display: flex; justify-content: space-between; align-items: center; font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .fc { font-family: 'Cinzel', serif; font-size: 3rem; color: rgba(255,255,255,0.05); }
+    footer a { color: var(--gramsci-red); text-decoration: none; }
+
+    /* Utils */
+    .r { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .r.v, .r.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media(max-width: 1000px) {
+      :root { --sidebar: 0px; }
+      .snav { display: none; }
+      .hero, .sec { padding: 4rem 2rem; }
+      .intro-grid, .split-cols, .actualite-grid, .synth-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 2rem; }
+      .hero-thesis { text-align: left; }
+      footer { flex-direction: column; gap: 2rem; text-align: center; }
+    }
+  </style>
+
+  <script>
+    // Concept Cards interaction & Tracking
+    let conceptsRead = new Set();
+    window.toggleCard = function(card) {
+      const isOpening = !card.classList.contains('open');
+      card.classList.toggle('open');
+      const toggleSpan = card.querySelector('.cc-toggle span:first-child');
+      if (toggleSpan) toggleSpan.textContent = isOpening ? 'Réduire' : 'Lire la suite';
+      
+      if (isOpening) {
+        conceptsRead.add(card.dataset.num);
+        updateProgress();
+      }
+    };
+
+    function updateProgress() {
+      const count = conceptsRead.size;
+      const countEl = document.getElementById('conceptCount');
+      const fillEl = document.getElementById('conceptFill');
+      if(countEl) countEl.textContent = `${count}/5`;
+      if(fillEl) fillEl.style.width = `${(count/5)*100}%`;
+    }
+
+    // Accordion
+    window.toggleAcc = function(head) {
+      const item = head.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    };
+  </script>
+</FicheLayout>
