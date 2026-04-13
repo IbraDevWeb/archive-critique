@@ -1,0 +1,304 @@
+---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FicheCard from '../components/FicheCard.astro';
+
+const themes = [
+  {
+    title: "Culture & Domination",
+    description: "Comment la culture et l'industrie nous font accepter le système.",
+    fiches: [
+      { title: "Sur la télévision", author: "Pierre Bourdieu", year: "1996", href: "/fiches/bourdieu-television", color: "#b5241c" },
+      { title: "L'Hégémonie Culturelle", author: "Antonio Gramsci", year: "1929", href: "/fiches/gramsci-hegemonie", color: "#a61c1c" },
+      { title: "L'Industrie Culturelle", author: "Adorno & Horkheimer", year: "1947", href: "/fiches/adorno-horkheimer", color: "#e62117" }
+    ]
+  },
+  {
+    title: "Pouvoir & Biopolitique",
+    description: "Le déplacement du contrôle des territoires vers le contrôle de la vie.",
+    fiches: [
+      { title: "La nouvelle raison du monde", author: "Dardot & Laval", year: "2009", href: "/fiches/dardot-laval", color: "#c0231b" },
+      { title: "Naissance de la biopolitique", author: "Michel Foucault", year: "1979", href: "/fiches/foucault-pouvoir", color: "#c4643b" }
+    ]
+  },
+  {
+    title: "Contrôle & Réseaux",
+    description: "Le passage de l'enfermement physique au contrôle par le flux.",
+    fiches: [
+      { title: "La Société du Spectacle", author: "Guy Debord", year: "1967", href: "/fiches/debord-spectacle", color: "#cc0000" },
+      { title: "Sociétés de Contrôle", author: "Gilles Deleuze", year: "1990", href: "/fiches/deleuze-controle", color: "#00f2ff" },
+      { title: "Understanding Media", author: "Marshall McLuhan", year: "1964", href: "/fiches/mcluhan-media", color: "#00ff41" }
+    ]
+  },
+  {
+    title: "Histoire & Cycles",
+    description: "La naissance et la mort des solidarités collectives.",
+    fiches: [
+      { title: "La 'Asabiya", author: "Ibn Khaldoun", year: "1377", href: "/fiches/ibn-khaldoun", color: "#c4962a" },
+      { title: "Anatomie des Dystopies", author: "Orwell & Huxley", year: "1932", href: "/fiches/orwell-huxley", color: "#1a3a5c" }
+    ]
+  }
+];
+---
+
+<BaseLayout title="Index" description="Archive Critique - Cartographie des mécanismes de pouvoir.">
+  <div class="paper-texture"></div>
+  
+  <main class="archive-main">
+    
+    <header class="archive-hero reveal">
+      <div class="hero-top-meta">
+        <span>RÉF. 001 — VULGARISATION RADICALE</span>
+        <span>INDEX GÉNÉRAL</span>
+      </div>
+      
+      <h1 class="hero-title">Archive<br><em>Critique</em></h1>
+      
+      <div class="hero-bottom-meta">
+        <p class="hero-desc">Une cartographie des mécanismes de pouvoir, de domination et de subjectivation. Base de données théorique en accès libre.</p>
+        <div class="hero-stats">
+          <span class="stat-num">10</span>
+          <span class="stat-lbl">Entrées<br>actives</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="archive-content">
+      {themes.map((theme, index) => (
+        <section class="archive-section reveal" style={`--delay: ${index * 0.15}s`}>
+          
+          <div class="section-header">
+            <div class="section-num">VOL. 0{index + 1}</div>
+            <div class="section-title-wrap">
+              <h2 class="section-title">{theme.title}</h2>
+              <p class="section-desc">{theme.description}</p>
+            </div>
+          </div>
+          
+          <div class="archive-cards-grid">
+            {theme.fiches.map((fiche) => (
+              <div class="card-wrapper">
+                <FicheCard 
+                  title={fiche.title} 
+                  author={fiche.author} 
+                  year={fiche.year} 
+                  href={fiche.href} 
+                  color={fiche.color} 
+                />
+              </div>
+            ))}
+          </div>
+
+        </section>
+      ))}
+    </div>
+
+  </main>
+</BaseLayout>
+
+<style is:global>
+  /* ─── PALETTE "PAPIER & ENCRE" ─── */
+  :root {
+    --bg-paper: #f0ebe1;
+    --text-ink: #1a1918;
+    --border-ink: #d4cec4;
+    --accent-ink: #b5241c;
+    --faint-ink: #7a7671;
+  }
+
+  body {
+    background-color: var(--bg-paper) !important;
+    color: var(--text-ink) !important;
+  }
+
+  /* Rendre le curseur global élégant */
+  .cur-base {
+    background: transparent !important;
+    border: 2px solid var(--accent-ink) !important;
+  }
+  .cur-base.big {
+    background: rgba(181, 36, 28, 0.08) !important;
+    border-color: var(--accent-ink) !important;
+  }
+
+  /* Texture papier globale */
+  .paper-texture {
+    position: fixed; inset: 0; z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  /* ─── REDESIGN DES FICHE CARDS POUR S'INTÉGRER AU THÈME ─── */
+  .fiche-card {
+    background: transparent !important;
+    border: 1px solid var(--border-ink) !important;
+    color: var(--text-ink) !important;
+    border-radius: 0 !important; /* Retrait des arrondis pour le côté rigoureux */
+    box-shadow: none !important;
+  }
+  .fiche-card:hover {
+    border-color: var(--card-color) !important;
+    background: #fff !important;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.03) !important; /* Ombre portée solide façon offset */
+    transform: translate(-4px, -4px) !important;
+  }
+  .fiche-card:hover .fc-bg {
+    opacity: 0.03 !important; 
+  }
+  .fc-title {
+    color: var(--text-ink) !important;
+    font-family: 'Cormorant Garamond', serif !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-size: 1.8rem !important;
+  }
+  .fc-year, .fc-author {
+    color: var(--faint-ink) !important;
+  }
+  .fc-icon {
+    color: var(--text-ink) !important;
+  }
+
+  /* ─── STRUCTURE DE LA PAGE ─── */
+  .archive-main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 4rem 6rem;
+  }
+
+  /* ─── HERO HEADER ─── */
+  .archive-hero {
+    padding: 6rem 0 4rem;
+    border-bottom: 2px solid var(--text-ink);
+    margin-bottom: 4rem;
+  }
+
+  .hero-top-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--faint-ink);
+    border-bottom: 1px solid var(--border-ink);
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--text-ink);
+    margin-bottom: 3rem;
+  }
+
+  .hero-title em {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--accent-ink);
+  }
+
+  .hero-bottom-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 4rem;
+  }
+
+  .hero-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--text-ink);
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  .hero-stats {
+    text-align: right;
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 0.8;
+    color: var(--accent-ink);
+  }
+
+  .stat-lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--faint-ink);
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  /* ─── THEME SECTIONS ─── */
+  .archive-section {
+    margin-bottom: 6rem;
+    animation-delay: var(--delay);
+  }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-ink);
+  }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--accent-ink);
+    padding-top: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--faint-ink);
+  }
+
+  .archive-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding-left: calc(120px + 2rem); /* Aligne la grille avec le texte du titre */
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1000px) {
+    .archive-cards-grid { padding-left: 0; }
+    .section-header { grid-template-columns: 1fr; gap: 1rem; }
+    .section-num { padding-top: 0; }
+  }
+  @media (max-width: 700px) {
+    .archive-main { padding: 0 2rem 4rem; }
+    .hero-bottom-meta { flex-direction: column; align-items: flex-start; gap: 2rem; }
+    .hero-stats { text-align: left; }
+  }
+</style>

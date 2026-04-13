@@ -1,0 +1,999 @@
+---
+import FicheLayout from '../../layouts/FicheLayout.astro';
+
+const title = "Orwell & Huxley — Anatomie des Dystopies";
+const description = "Deux cauchemars, deux prophètes, deux diagnostics radicalement différents sur la fin de la liberté humaine.";
+const fonts = "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap";
+---
+
+<FicheLayout title={title} description={description} fonts={fonts}>
+  <nav class="sidenav">
+    <div class="snav-top">
+      <div class="snav-eyebrow">Étude comparative · Dystopies</div>
+      <div class="snav-vs">
+        <span class="o">Orwell</span>
+        <span class="amp"> &amp; </span><br>
+        <span class="h">Huxley</span>
+      </div>
+      <div class="snav-sub">Anatomie des dystopies modernes</div>
+    </div>
+
+    <span class="snav-section-lbl">Introduction</span>
+    <a href="#hero" class="snav-link act"><span class="snav-dot"></span>Présentation générale</a>
+    <a href="#deux-visions" class="snav-link"><span class="snav-dot"></span>Deux visions fondatrices</a>
+
+    <div class="snav-divider"></div>
+    <span class="snav-section-lbl">Analyse comparative</span>
+    <a href="#tableau" class="snav-link"><span class="snav-dot"></span>Tableau comparatif</a>
+    <a href="#glossaire" class="snav-link"><span class="snav-dot"></span>Lexique dystopique</a>
+    <a href="#mecanismes" class="snav-link"><span class="snav-dot"></span>Mécanismes de domination</a>
+
+    <div class="snav-divider"></div>
+    <span class="snav-section-lbl">Réseau d'auteurs</span>
+    <a href="#auteurs" class="snav-link"><span class="snav-dot"></span>La galaxie critique</a>
+    <a href="#han" class="snav-link"><span class="snav-dot"></span>Byung-Chul Han</a>
+    <a href="#debord-laboetie" class="snav-link"><span class="snav-dot"></span>Debord & La Boétie</a>
+    <a href="#bauman" class="snav-link"><span class="snav-dot"></span>Bauman & l'amour liquide</a>
+
+    <div class="snav-divider"></div>
+    <span class="snav-section-lbl">Contemporain</span>
+    <a href="#aujourd-hui" class="snav-link"><span class="snav-dot"></span>Quelle dystopie vivons-nous ?</a>
+    <a href="#reflexion" class="snav-link"><span class="snav-dot"></span>Pistes de réflexion</a>
+    <a href="#synthese" class="snav-link"><span class="snav-dot"></span>Synthèse critique</a>
+
+    <div class="snav-footer">
+      Littérature & Philosophie politique<br>
+      Cours comparatif · L3 / M1<br>
+      <a href="/" style="color:var(--gold);text-decoration:none;display:block;margin-top:5px;">↗ Retour à l'accueil</a>
+    </div>
+  </nav>
+
+  <main class="main">
+
+  <section id="hero" class="hero">
+    <div class="hero-watermark">1984</div>
+
+    <div>
+      <div class="hero-tag">Étude comparative · Dystopies littéraires & Sociétés contemporaines</div>
+
+      <div class="hero-split">
+        <div class="hero-author hero-author-left">
+          <div class="hero-author-name blue">George<br>Orwell</div>
+          <div class="hero-author-sub">1903 — 1950</div>
+          <div class="hero-works">
+            <span>1984 (1949)</span>
+            <span>La Ferme des animaux</span>
+          </div>
+        </div>
+        <div class="hero-vs-col">
+          <div class="hero-vs-line"></div>
+          <div class="hero-vs-text">versus</div>
+          <div class="hero-vs-line"></div>
+        </div>
+        <div class="hero-author">
+          <div class="hero-author-name red">Aldous<br>Huxley</div>
+          <div class="hero-author-sub">1894 — 1963</div>
+          <div class="hero-works">
+            <span>Le Meilleur des mondes (1932)</span>
+            <span>Le Retour au meilleur des mondes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-divider"></div>
+
+      <p class="hero-thesis">
+        Deux cauchemars, deux prophètes, deux diagnostics radicalement différents sur la fin de la liberté humaine.
+        Orwell craignait que <strong>la vérité nous soit cachée</strong>. Huxley craignait qu'<strong>il n'y ait plus personne pour la vouloir</strong>.
+        La question qui hante notre époque : <em>laquelle de ces deux visions s'est réalisée ?</em>
+      </p>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-meta">
+        <div>Orwell — 1984 · 1949</div>
+        <div>Huxley — Brave New World · 1932</div>
+        <div>Connexions — Han · Debord · La Boétie · Bauman · Tocqueville</div>
+        <div>Méthode — Analyse comparée & application contemporaine</div>
+      </div>
+      <div class="hero-epigraph">
+        « Si vous voulez une image de l'avenir, imaginez une botte écrasant un visage humain — pour toujours. »
+        <cite>— George Orwell, 1984</cite>
+      </div>
+    </div>
+  </section>
+
+  <section id="deux-visions" class="sec">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">01 — Fondements</span>
+      <h2 class="sec-h2">Deux visions de la <em>fin de la liberté</em></h2>
+    </div>
+
+    <div class="intro-cols">
+      <div class="reveal">
+        <div class="intro-col-head blue">Orwell — La domination par la douleur</div>
+        <div class="intro-col-body">
+          <p>Dans <em>1984</em>, Orwell imagine une société gouvernée par la <strong>terreur explicite</strong>. Le Parti contrôle non seulement les corps mais la pensée elle-même, via la Novlangue, le Miniver, la Télécran et la Chambre 101. Le pouvoir s'impose <em>contre</em> la volonté des individus.</p>
+          <p>La dystopie orwellienne est une dystopie de la <strong>contrainte externe</strong> : on vous interdit, on vous surveille, on vous torture. Le pouvoir a un visage — celui de Big Brother. Il est haïssable et haï. C'est une tyrannie qui se sait telle et le revendique.</p>
+          <p>Orwell s'inspire du stalinisme et du fascisme qu'il a vécus. Sa peur est celle de son époque : que des régimes totalitaires perfectionnnent indéfiniment leurs instruments de répression.</p>
+          <div class="intro-quote blue">« La liberté, c'est la liberté de dire que deux et deux font quatre. Lorsque cela est accordé, le reste suit. »<br><em>— Winston Smith, 1984</em></div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="intro-col-head red">Huxley — La domination par le plaisir</div>
+        <div class="intro-col-body">
+          <p>Dans <em>Le Meilleur des mondes</em>, Huxley imagine une société gouvernée par le <strong>plaisir administré</strong>. Les individus ne sont pas forcés — ils désirent leur servitude. Le soma (drogue officielle), le conditionnement dès la naissance, la sexualité organisée : le contrôle s'exerce <em>à travers</em> la volonté.</p>
+          <p>La dystopie huxleyenne est une dystopie de la <strong>contrainte interne</strong> : on ne vous interdit rien, on vous programme à ne rien vouloir d'autre que ce qu'on vous offre. Le pouvoir est invisible parce qu'il est devenu désir. Personne n'est opprimé — tout le monde est satisfait.</p>
+          <p>Huxley s'inspire des débuts de la société de consommation américaine, de Ford et de la psychologie behavioriste. Sa peur est plus subtile : que les hommes adorent les techniques qui abolissent leur capacité à penser.</p>
+          <div class="intro-quote red">« Les gens seront amenés à aimer leur servitude. »<br><em>— Aldous Huxley, Le Retour au meilleur des mondes</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pq gold reveal" style="margin-top:3rem;">
+      <p>« Orwell craignait que ce que nous haïssons nous détruise. Huxley craignait que ce que nous aimons nous détruise. »</p>
+      <cite>— Neil Postman, Se distraire à en mourir, 1985</cite>
+    </div>
+  </section>
+
+  <section id="tableau" class="sec alt">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">02 — Comparaison</span>
+      <h2 class="sec-h2">Tableau <em>analytique</em> comparé</h2>
+    </div>
+
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Orwell — 1984</th>
+            <th>Huxley — Meilleur des Mondes</th>
+            <th>Notre époque (2020s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mode de contrôle</td>
+            <td>Terreur, surveillance, torture. La peur comme instrument premier du pouvoir.</td>
+            <td>Plaisir, conditionnement, pharmacologie. La satisfaction comme instrument premier.</td>
+            <td>Les deux simultanément : surveillance algorithmique + gamification du réel.</td>
+          </tr>
+          <tr>
+            <td>Rapport à la vérité</td>
+            <td>La vérité est falsifiée activement (Ministère de la Vérité). Guerre permanente contre les faits.</td>
+            <td>La vérité est rendue inaccessible par le bruit, le divertissement et le conditionnement.</td>
+            <td>Post-vérité : la vérité devient opinion parmi d'autres. L'infobésité remplace la censure.</td>
+          </tr>
+          <tr>
+            <td>Rapport au passé</td>
+            <td>Le passé est réécrit en continu. La mémoire historique est activement détruite.</td>
+            <td>Le passé est inutile, obsolète — nul besoin de le détruire, on le rend simplement ennuyeux.</td>
+            <td>Amnésie structurelle : le flux d'information empêche toute profondeur historique.</td>
+          </tr>
+          <tr>
+            <td>Rapport au corps</td>
+            <td>Corps supprimé, nié, torturé. La sexualité est interdite (Anti-Sexe).</td>
+            <td>Corps hyper-valorisé, la sexualité est obligation sociale. Le corps est outil de plaisir administré.</td>
+            <td>Corps marchandisé (fitness, image, bien-être), sexualité spectacularisée sur réseaux.</td>
+          </tr>
+          <tr>
+            <td>Rapport au langage</td>
+            <td>Novlangue : réduire le vocabulaire pour rendre la pensée dissidente impossible.</td>
+            <td>Pas besoin de réduire le langage — personne ne veut penser des pensées complexes.</td>
+            <td>Twitter/TikTok : formats imposent des micro-expressions. La profondeur devient inaccessible.</td>
+          </tr>
+          <tr>
+            <td>Nature du pouvoir</td>
+            <td>Visible, nommé (Big Brother), haïssable. Exercé par une oligarchie consciente et cynique.</td>
+            <td>Invisible, diffus, bienveillant en apparence. Mustapha Menier explique le système avec bienveillance.</td>
+            <td>Pouvoir algorithmique : sans visage, sans responsable identifiable, présenté comme service.</td>
+          </tr>
+          <tr>
+            <td>Rapport à la pensée</td>
+            <td>Crimepensée : la pensée dissidente est un crime punissable de mort. Autodiscipline forcée.</td>
+            <td>L'absence de pensée profonde est un confort. On n'a pas envie de penser — c'est désagréable.</td>
+            <td>L'attention est marchandisée. Penser profondément devient une compétence rare, presque élitiste.</td>
+          </tr>
+          <tr>
+            <td>Issue possible</td>
+            <td>Nulle : Winston est brisé. L'amour de Big Brother est la seule issue. Désespoir absolu.</td>
+            <td>Bernard et Helmholtz sont exilés sur une île — l'humanité profonde est possible, mais marginale.</td>
+            <td>Résistance possible, mais coûteuse : elle exige rupture avec les normes sociales dominantes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="glossaire" class="sec">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">03 — Lexique</span>
+      <h2 class="sec-h2">Les concepts <em>dystopiques</em> et leur actualité</h2>
+    </div>
+
+    <div class="glos-grid reveal">
+      <div class="glos-item" data-glyph="👁">
+        <span class="gi-source blue">Orwell — 1984</span>
+        <div class="gi-term">Big Brother / Télécran</div>
+        <p class="gi-def">Système de surveillance omnisciente combinant un écran bidirectionnel (observe et diffuse) et une figure d'autorité absolue. La surveillance n'a pas besoin d'être constante — il suffit qu'elle soit <em>possible</em> à tout instant pour que les individus s'autocensurent.</p>
+        <div class="gi-now">GAFAM, caméras de reconnaissance faciale, métadonnées téléphoniques. Le télécran est devenu smartphone — et nous l'avons acheté nous-mêmes, avec enthousiasme.</div>
+      </div>
+
+      <div class="glos-item" data-glyph="🗣">
+        <span class="gi-source blue">Orwell — 1984</span>
+        <div class="gi-term">Novlangue (Newspeak)</div>
+        <p class="gi-def">Langue officielle de l'Océania dont le but est de réduire progressivement le vocabulaire jusqu'à rendre toute pensée dissidente <em>impensable</em>. Chaque édition du dictionnaire est plus courte. Le langage n'est pas un outil de la pensée — il en est la limite.</p>
+        <div class="gi-now">Langage inclusif/exclusif des réseaux sociaux, cancel culture, termes démonétisés sur YouTube. La compression du langage acceptable réduit l'espace de la pensée légitime.</div>
+      </div>
+
+      <div class="glos-item" data-glyph="💊">
+        <span class="gi-source red">Huxley — Meilleur des mondes</span>
+        <div class="gi-term">Le Soma</div>
+        <p class="gi-def">Drogue officielle et obligatoire distribuée par l'État. Un gramme de soma pour régler tous les problèmes existentiels. Pas de gueule de bois, pas d'effets négatifs — une anesthésie parfaite de la conscience critique. La souffrance n'est plus un signal — elle est un bug à corriger.</p>
+        <div class="gi-now">Antidépresseurs prescriptifs à large spectre, scrolling compulsif, notifications dopaminergiques. L'industrie du bien-être comme nouvelle pharmacologie sociale.</div>
+      </div>
+
+      <div class="glos-item" data-glyph="🧬">
+        <span class="gi-source red">Huxley — Meilleur des mondes</span>
+        <div class="gi-term">Conditionnement bokanovsky</div>
+        <p class="gi-def">Système de castes biologiques et psychologiques déterminées dès la naissance (Alphas, Betas, Gammas, Deltas, Epsilons). Chaque individu est conditionné à aimer sa place et à mépriser les autres. La hiérarchie sociale devient naturelle parce qu'elle est biologique.</p>
+        <div class="gi-now">Algorithmes de recommandation qui créent des bulles de filtre dès l'enfance. La personnalisation numérique comme conditionnement doux : chacun dans sa bulle, convaincu que c'est son choix.</div>
+      </div>
+
+      <div class="glos-item" data-glyph="✌">
+        <span class="gi-source blue">Orwell — 1984</span>
+        <div class="gi-term">Doublepensée (Doublethink)</div>
+        <p class="gi-def">Capacité à tenir simultanément deux croyances contradictoires, en sachant que l'une est fausse, et en croyant les deux. <em>La guerre, c'est la paix. La liberté, c'est l'esclavage. L'ignorance, c'est la force.</em> La cohérence intellectuelle est un luxe dangereux.</p>
+        <div class="gi-now">Discours politiques contemporains : liberté de surveiller, sécurité qui nécessite la restriction des libertés, croissance durable. La novlangue managériale et politique.</div>
+      </div>
+
+      <div class="glos-item" data-glyph="🎭">
+        <span class="gi-source red">Huxley — Meilleur des mondes</span>
+        <div class="gi-term">Le Sentiment (feelies)</div>
+        <p class="gi-def">Films qui transmettent non des idées mais des <em>sensations physiques</em> directes. L'expérience esthétique réduite au pur affect sensoriel, vidée de tout contenu intellectuel ou émotionnel profond. Le spectateur ne pense pas — il ressent, et c'est assez.</p>
+        <div class="gi-now">TikTok, Reels, vidéos courtes hyperstimulantes. L'économie de l'attention optimisée pour le déclenchement émotionnel immédiat, sans profondeur narrative.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mecanismes" class="split-dark">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">04 — Architecture</span>
+      <h2 class="sec-h2" style="color:var(--ash)">Comment la domination <em>se perpétue</em></h2>
+    </div>
+
+    <div class="diag-grid reveal">
+      <div>
+        <div class="diag-col-title blue">Orwell — Mécanismes durs</div>
+        <ul class="diag-list">
+          <li><strong>La surveillance permanente</strong> — le Télécran crée un Panoptique parfait. La peur d'être observé suffit à l'autocensure.
+            <span class="match blue">→ Foucault : Surveiller et Punir (1975)</span></li>
+          <li><strong>Le Deux-Minutes-Haine</strong> — rituel collectif de défoulement qui canalise la frustration vers un ennemi désigné, renforçant la cohésion autour du Parti.
+            <span class="match gold">→ Girard : Le bouc émissaire</span></li>
+          <li><strong>La réécriture continue du passé</strong> — sans passé stable, aucune résistance n'est possible. La mémoire collective est la condition de toute politique.
+            <span class="match blue">→ Arendt : Les Origines du totalitarisme</span></li>
+          <li><strong>La délation institutionnalisée</strong> — les enfants dénoncent les parents (Patrouille des Espions). Le lien social est transformé en outil de contrôle.
+            <span class="match gold">→ Tocqueville : despotisme doux</span></li>
+          <li><strong>La Chambre 101</strong> — la peur personnalisée. La torture ultime n'est pas physique mais psychologique : confronter chacun à son horreur intime.
+            <span class="match blue">→ Freud : le retour du refoulé</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="diag-col-title red">Huxley — Mécanismes doux</div>
+        <ul class="diag-list">
+          <li><strong>Le conditionnement dès la naissance</strong> — les identités, désirs et croyances sont programmés avant l'éveil de la conscience. Il n'y a pas de « soi » avant la caste.
+            <span class="match red">→ Bourdieu : habitus et violence symbolique</span></li>
+          <li><strong>La promiscuité organisée</strong> — la sexualité est déliée de tout attachement profond. Tout le monde appartient à tout le monde. L'amour exclusif est pathologique.
+            <span class="match gold">→ Bauman : Amour liquide (2003)</span></li>
+          <li><strong>L'hyperconsommation comme identité</strong> — « la vieillesse est belle » est remplacée par l'obsolescence programmée des corps et des objets.
+            <span class="match red">→ Debord : La Société du spectacle (1967)</span></li>
+          <li><strong>L'absence de tragédie</strong> — Shakespeare est interdit. La grande littérature, la souffrance authentique, la mort — tout ce qui donne de la profondeur à la vie est banni.
+            <span class="match gold">→ Han : Dans la société de la fatigue (2010)</span></li>
+          <li><strong>La stabilité comme valeur suprême</strong> — Mustapha Menier dit : « Il faut choisir entre le bonheur et ce qu'on appelait autrefois les hautes choses. »
+            <span class="match red">→ La Boétie : servitude volontaire</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-eyebrow">
+        <h3 style="font-family:'EB Garamond',serif; font-size:1.8rem; font-weight:700; color:var(--ash);">Le <em style="color:var(--gold)">processus commun</em> — Comment les deux dystopies fonctionnent</h3>
+      </div>
+      <div class="mflow reveal">
+        <div class="mflow-step">
+          <div class="mflow-num gold">01</div>
+          <div class="mflow-body">
+            <div class="mflow-title">Destruction du lien social authentique</div>
+            <div class="mflow-desc">Les deux systèmes dissolvent les solidarités horizontales (famille, amitié, classe) qui pourraient former une résistance. L'individu est isolé face au pouvoir, qu'il soit par la dénonciation (Orwell) ou par l'organisation de la promiscuité superficielle (Huxley).</div>
+            <div class="mflow-authors">
+              <span class="mflow-tag tag-blue">1984 : délation familiale</span>
+              <span class="mflow-tag tag-red">BNW : « tout le monde appartient à tout le monde »</span>
+              <span class="mflow-tag tag-gold">Bauman : amour liquide</span>
+            </div>
+          </div>
+        </div>
+        <div class="mflow-step">
+          <div class="mflow-num gold">02</div>
+          <div class="mflow-body">
+            <div class="mflow-title">Colonisation de l'intériorité</div>
+            <div class="mflow-desc">Le pouvoir ne se contente pas de contrôler les comportements — il colonise les désirs, les pensées, les rêves. Chez Orwell par la peur (la Crimepensée). Chez Huxley par le plaisir (le Soma, le conditionnement). Dans les deux cas, il n'y a plus d'espace intérieur libre.</div>
+            <div class="mflow-authors">
+              <span class="mflow-tag tag-blue">1984 : crimepensée</span>
+              <span class="mflow-tag tag-red">BNW : soma et conditionnement</span>
+              <span class="mflow-tag tag-gold">Han : transparence totale</span>
+            </div>
+          </div>
+        </div>
+        <div class="mflow-step">
+          <div class="mflow-num gold">03</div>
+          <div class="mflow-body">
+            <div class="mflow-title">Neutralisation de la mémoire et du temps long</div>
+            <div class="mflow-desc">Sans passé, pas d'alternative possible. Orwell le fait activement (réécriture des archives). Huxley le fait passivement (le passé est ennuyeux et inutile). Les deux aboutissent au même résultat : l'histoire disparaît, et avec elle, la conscience que les choses pourraient être autrement.</div>
+            <div class="mflow-authors">
+              <span class="mflow-tag tag-blue">Ministère de la Vérité</span>
+              <span class="mflow-tag tag-red">Ford a remplacé Dieu</span>
+              <span class="mflow-tag tag-gold">Debord : présent perpétuel du spectacle</span>
+            </div>
+          </div>
+        </div>
+        <div class="mflow-step">
+          <div class="mflow-num gold">04</div>
+          <div class="mflow-body">
+            <div class="mflow-title">Suppression de la transcendance</div>
+            <div class="mflow-desc">Art, religion, philosophie — tout ce qui invite à regarder au-delà du présent immédiat est supprimé (Orwell) ou rendu inutile (Huxley). La vie immanente, satisfaite d'elle-même, ne questionne pas. La profondeur est l'ennemie du contrôle.</div>
+            <div class="mflow-authors">
+              <span class="mflow-tag tag-blue">Ingsoc remplace la religion</span>
+              <span class="mflow-tag tag-red">Shakespeare est interdit</span>
+              <span class="mflow-tag tag-gold">Han : société de la performance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="auteurs" class="sec alt">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">05 — Réseau</span>
+      <h2 class="sec-h2">La galaxie <em>critique</em> — Auteurs en dialogue</h2>
+    </div>
+    <div class="authors-grid reveal">
+
+      <div class="author-card" data-initial="H">
+        <span class="ac-flag dark">Philosophe · Corée/Allemagne</span>
+        <div class="ac-name">Byung-Chul Han</div>
+        <div class="ac-work">La Société de la fatigue (2010) · La Transparence du mal</div>
+        <p class="ac-body">Han diagnostique la société contemporaine comme un passage de la <strong>société disciplinaire</strong> (Foucault/Orwell) à la <strong>société de la performance</strong>. Le sujet n'est plus interdit — il est exhorté à se surpasser, à optimiser, à s'épanouir. Il n'est plus exploité par un autre : il s'exploite lui-même, librement, avec enthousiasme.</p>
+        <div class="ac-connection">Connexion Huxley : la servitude volontaire n'a pas besoin de soma. Le burn-out est le nouveau conditionnement — non par le plaisir, mais par l'injonction à la réalisation de soi.</div>
+      </div>
+
+      <div class="author-card" data-initial="L">
+        <span class="ac-flag dark">Philosophe · France · XVIe s.</span>
+        <div class="ac-name">Étienne de La Boétie</div>
+        <div class="ac-work">Discours de la servitude volontaire (1548)</div>
+        <p class="ac-body">Écrit à 18 ans, ce texte fondateur pose la question centrale : <strong>pourquoi les peuples obéissent-ils à des tyrans ?</strong> Sa réponse est vertigineuse : parce qu'ils ont perdu l'habitude de la liberté. La servitude s'apprend, s'intègre, devient nature. Il suffit de cesser d'obéir — mais cette cessation est la chose la plus difficile du monde.</p>
+        <div class="ac-connection">Connexion Huxley : le Meilleur des mondes est la réalisation parfaite de la thèse de La Boétie. Les Deltas et les Epsilons ont non seulement accepté leur servitude — ils l'aiment viscéralement.</div>
+      </div>
+
+      <div class="author-card" data-initial="D">
+        <span class="ac-flag dark">Théoricien · France · XXe s.</span>
+        <div class="ac-name">Guy Debord</div>
+        <div class="ac-work">La Société du spectacle (1967)</div>
+        <p class="ac-body">Pour Debord, le capitalisme avancé n'est plus une accumulation de marchandises mais une <strong>accumulation de spectacles</strong>. La vie authentique a été remplacée par sa représentation. On ne vit plus — on regarde la vie des autres, on consume des images de vie. Le spectacle est la forme que prend le capital lorsqu'il a colonisé le quotidien.</p>
+        <div class="ac-connection">Connexion Huxley/Han : les feelies de Huxley, préfiguration parfaite de la société du spectacle. Debord + Han = comprendre pourquoi Instagram/TikTok sont des outils de pouvoir et non de liberté.</div>
+      </div>
+
+      <div class="author-card" data-initial="B">
+        <span class="ac-flag dark">Sociologue · Pologne · XXe s.</span>
+        <div class="ac-name">Zygmunt Bauman</div>
+        <div class="ac-work">L'Amour liquide (2003) · La Vie liquide</div>
+        <p class="ac-body">Bauman introduit la notion de <strong>modernité liquide</strong> : une époque où toutes les structures solides (travail stable, famille, identité nationale, foi) se sont dissoutes. Dans l'amour liquide, les relations humaines deviennent des connexions — facilement établies, facilement rompues, évaluées selon leur utilité immédiate. L'autre devient un consommable.</p>
+        <div class="ac-connection">Connexion Huxley : la promiscuité du Meilleur des mondes EST l'amour liquide porté à son terme logique. La profondeur du lien est une inefficacité systémique.</div>
+      </div>
+
+      <div class="author-card" data-initial="T">
+        <span class="ac-flag dark">Philosophe politique · France · XIXe s.</span>
+        <div class="ac-name">Alexis de Tocqueville</div>
+        <div class="ac-work">De la Démocratie en Amérique (1835–1840)</div>
+        <p class="ac-body">Tocqueville prédit un <strong>despotisme doux démocratique</strong> : un pouvoir tutélaire, prévoyant, régulier, doux, qui maintient les citoyens dans une enfance perpétuelle. Ce pouvoir « ne tyrannise pas, il gêne, comprime, énerve, éteint, hébète ». Les citoyens restent libres en apparence — et abandonnent l'exercice réel de leur liberté.</p>
+        <div class="ac-connection">Connexion Huxley : Tocqueville avait anticipé le Meilleur des mondes 100 ans avant Huxley. Le Contrôleur mondial n'est pas un tyran — il est un gestionnaire bienveillant.</div>
+      </div>
+
+      <div class="author-card" data-initial="F">
+        <span class="ac-flag dark">Philosophe · France · XXe s.</span>
+        <div class="ac-name">Michel Foucault</div>
+        <div class="ac-work">Surveiller et Punir (1975) · Naissance de la biopolitique</div>
+        <p class="ac-body">Foucault théorise le <strong>Panoptique</strong> (prison circulaire de Bentham) comme modèle du pouvoir moderne : il suffit que les prisonniers <em>sachent</em> qu'ils peuvent être observés à tout moment pour qu'ils s'autodisciplinent. Le pouvoir devient économique quand il n'a plus besoin de s'exercer — il est intériorisé. La biopolitique désigne le contrôle des corps collectifs.</p>
+        <div class="ac-connection">Connexion Orwell + contemporain : le Télécran est le Panoptique parfait. Les smartphones, cookies, et profils algorithmiques constituent un Panoptique volontairement adopté.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="han" class="sec">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">06 — Focus</span>
+      <h2 class="sec-h2">Byung-Chul Han — <em>La dystopie du sujet performant</em></h2>
+    </div>
+
+    <div class="intro-cols">
+      <div class="reveal">
+        <div class="intro-col-head" style="color:var(--mid);border-color:var(--mid);">La société disciplinaire → La société de la performance</div>
+        <div class="intro-col-body">
+          <p>Han opère une <strong>distinction capitale</strong> : Foucault (et Orwell) décrivent la <em>société disciplinaire</em> — fondée sur l'interdit, la norme, le contrôle externe. Mais cette société est révolue.</p>
+          <p>La société contemporaine est une <em>société de la performance</em> (Leistungsgesellschaft). Elle ne dit plus « tu dois » mais <strong>« tu peux »</strong>. Elle ne punit pas la transgression — elle culpabilise l'insuffisance. Le sujet de la performance est son propre exploiteur.</p>
+          <p>Le dépressif, le burn-outé, l'anxieux chronique — ce ne sont pas des victimes du système au sens orwellien. Ce sont des sujets qui <strong>ont intériorisé l'impératif d'optimisation</strong> jusqu'à l'épuisement.</p>
+          <div class="intro-quote" style="border-color:var(--mid); background:rgba(61,56,48,.05);">« Le sujet de la performance est plus rapide et plus productif que le sujet disciplinaire. Mais la frontière entre l'exploitation et la libre réalisation de soi est abolie. »<br><em>— Byung-Chul Han</em></div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="intro-col-head" style="color:var(--mid);border-color:var(--mid);">La Transparence du Mal — Le numérique comme nouveau soma</div>
+        <div class="intro-col-body">
+          <p>Dans <em>La Transparence du mal</em>, Han analyse comment la société contemporaine a éliminé toute <strong>négativité</strong> : la souffrance, le manque, l'altérité radicale, la transcendance. Tout ce qui résiste, qui fait obstacle, qui exige un effort de dépassement.</p>
+          <p>Ce faisant, elle a éliminé les conditions de possibilité du désir, de l'amour et de la pensée véritables. Le désir naît du manque — une société sans manque est une société sans désir profond. Ce que Huxley avait compris intuitivement.</p>
+          <p>La <em>société de la transparence</em> de Han est une reformulation philosophique rigoureuse du Meilleur des mondes : <strong>un monde où tout est visible, accessible, optimisé — et où rien ne vaut vraiment d'être vécu.</strong></p>
+          <div class="intro-quote" style="border-color:var(--mid); background:rgba(61,56,48,.05);">« L'enfer de l'identique — voilà ce que produit la société de la performance. Non pas l'autre, mais le même. »<br><em>— Byung-Chul Han</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pq gold reveal" style="margin-top:3rem;">
+      <p>« La fatigue de la société de performance est une fatigue solitaire, qui isole et divise. Elle rend muet et incapable de communauté. Dans le Meilleur des Mondes, on est seul ensemble. »</p>
+      <cite>— Lecture croisée Han / Huxley</cite>
+    </div>
+  </section>
+
+  <section id="debord-laboetie" class="sec alt">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">07 — Focus</span>
+      <h2 class="sec-h2">Debord &amp; La Boétie — <em>Spectacle et servitude volontaire</em></h2>
+    </div>
+
+    <div class="intro-cols">
+      <div class="reveal">
+        <div class="intro-col-head" style="color:#2d5c1a; border-color:#2d5c1a;">La Boétie — La question fondatrice (1548)</div>
+        <div class="intro-col-body">
+          <p>Étienne de La Boétie pose la question politique la plus radicale qui soit : <strong>« Pourquoi les hommes obéissent-ils ? »</strong> Non par peur de la sanction — la réponse serait trop simple. Mais parce qu'ils <em>veulent</em> obéir, parce qu'ils ont été formés à la docilité dès l'enfance.</p>
+          <p>La servitude volontaire n'est pas une aliénation imposée de l'extérieur. C'est une disposition intérieure, cultivée, entretenue par les habitudes, les divertissements, les cérémonies, les spectacles offerts par le tyran.</p>
+          <p><strong>Le tyran offre des jeux, du pain, du spectacle — et le peuple abdique sa liberté dans la gratitude.</strong> La Boétie décrit cela avec une stupeur lucide, qui anticipe de cinq siècles la société de consommation.</p>
+          <div class="intro-quote" style="border-color:#2d5c1a; background:#e8f5e1;">« Ce sont les théâtres, les jeux, les farces, les spectacles... qui anesthésiaient jadis les peuples sous les tyrans. »<br><em>— La Boétie, Discours de la servitude volontaire</em></div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="intro-col-head" style="color:#5c3a1a; border-color:#5c3a1a;">Debord — Le spectacle comme totalité (1967)</div>
+        <div class="intro-col-body">
+          <p>Debord radicalise La Boétie pour la société capitaliste avancée. Le spectacle n'est plus un instrument du pouvoir — il <em>est</em> le pouvoir. <strong>« Tout ce qui était directement vécu s'est éloigné dans une représentation. »</strong></p>
+          <p>La vie authentique — le travail créateur, la communauté réelle, l'expérience directe — a été <em>spectacularisée</em> : transformée en image, en consommation d'images. L'ouvrier qui autrefois produisait des biens se retrouve spectateur de sa propre vie.</p>
+          <p>Le spectacle n'est pas la somme des images — c'est un rapport social entre personnes, médiatisé par des images. <strong>C'est Huxley étendu à toute la structure sociale</strong> : les feelies ne sont pas une distraction — elles sont la forme du lien social lui-même.</p>
+          <div class="intro-quote" style="border-color:#5c3a1a; background:#f5e8dc;">« Le spectacle est le capital parvenu à un tel degré d'accumulation qu'il devient image. »<br><em>— Guy Debord, La Société du spectacle, thèse 34</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem; padding:3rem; background:var(--void); color:var(--ash);" class="reveal">
+      <div style="font-family:'Space Mono',monospace; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem;">Triangle La Boétie → Debord → Huxley — La même intuition, trois siècles d'écart</div>
+      <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:700px; height:auto; font-family:'Space Mono',monospace; display:block; margin:0 auto;">
+        <polygon points="350,30 80,250 620,250" fill="none" stroke="rgba(200,168,75,0.2)" stroke-width="1" stroke-dasharray="4,4"/>
+        <circle cx="350" cy="30" r="38" fill="rgba(92,60,26,0.3)" stroke="#c4962a" stroke-width="1.5"/>
+        <text x="350" y="25" text-anchor="middle" fill="#e8c870" font-size="10" font-weight="700">LA BOÉTIE</text>
+        <text x="350" y="40" text-anchor="middle" fill="rgba(240,236,227,.5)" font-size="8">1548</text>
+
+        <circle cx="80" cy="250" r="38" fill="rgba(60,80,92,0.3)" stroke="#4a8ab5" stroke-width="1.5"/>
+        <text x="80" y="245" text-anchor="middle" fill="#6ea3cc" font-size="10" font-weight="700">ORWELL</text>
+        <text x="80" y="260" text-anchor="middle" fill="rgba(240,236,227,.5)" font-size="8">1949</text>
+
+        <circle cx="620" cy="250" r="38" fill="rgba(92,26,26,0.3)" stroke="#c45a5a" stroke-width="1.5"/>
+        <text x="620" y="245" text-anchor="middle" fill="#cc6e6e" font-size="10" font-weight="700">HUXLEY</text>
+        <text x="620" y="260" text-anchor="middle" fill="rgba(240,236,227,.5)" font-size="8">1932</text>
+
+        <circle cx="350" cy="175" r="44" fill="rgba(200,168,75,0.1)" stroke="var(--gold)" stroke-width="2"/>
+        <text x="350" y="169" text-anchor="middle" fill="#e8c870" font-size="10" font-weight="700">DEBORD</text>
+        <text x="350" y="184" text-anchor="middle" fill="rgba(240,236,227,.5)" font-size="8">1967</text>
+
+        <line x1="350" y1="68" x2="350" y2="131" stroke="rgba(200,168,75,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="113" y1="232" x2="307" y2="193" stroke="rgba(74,138,181,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="587" y1="232" x2="393" y2="193" stroke="rgba(196,90,90,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+
+        <text x="350" y="108" text-anchor="middle" fill="rgba(200,168,75,0.4)" font-size="7" letter-spacing="1">SPECTACLE = SERVITUDE</text>
+        <text x="210" y="215" text-anchor="middle" fill="rgba(74,138,181,0.4)" font-size="7" letter-spacing="1" transform="rotate(-18,210,215)">CONTRAINTE EXTERNE</text>
+        <text x="490" y="215" text-anchor="middle" fill="rgba(196,90,90,0.4)" font-size="7" letter-spacing="1" transform="rotate(18,490,215)">CONTRAINTE INTERNE</text>
+
+        <rect x="290" y="258" width="120" height="22" rx="3" fill="rgba(200,168,75,0.05)" stroke="rgba(200,168,75,0.2)" stroke-width="1"/>
+        <text x="350" y="273" text-anchor="middle" fill="rgba(200,168,75,0.5)" font-size="8" letter-spacing="1">HAN 2010 — SYNTHÈSE</text>
+      </svg>
+    </div>
+  </section>
+
+  <section id="bauman" class="sec">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">08 — Focus</span>
+      <h2 class="sec-h2">Bauman — <em>L'amour liquide et la dissolution du lien</em></h2>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem;" class="reveal">
+      <div>
+        <p style="font-size:.95rem; color:#3a3530; line-height:1.9; margin-bottom:1.2rem;">Pour Bauman, la <strong>modernité liquide</strong> est une époque où tout ce qui était solide — les identités, les institutions, les engagements — se dissout dans un flux permanent. La vie liquide est une vie de <em>recommencements perpétuels</em>, d'identités provisoires, de relations à durée déterminée.</p>
+        <p style="font-size:.95rem; color:#3a3530; line-height:1.9; margin-bottom:1.2rem;"><em>L'amour liquide</em> décrit ce qu'advient l'amour dans ce contexte : les relations humaines deviennent des « connexions » (le mot est révélateur), facilement établies sur les applications, facilement rompues. On accumule des contacts comme des options. Le partenaire est un <strong>investissement dont on attend un retour</strong>.</p>
+        <p style="font-size:.95rem; color:#3a3530; line-height:1.9;">Bauman voit là une réponse rationnelle à un monde instable — mais une réponse qui <strong>détruit les conditions de possibilité de l'amour véritable</strong>, qui exige durée, engagement, acceptation de la vulnérabilité.</p>
+      </div>
+      <div>
+        <div style="background:var(--huxley-pale); padding:2rem; border-left:3px solid var(--huxley); margin-bottom:1.5rem;">
+          <div style="font-family:'Space Mono',monospace; font-size:.55rem; letter-spacing:.15em; text-transform:uppercase; color:var(--huxley); margin-bottom:.8rem;">Connexion Huxley directe</div>
+          <p style="font-size:.9rem; line-height:1.75; color:#3a3530;">Dans le Meilleur des mondes, « tout le monde appartient à tout le monde » n'est pas une libération sexuelle — c'est l'institutionnalisation de la liquidité relationnelle. Huxley a préfiguré Tinder en 1932 : des corps disponibles, des connexions sans investissement émotionnel.</p>
+        </div>
+        <div style="background:var(--orwell-pale); padding:2rem; border-left:3px solid var(--orwell);">
+          <div style="font-family:'Space Mono',monospace; font-size:.55rem; letter-spacing:.15em; text-transform:uppercase; color:var(--orwell); margin-bottom:.8rem;">Connexion Orwell inverse</div>
+          <p style="font-size:.9rem; line-height:1.75; color:#3a3530;">Orwell, au contraire, voit dans l'amour entre Winston et Julia le <strong>seul acte de résistance réel</strong>. L'amour solide, exclusif, profond est subversif parce qu'il crée une allégeance qui échappe au Parti. Ce que le Parti craint le plus, c'est l'amour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="aujourd-hui" class="split-dark">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">09 — Application</span>
+      <h2 class="sec-h2" style="color:var(--ash);">Quelle dystopie <em>vivons-nous ?</em></h2>
+    </div>
+
+    <div class="pq gold reveal" style="margin-bottom:3rem;">
+      <p>« Les deux prophéties se sont réalisées — mais selon une géographie du pouvoir. La surveillance orwellienne pour les populations dangereuses. La satisfaction huxleyenne pour les consommateurs dociles. »</p>
+      <cite>— Lecture croisée contemporaine</cite>
+    </div>
+
+    <div class="diag-grid reveal">
+      <div>
+        <div class="diag-col-title blue">Éléments orwelliens contemporains</div>
+        <ul class="diag-list">
+          <li><strong>Crédit social (Chine)</strong> — notation comportementale des citoyens, accès différencié aux services selon le score de conformité.
+            <span class="match blue">→ Télécran + Novlangue combinés</span></li>
+          <li><strong>Surveillance NSA / GCHQ</strong> — révélations Snowden (2013) : écoute de masse des communications mondiales sans mandat. Le Télécran était dans nos poches.
+            <span class="match blue">→ Panoptique de Foucault</span></li>
+          <li><strong>Désinformation d'État</strong> — fake news industrialisées, réécriture des faits historiques par des gouvernements autoritaires (Russie, Hongrie, Turquie).
+            <span class="match blue">→ Ministère de la Vérité</span></li>
+          <li><strong>Lois antiterroristes</strong> — création de catégories d'individus suspectés a priori, détention sans jugement, surveillance préventive.
+            <span class="match gold">→ Crimepensée</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="diag-col-title red">Éléments huxleyens contemporains</div>
+        <ul class="diag-list">
+          <li><strong>Économie de l'attention</strong> — les GAFAM ont bâti leur modèle sur la capture de l'attention. Le scroll infini, les notifications, les likes : ingénierie du conditionnement dopaminergique.
+            <span class="match red">→ Soma algorithmique</span></li>
+          <li><strong>Prescription anxiolytique de masse</strong> — explosion des prescriptions d'antidépresseurs et anxiolytiques dans les pays occidentaux. La souffrance psychique est un signal qu'on anesthésie.
+            <span class="match red">→ Soma littéral</span></li>
+          <li><strong>Divertissement comme politique</strong> — reality TV, entertainment politik. Les hommes politiques passent dans les talk-shows. La politique devient du spectacle.
+            <span class="match gold">→ Debord + La Boétie</span></li>
+          <li><strong>Burn-out épidémique</strong> — l'injonction à la performance et à l'accomplissement personnel comme nouvelle forme de servitude volontaire.
+            <span class="match gold">→ Byung-Chul Han</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); padding:3rem;" class="reveal">
+      <div style="font-family:'Space Mono',monospace; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:2rem;">La thèse de Neil Postman — Se distraire à en mourir (1985)</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2rem;">
+        <div>
+          <div style="font-family:'EB Garamond',serif; font-size:1.1rem; font-weight:700; color:var(--ash); margin-bottom:.7rem;">Le diagnostic</div>
+          <p style="font-size:.88rem; color:rgba(240,236,227,.6); line-height:1.75;">Postman (1985) affirme que c'est Huxley qui avait raison, pas Orwell. Les démocraties occidentales ne périront pas par la tyrannie mais par le <strong>divertissement</strong>. La télévision transforme tout — politique, religion, éducation — en spectacle.</p>
+        </div>
+        <div>
+          <div style="font-family:'EB Garamond',serif; font-size:1.1rem; font-weight:700; color:var(--ash); margin-bottom:.7rem;">Le mécanisme</div>
+          <p style="font-size:.88rem; color:rgba(240,236,227,.6); line-height:1.75;">Le medium télévisuel impose sa logique à tout contenu : réduction à l'image, à l'émotion, à l'instantané. Ce faisant, il détruit la <strong>pensée linéaire</strong>, argumentative, profonde — celle que nécessite la démocratie réelle.</p>
+        </div>
+        <div>
+          <div style="font-family:'EB Garamond',serif; font-size:1.1rem; font-weight:700; color:var(--ash); margin-bottom:.7rem;">Aujourd'hui</div>
+          <p style="font-size:.88rem; color:rgba(240,236,227,.6); line-height:1.75;">Ce que Postman diagnostiquait pour la télévision s'applique au numérique à une puissance décuplée. <strong>TikTok + smartphones + IA générative</strong> = le Meilleur des mondes de Huxley opérationnalisé à l'échelle planétaire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reflexion" class="sec ref-sec dark">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">10 — Pédagogie</span>
+      <h2 class="sec-h2">Pistes de <em>réflexion</em></h2>
+    </div>
+
+    <div class="q-stack reveal">
+      <div class="q-item">
+        <span class="q-n">Q.01</span>
+        <div>
+          <p class="q-t">Neil Postman affirme en 1985 que c'est Huxley, et non Orwell, qui avait raison. À l'aune de TikTok, des algorithmes de recommandation et du burn-out épidémique, cette thèse vous semble-t-elle juste ? Nuancez.</p>
+          <p class="q-hint">Piste : distinguer les populations concernées (consommateurs / dissidents politiques). La dystopie peut être huxleyenne pour les uns et orwellienne pour les autres simultanément.</p>
+          <div class="q-tags">
+            <span class="q-tag">Huxley vs Orwell</span>
+            <span class="q-tag">Postman</span>
+            <span class="q-tag">Algorithme = soma ?</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-item">
+        <span class="q-num">Q.02</span>
+        <div>
+          <p class="q-t">La Boétie affirme que la servitude volontaire est le fondement de toute tyrannie. En quoi la notion de servitude volontaire éclaire-t-elle les comportements des utilisateurs de réseaux sociaux qui acceptent la surveillance en échange de services gratuits ?</p>
+          <p class="q-hint">Piste : analyser le contrat implicite des GAFAM. Données personnelles contre service. Est-ce un choix libre ? Comparer avec le conditionnement bokanovsky de Huxley.</p>
+          <div class="q-tags">
+            <span class="q-tag">La Boétie</span>
+            <span class="q-tag">GAFAM</span>
+            <span class="q-tag">Servitude volontaire</span>
+            <span class="q-tag">Foucault</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-item">
+        <span class="q-num">Q.03</span>
+        <div>
+          <p class="q-t">Byung-Chul Han parle de « violence positive » (excès de positivité, d'optimisation, de performance) par opposition à la violence négative de l'interdit. En quoi cette distinction renouvelle-t-elle la lecture d'Huxley ? Illustrez avec des exemples contemporains.</p>
+          <p class="q-hint">Piste : injonction à l'épanouissement personnel (développement personnel, coaching, bien-être). Comparer avec le soma. La différence : le soma est donné ; le burn-out est auto-infligé.</p>
+          <div class="q-tags">
+            <span class="q-tag">Byung-Chul Han</span>
+            <span class="q-tag">Violence positive</span>
+            <span class="q-tag">Huxley / Soma</span>
+            <span class="q-tag">Burn-out</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-item">
+        <span class="q-num">Q.04</span>
+        <div>
+          <p class="q-t">Debord affirme que « le spectacle est le capital parvenu à un degré d'accumulation tel qu'il devient image ». En quoi les influenceurs, les stories Instagram et la politique spectacle donnent-ils raison à cette thèse ? Y a-t-il des contre-exemples ?</p>
+          <p class="q-hint">Piste : analyser le cas des politiciens sur TikTok, la mise en scène de la vie privée par les célébrités. Contre-exemple possible : les usages militants et d'émancipation des mêmes outils.</p>
+          <div class="q-tags">
+            <span class="q-tag">Debord</span>
+            <span class="q-tag">Société du spectacle</span>
+            <span class="q-tag">Influenceurs</span>
+            <span class="q-tag">Résistance possible ?</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-item">
+        <span class="q-num">Q.05</span>
+        <div>
+          <p class="q-t">Dans 1984, l'amour entre Winston et Julia est le seul acte de résistance réel. Chez Bauman, l'amour solide est devenu exceptionnel dans une époque liquide. Dans quel sens peut-on dire que l'amour profond est aujourd'hui un acte politique ?</p>
+          <p class="q-hint">Piste : relier à La Boétie (le lien fort échappe à la logique de la servitude), à Bauman (résister à la liquidité), à Han (la capacité d'endurer l'altérité radicale de l'autre).</p>
+          <div class="q-tags">
+            <span class="q-tag">Orwell / Winston & Julia</span>
+            <span class="q-tag">Bauman</span>
+            <span class="q-tag">Han</span>
+            <span class="q-tag">Amour comme résistance</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-item">
+        <span class="q-num">Q.06</span>
+        <div>
+          <p class="q-t">Tocqueville décrit un « despotisme doux » qui ne tyrannise pas mais « comprime, énerve, éteint, hébète ». En quoi cette description s'applique-t-elle aux algorithmes de recommandation des plateformes numériques ? Est-ce une domination ou un service ?</p>
+          <p class="q-hint">Piste : analyser la bulle de filtre (Eli Pariser). L'algorithme qui vous donne ce que vous voulez vous prive progressivement de ce que vous ne savez pas encore vouloir.</p>
+          <div class="q-tags">
+            <span class="q-tag">Tocqueville</span>
+            <span class="q-tag">Despotisme doux</span>
+            <span class="q-tag">Algorithme</span>
+            <span class="q-tag">Huxley / Conditionnement</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="synthese" class="sec synth-sec">
+    <div class="sec-eyebrow reveal">
+      <span class="sec-num">11 — Conclusion</span>
+      <h2 class="sec-h2">Synthèse <em>critique</em></h2>
+    </div>
+    <div class="synth-grid reveal">
+      <div class="synth-card">
+        <div class="synth-card-title">Ce qu'Orwell avait juste</div>
+        <p class="synth-card-body">La surveillance de masse, la réécriture de l'histoire, les régimes autoritaires qui détruisent la vérité. Chine, Russie, Corée du Nord, et la tentation orwellienne dans les démocraties libérales elles-mêmes.</p>
+      </div>
+      <div class="synth-card">
+        <div class="synth-card-title">Ce qu'Huxley avait juste</div>
+        <p class="synth-card-body">L'économie de l'attention, le soma algorithmique, l'injonction à la performance, l'amour liquide, le divertissement comme substitut à la pensée. La dystopie la plus réalisée dans les démocraties consuméristes.</p>
+      </div>
+      <div class="synth-card">
+        <div class="synth-card-title">Le dépassement : Han</div>
+        <p class="synth-card-body">Han synthétise les deux : la société de la performance n'est ni orwellienne (contrainte externe) ni totalement huxleyenne (plaisir passif). C'est un sujet actif qui s'exploite lui-même — une troisième forme de servitude.</p>
+      </div>
+      <div class="synth-card">
+        <div class="synth-card-title">La résistance possible</div>
+        <p class="synth-card-body">La Boétie : il suffit de cesser d'obéir. Orwell : l'amour authentique. Han : cultiver la négativité, le manque, l'ennui profond. Bauman : s'engager malgré l'incertitude. Les résistances existent — mais elles demandent du courage.</p>
+      </div>
+      <div class="synth-card">
+        <div class="synth-card-title">La limite de ces analyses</div>
+        <p class="synth-card-body">Ces auteurs peuvent être lus de façon déterministe — comme si la domination était totale et la résistance impossible. Les dystopies sont des avertissements, pas des fatalités. La lucidité est déjà une forme de résistance.</p>
+      </div>
+      <div class="synth-card">
+        <div class="synth-card-title">La question ouverte</div>
+        <p class="synth-card-body">Si Huxley avait raison — si nous désirons vraiment notre servitude — alors qui est « nous » dans cette phrase ? Reste-t-il une part de subjectivité qui résiste, qui sait, qui refuse ? Ou est-ce aussi une illusion ?</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Orwell — 1984, 1949<br>Huxley — Brave New World, 1932<br>Étude comparative · Fiche pédagogique</span>
+    <div class="f-center">1984 × BNW</div>
+    <div>
+      <a href="/">↗ Retour à l'accueil</a>
+      <span style="margin-top:0.5rem; display:block; text-align:right;">Littérature & Philosophie politique<br>Cours comparatif L3 / M1</span>
+    </div>
+  </footer>
+
+  </main>
+
+  <style is:global>
+    :root {
+      --void: #080808;
+      --ash: #f0ece3;
+      --ash2: #e5e0d5;
+      --orwell: #1a3a5c;
+      --orwell-pale: #d0dcea;
+      --orwell-glow: #4a8ab5;
+      --huxley: #5c1a1a;
+      --huxley-pale: #ead0d0;
+      --huxley-glow: #c45a5a;
+      --gold: #c8a84b;
+      --gold-pale: #f5edce;
+      --mid: #3d3830;
+      --faint: #9e9890;
+      --line: #d8d2c8;
+      --sidebar-w: 280px;
+    }
+
+    body {
+      background: var(--ash);
+      color: var(--void);
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* Surcharge du curseur global */
+    .cur { background: var(--gold) !important; border: none !important; }
+    .cur.big { background: rgba(200,168,75,.15) !important; border: none !important; }
+    #prog { background: var(--gold) !important; }
+
+    /* SIDEBAR */
+    .sidenav {
+      position: fixed; left:0; top:0; bottom:0;
+      width: var(--sidebar-w);
+      background: var(--void);
+      color: var(--ash);
+      z-index: 100;
+      display: flex; flex-direction: column;
+      overflow-y: auto;
+      border-right: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .snav-top { padding: 2.5rem 2rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .snav-eyebrow { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .snav-vs { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.08em; line-height: 1.1; }
+    .snav-vs .o { color: #6ea3cc; }
+    .snav-vs .h { color: #cc6e6e; }
+    .snav-vs .amp { color: rgba(255,255,255,0.2); }
+    .snav-sub { font-family: 'EB Garamond', serif; font-style: italic; font-size: 0.85rem; color: rgba(240,236,227,0.4); margin-top: 0.4rem; }
+
+    .snav-section-lbl { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,236,227,0.25); padding: 1.2rem 2rem 0.5rem; }
+    .snav-link { display: flex; align-items: center; gap: 0.8rem; padding: 0.48rem 2rem; font-family: 'Space Mono', monospace; font-size: 0.58rem; letter-spacing: 0.06em; color: rgba(240,236,227,0.45); text-decoration: none; border-left: 2px solid transparent; transition: all .25s; }
+    .snav-link:hover { color:var(--ash); border-left-color:var(--gold); padding-left:2.3rem; }
+    .snav-link.act { color:var(--ash); border-left-color:var(--gold); background:rgba(200,168,75,0.06); }
+    .snav-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; background:currentColor; opacity:0.4; }
+    .snav-divider { height:1px;background:rgba(255,255,255,0.05);margin:0.8rem 2rem; }
+    .snav-footer { margin-top:auto; padding:1.5rem 2rem; border-top:1px solid rgba(255,255,255,0.05); font-family:'Space Mono',monospace; font-size:0.5rem; letter-spacing:0.08em; color:rgba(240,236,227,0.2); line-height:2; }
+    .snav-footer a { color:var(--gold); text-decoration:none; transition: color 0.2s; }
+    .snav-footer a:hover { color: var(--ash); }
+
+    /* MAIN */
+    .main { margin-left: var(--sidebar-w); }
+
+    /* HERO */
+    .hero { background: var(--void); color: var(--ash); min-height: 100vh; display: grid; grid-template-rows: 1fr auto; padding: 5rem 6rem 4rem; position: relative; overflow: hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 60px 60px; pointer-events:none; }
+    .hero-watermark { position:absolute; right:-2rem; top:50%; transform:translateY(-50%); font-family:'Bebas Neue',sans-serif; font-size:28vw; line-height:1; color:rgba(255,255,255,0.02); pointer-events:none; user-select:none; white-space:nowrap; }
+    .hero-tag { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:3rem; opacity:0; animation:up .8s ease forwards .1s; }
+    
+    .hero-split { display:grid; grid-template-columns:1fr 50px 1fr; gap:0; align-items:center; opacity:0; animation:up .9s ease forwards .3s; }
+    .hero-author { text-align:right; }
+    .hero-author-left { text-align:left; }
+    .hero-author-name { font-family:'Bebas Neue',sans-serif; font-size:clamp(3.5rem,6vw,7rem); letter-spacing:0.06em; line-height:0.9; }
+    .hero-author-name.blue { color:#6ea3cc; }
+    .hero-author-name.red  { color:#cc6e6e; }
+    .hero-author-sub { font-family:'EB Garamond',serif; font-style:italic; font-size:1rem; color:rgba(240,236,227,0.4); margin-top:0.3rem; }
+    .hero-works { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.08em; color:rgba(240,236,227,0.4); margin-top:0.6rem; }
+    .hero-works span { display:inline-block; border:1px solid rgba(255,255,255,0.12); padding:0.2rem 0.6rem; border-radius:2px; margin:0.15rem; }
+    
+    .hero-vs-col { display:flex; flex-direction:column; align-items:center; gap:0.5rem; }
+    .hero-vs-line { flex:1; width:1px; background:rgba(255,255,255,0.12); min-height:60px; }
+    .hero-vs-text { font-family:'Space Mono',monospace; font-size:0.55rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(240,236,227,0.3); writing-mode:vertical-rl; }
+
+    .hero-divider { width:100%; height:1px; background:rgba(255,255,255,0.06); margin:3rem 0 2rem; opacity:0; animation:fadeIn .8s ease forwards .6s; }
+    .hero-thesis { max-width:700px; font-size:1.15rem; font-weight:400; font-style:italic; color:rgba(240,236,227,0.65); line-height:1.9; opacity:0; animation:up .8s ease forwards .5s; }
+    .hero-thesis strong { color:var(--ash); font-style:normal; font-weight:500; }
+
+    .hero-bottom { display:flex; justify-content:space-between; align-items:flex-end; padding-top:3rem; border-top:1px solid rgba(255,255,255,0.06); opacity:0; animation:fadeIn 1s ease forwards 1s; }
+    .hero-meta { font-family:'Space Mono',monospace; font-size:0.55rem; letter-spacing:0.1em; color:rgba(240,236,227,0.25); line-height:2.2; text-transform:uppercase; }
+    .hero-epigraph { text-align:right; max-width:380px; font-family:'EB Garamond',serif; font-style:italic; font-size:1rem; color:rgba(240,236,227,0.45); line-height:1.7; }
+    .hero-epigraph cite { display:block; font-style:normal; font-family:'Space Mono',monospace; font-size:0.55rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-top:0.5rem; }
+
+    /* SECTION */
+    .sec { padding:6rem 6rem; border-bottom:1px solid var(--line); }
+    .sec.alt  { background:var(--ash2); }
+    .sec.dark { background:var(--void); color:var(--ash); }
+    .sec.dark .line { border-color:rgba(255,255,255,0.07); }
+
+    .sec-eyebrow { display:flex; align-items:center; gap:1.5rem; margin-bottom:3.5rem; }
+    .sec-num { font-family:'Space Mono',monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); background:var(--gold-pale); padding:.3rem .8rem; border-radius:2px; }
+    .dark .sec-num { background:rgba(200,168,75,0.15); }
+    .sec-h2 { font-family:'EB Garamond',serif; font-size:2.8rem; font-weight:700; line-height:1.1; }
+    .sec-h2 em { font-style:italic; color:var(--gold); }
+    .dark .sec-h2 { color:var(--ash); }
+    .dark .sec-h2 em { color:var(--gold); }
+
+    /* INTRO COLS */
+    .intro-cols { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:1rem; }
+    .intro-col-head { font-family:'Space Mono',monospace; font-size:0.6rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding-bottom:0.8rem; margin-bottom:1.5rem; border-bottom:2px solid; }
+    .intro-col-head.blue { color:var(--orwell); border-color:var(--orwell); }
+    .intro-col-head.red  { color:var(--huxley); border-color:var(--huxley); }
+    .intro-col-body { font-size:0.95rem; color:#3a3530; line-height:1.9; }
+    .intro-col-body p { margin-bottom:1rem; }
+    .intro-col-body p:last-child { margin-bottom:0; }
+    .intro-col-body strong { color:var(--void); font-weight:600; }
+    .intro-col-body em { font-style:italic; }
+
+    .intro-quote { margin-top:1.5rem; padding:1.2rem 1.5rem; border-left:3px solid; font-style:italic; font-size:0.92rem; line-height:1.7; color:#555; }
+    .intro-quote.blue { border-color:var(--orwell); background:var(--orwell-pale); }
+    .intro-quote.red  { border-color:var(--huxley); background:var(--huxley-pale); }
+
+    /* TABLE */
+    .compare-table { width:100%; border-collapse:collapse; margin-top:1rem; }
+    .compare-table th { padding:1.2rem 1.5rem; text-align:left; font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; border-bottom:2px solid var(--gold); }
+    .compare-table th:nth-child(1) { color:var(--faint); width:18%; }
+    .compare-table th:nth-child(2) { color:var(--orwell); background:rgba(26,58,92,0.05); }
+    .compare-table th:nth-child(3) { color:var(--huxley); background:rgba(92,26,26,0.05); }
+    .compare-table th:nth-child(4) { color:var(--gold); }
+    .compare-table td { padding:1.1rem 1.5rem; vertical-align:top; font-size:0.88rem; line-height:1.7; color:#3a3530; border-bottom:1px solid var(--line); }
+    .compare-table td:nth-child(1) { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--faint); font-weight:700; }
+    .compare-table td:nth-child(2) { background:rgba(26,58,92,0.03); }
+    .compare-table td:nth-child(3) { background:rgba(92,26,26,0.03); }
+    .compare-table td:nth-child(4) { font-style:italic; color:var(--mid); }
+    .compare-table tr:hover td { background:var(--gold-pale) !important; }
+    .compare-table tr:hover td:nth-child(1) { color:var(--void); }
+
+    /* PULL QUOTE */
+    .pq { padding:3rem 4rem; margin:3rem 0; position:relative; overflow:hidden; }
+    .pq.blue { background:var(--orwell); color:var(--ash); }
+    .pq.red  { background:var(--huxley); color:var(--ash); }
+    .pq.gold { background:var(--void); color:var(--ash); border-left:4px solid var(--gold); }
+    .pq::before { content:'\201C'; position:absolute; top:-1.5rem; left:2rem; font-family:'EB Garamond',serif; font-size:12rem; line-height:1; opacity:0.1; pointer-events:none; }
+    .pq p { font-family:'EB Garamond',serif; font-size:1.5rem; font-style:italic; font-weight:400; line-height:1.6; position:relative; z-index:1; }
+    .pq cite { display:block; margin-top:1rem; font-family:'Space Mono',monospace; font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; font-style:normal; color:rgba(240,236,227,0.5); }
+    .pq.gold cite { color:var(--gold); }
+
+    /* GLOSSAIRE */
+    .glos-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--line); border:1px solid var(--line); }
+    .glos-item { background:var(--ash); padding:2.2rem 2.5rem; position:relative; overflow:hidden; transition:background .3s; }
+    .alt .glos-item { background:var(--ash2); }
+    .glos-item:hover { background:var(--gold-pale); }
+    .glos-item::after { content:attr(data-glyph); position:absolute; right:1rem; bottom:-1rem; font-size:6rem; opacity:.04; pointer-events:none; font-family:'EB Garamond',serif; }
+    .gi-source { font-family:'Space Mono',monospace; font-size:.52rem; letter-spacing:.2em; text-transform:uppercase; display:block; margin-bottom:.4rem; }
+    .gi-source.blue { color:var(--orwell); }
+    .gi-source.red  { color:var(--huxley); }
+    .gi-term { font-family:'EB Garamond',serif; font-size:1.5rem; font-weight:700; margin-bottom:.8rem; line-height:1.2; }
+    .gi-def { font-size:.9rem; color:#3a3530; line-height:1.8; margin-bottom:.8rem; }
+    .gi-now { padding:.7rem 1rem; background:rgba(200,168,75,.08); border-left:2px solid var(--gold); font-style:italic; font-size:.82rem; color:var(--mid); line-height:1.6; }
+    .gi-now::before { content:'Aujourd\'hui → '; font-style:normal; font-family:'Space Mono',monospace; font-size:.55rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:.3rem; }
+
+    /* DIAGONAL SPLIT */
+    .split-dark { background:var(--void); color:var(--ash); padding:6rem 6rem; border-bottom:1px solid rgba(255,255,255,0.04); }
+    .split-dark .sec-h2 { color:var(--ash); }
+    .diag-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:2rem; }
+    .diag-col-title { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; letter-spacing:.1em; margin-bottom:1.5rem; padding-bottom:.8rem; border-bottom:2px solid; }
+    .diag-col-title.blue { color:#6ea3cc; border-color:#1a3a5c; }
+    .diag-col-title.red  { color:#cc6e6e; border-color:#5c1a1a; }
+    .diag-list { list-style:none; }
+    .diag-list li { padding:.9rem 0 .9rem 1.5rem; border-bottom:1px solid rgba(255,255,255,0.07); font-size:.9rem; color:rgba(240,236,227,.7); line-height:1.7; position:relative; }
+    .diag-list li::before { content:'—'; position:absolute; left:0; font-family:'Space Mono',monospace; }
+    .diag-list li strong { color:var(--ash); }
+    .diag-list li .match { display:block; margin-top:.4rem; font-family:'Space Mono',monospace; font-size:.55rem; letter-spacing:.1em; text-transform:uppercase; }
+    .match.blue { color:var(--orwell-glow); }
+    .match.red  { color:var(--huxley-glow); }
+    .match.gold { color:var(--gold); }
+
+    /* MECHANISM FLOW */
+    .mflow { display:flex; flex-direction:column; gap:0; }
+    .mflow-step { display:grid; grid-template-columns:56px 1fr; gap:1.5rem; position:relative; }
+    .mflow-step::before { content:''; position:absolute; left:27px; top:56px; width:2px; height:calc(100% - 26px); background:rgba(200,168,75,.2); }
+    .mflow-step:last-child::before { display:none; }
+    .mflow-num { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-size:.7rem; font-weight:700; flex-shrink:0; position:relative; z-index:1; border:2px solid; }
+    .mflow-num.gold { background:var(--gold); color:var(--void); border-color:var(--gold); }
+    .mflow-body { padding:.5rem 0 3rem; }
+    .mflow-title { font-family:'EB Garamond',serif; font-size:1.1rem; font-weight:700; margin-bottom:.4rem; color:var(--ash); }
+    .mflow-desc { font-family:'EB Garamond',serif; font-size:.88rem; color:rgba(240,236,227,.55); line-height:1.75; }
+    .mflow-authors { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.7rem; }
+    .mflow-tag { font-family:'Space Mono',monospace; font-size:.5rem; letter-spacing:.1em; text-transform:uppercase; padding:.2rem .6rem; border:1px solid; border-radius:2px; }
+    .tag-blue { color:var(--orwell-glow); border-color:rgba(74,138,181,.3); }
+    .tag-red  { color:var(--huxley-glow); border-color:rgba(196,90,90,.3); }
+    .tag-gold { color:var(--gold); border-color:rgba(200,168,75,.3); }
+
+    /* AUTHORS WEB */
+    .authors-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--void); border:1px solid var(--void); margin-top:1rem; }
+    .author-card { background:var(--ash); padding:2.5rem; position:relative; overflow:hidden; transition:background .3s, transform .3s; }
+    .alt .author-card { background:var(--ash2); }
+    .author-card:hover { background:var(--gold-pale); }
+    .author-card::before { content:attr(data-initial); position:absolute; right:1rem; bottom:-0.5rem; font-family:'Bebas Neue',sans-serif; font-size:7rem; color:rgba(0,0,0,0.04); line-height:1; pointer-events:none; }
+    .ac-flag { display:inline-block; font-family:'Space Mono',monospace; font-size:0.5rem; letter-spacing:0.15em; text-transform:uppercase; padding:.2rem .6rem; border-radius:2px; margin-bottom:.7rem; }
+    .ac-flag.dark { background:rgba(0,0,0,0.06); color:var(--mid); }
+    .ac-name { font-family:'EB Garamond',serif; font-size:1.5rem; font-weight:700; line-height:1.2; margin-bottom:.3rem; }
+    .ac-work { font-family:'Space Mono',monospace; font-size:0.55rem; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); margin-bottom:1rem; }
+    .ac-body { font-size:0.88rem; color:#3a3530; line-height:1.75; }
+    .ac-connection { margin-top:1rem; padding:.8rem 1rem; border-left:2px solid var(--gold); background:rgba(200,168,75,.06); font-size:0.82rem; font-style:italic; color:var(--mid); line-height:1.6; }
+
+    /* REFLEXIONS */
+    .ref-sec { background:var(--void) !important; color:var(--ash); }
+    .ref-sec .sec-num { background:rgba(200,168,75,.15); color:var(--gold); }
+    .q-stack { display:flex; flex-direction:column; gap:2px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.04); }
+    .q-item { background:rgba(255,255,255,.015); padding:2.5rem 3rem; display:grid; grid-template-columns:70px 1fr; gap:2rem; align-items:start; transition:background .3s; border-left:3px solid transparent; }
+    .q-item:hover { background:rgba(200,168,75,.05); border-left-color:var(--gold); }
+    .q-n { font-family:'Space Mono',monospace; font-size:.55rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); padding-top:.2rem; }
+    .q-t { font-family:'EB Garamond',serif; font-size:1.15rem; font-style:italic; color:var(--ash); line-height:1.7; margin-bottom:.6rem; }
+    .q-hint { font-family:'Space Mono',monospace; font-size:.6rem; color:rgba(240,236,227,.3); font-style:normal; line-height:1.7; }
+    .q-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.8rem; }
+    .q-tag { font-family:'Space Mono',monospace; font-size:.5rem; letter-spacing:.1em; text-transform:uppercase; border:1px solid rgba(200,168,75,.3); color:var(--gold); padding:.2rem .6rem; border-radius:2px; }
+
+    /* SYNTHESE */
+    .synth-sec { background:var(--huxley) !important; color:var(--ash); }
+    .synth-sec .sec-num { background:rgba(255,255,255,.1); color:rgba(240,236,227,.8); }
+    .synth-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:1rem; }
+    .synth-card { background:rgba(0,0,0,.15); padding:2rem; border-top:3px solid rgba(255,255,255,.15); transition:background .3s; }
+    .synth-card:hover { background:rgba(0,0,0,.25); }
+    .synth-card-title { font-family:'Space Mono',monospace; font-size:.6rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(240,236,227,.6); margin-bottom:.8rem; }
+    .synth-card-body { font-size:.95rem; line-height:1.75; color:rgba(240,236,227,.9); }
+
+    /* RESPONSIVE */
+    @media(max-width:1100px){
+      :root{--sidebar-w:230px}
+      .hero, .sec, .split-dark { padding-left:4rem; padding-right:4rem; }
+      .synth-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:820px){
+      :root{--sidebar-w:0px}
+      .hero, .sec, .split-dark { padding: 4rem 2rem; }
+      .hero-split { grid-template-columns:1fr; gap:1rem; }
+      .hero-vs-col { display:none; }
+      .hero-author { text-align:left; }
+      .intro-cols, .diag-grid, .glos-grid, .authors-grid, .synth-grid { grid-template-columns:1fr; }
+      .compare-table { font-size:.8rem; }
+      .compare-table td, .compare-table th { padding:.8rem; }
+      .q-item { grid-template-columns:1fr; }
+      .hero-bottom { flex-direction:column; align-items:flex-start; gap:2rem; }
+    }
+/* ─── CORRECTIONS ORWELL & HUXLEY ─── */
+  
+  /* 1. Animations (Rend le texte visible) */
+  @keyframes up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* 2. Curseur (Géométrie complète) */
+  .cur { 
+    width: 12px; height: 12px; border-radius: 50%; background: var(--gold) !important; 
+    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; 
+    transform: translate(-50%,-50%); mix-blend-mode: multiply; 
+    transition: width .3s, height .3s, background .3s; 
+  }
+  .cur.big { width: 44px; height: 44px; background: rgba(200,168,75,.15) !important; }
+
+  /* 3. Footer (Réintégration du style effacé) */
+  footer { 
+    background: #050505; color: rgba(240,236,227,.2); padding: 4rem 6rem; 
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; 
+    font-family: 'Space Mono', monospace; font-size: 0.6rem; 
+    letter-spacing: 0.1em; text-transform: uppercase; 
+  }
+  footer .f-center { 
+    font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; 
+    letter-spacing: 0.1em; opacity: 0.12; text-align: center; text-transform: none; 
+  }
+  footer a { color: var(--gold); text-decoration: none; display: block; text-align: right; transition: color .2s; }
+  footer a:hover { color: var(--paper); }
+
+  </style>
+</FicheLayout>

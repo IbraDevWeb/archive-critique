@@ -1,0 +1,40 @@
+/* src/styles/global.css */
+
+/* ─── RESET GLOBAL ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── GESTION DU CURSEUR & OVERFLOW ─── */
+/* On masque le curseur système pour laisser briller ton CustomCursor.js */
+body {
+  cursor: none;
+  overflow-x: hidden; /* Empêche le scroll horizontal accidentel */
+  -webkit-font-smoothing: antialiased; /* Rend les typographies plus nettes */
+}
+
+/* ─── ANIMATIONS DE RÉVÉLATION (SCROLL) ─── */
+/* Ces classes sont le cœur de ton effet d'apparition brutaliste/élégant */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Selon tes fiches, tu as utilisé '.v' ou '.visible'. On gère les deux. */
+.reveal.v, .reveal.visible, .reveal.tl-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Délais pour les apparitions en cascade (grid, listes) */
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+.d4 { transition-delay: 0.4s; }

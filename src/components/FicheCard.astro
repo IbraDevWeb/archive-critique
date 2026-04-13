@@ -1,0 +1,113 @@
+---
+// src/components/FicheCard.astro
+
+export interface Props {
+  title: string;
+  author: string;
+  year: string;
+  href: string;
+  color: string;
+}
+
+const { title, author, year, href, color } = Astro.props;
+---
+
+<a href={href} class="fiche-card reveal" style={`--card-color: ${color};`}>
+  <div class="fc-bg"></div>
+  
+  <div class="fc-top">
+    <span class="fc-year">{year}</span>
+    <span class="fc-icon">↗</span>
+  </div>
+  
+  <div class="fc-content">
+    <h3 class="fc-title">{title}</h3>
+    <p class="fc-author">{author}</p>
+  </div>
+</a>
+
+<style>
+  .fiche-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+    color: var(--paper-text);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  }
+
+  /* Le fond coloré invisible par défaut */
+  .fc-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--card-color);
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Effets au survol */
+  .fiche-card:hover {
+    border-color: var(--card-color);
+    transform: translateY(-8px);
+  }
+
+  .fiche-card:hover .fc-bg {
+    opacity: 0.08; /* Crée un léger halo de la couleur de l'auteur */
+  }
+
+  .fiche-card:hover .fc-icon {
+    transform: translate(4px, -4px);
+    color: var(--card-color);
+  }
+
+  /* Positionnement du contenu au-dessus du fond */
+  .fc-top, .fc-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .fc-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+
+  .fc-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .fc-icon {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.15);
+    transition: transform 0.4s ease, color 0.4s ease;
+  }
+
+  .fc-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .fc-author {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.5);
+  }
+</style>

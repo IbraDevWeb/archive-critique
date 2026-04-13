@@ -1,0 +1,79 @@
+---
+// src/layouts/BaseLayout.astro
+import '../styles/global.css';
+
+const { title, description = "Archive Critique — Vulgarisation radicale et design brutaliste." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title} | Archive Critique</title>
+  <meta name="description" content={description} />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="cur" class="cur-base"></div>
+
+  <slot />
+
+  <script>
+    import { initCursor } from '../components/CustomCursor.js';
+
+    // 1. Initialisation du curseur personnalisé
+    initCursor();
+
+    // 2. Initialisation globale du Scroll Reveal pour les animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          // On arrête d'observer une fois l'élément apparu pour les performances
+          observer.unobserve(e.target); 
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+  <style is:global>
+    /* Variables de base pour l'interface globale */
+    :root {
+      --void-bg: #050a10;
+      --paper-text: #f4f6f9;
+      --accent-color: #c0231b;
+    }
+    
+    body {
+      background-color: var(--void-bg);
+      color: var(--paper-text);
+      font-family: 'Syne', sans-serif;
+    }
+
+    /* Style du curseur par défaut hors des fiches */
+    .cur-base {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s, background 0.3s;
+    }
+    
+    .cur-base.big {
+      width: 44px;
+      height: 44px;
+      background: rgba(192, 35, 27, 0.15);
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,87 @@
+---
+// src/layouts/FicheLayout.astro
+import '../styles/global.css';
+
+const { title, description, fonts } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title} | Archive Critique</title>
+  <meta name="description" content={description || "Fiche de lecture et d'analyse critique."} />
+  
+  {fonts && <link href={fonts} rel="stylesheet" />}
+</head>
+<body>
+  <div id="prog"></div>
+  
+  <div id="cur" class="cur"></div>
+
+  <slot />
+
+  <script>
+    import { initCursor } from '../components/CustomCursor.js';
+
+    // 1. Initialisation du curseur
+    initCursor();
+
+    // 2. Barre de progression de lecture
+    window.addEventListener('scroll', () => {
+      const p = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      const prog = document.getElementById('prog');
+      if (prog) prog.style.transform = `scaleX(${p})`;
+    });
+
+    // 3. Scroll Reveal Observer (Gère .v, .visible et .tl-visible)
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { 
+        if (e.isIntersecting) { 
+          e.target.classList.add('v', 'visible'); 
+          obs.unobserve(e.target); 
+        } 
+      });
+    }, { threshold: 0.08 });
+    
+    // Délai infime pour s'assurer que le DOM généré par Astro est prêt
+    setTimeout(() => {
+      document.querySelectorAll('.reveal, .r').forEach(el => obs.observe(el));
+      
+      // Observer spécifique pour la timeline (ex: Dardot & Laval)
+      const tlo = new IntersectionObserver(entries => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('tl-visible'), i * 100);
+            tlo.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.tl-item').forEach(el => tlo.observe(el));
+    }, 50);
+
+    // 4. Navigation active (Sidebar)
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.snav-link, .snav-a');
+    
+    const navObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('act', 'on'));
+          const a = document.querySelector(`a[href="#${e.target.id}"]`);
+          if (a) {
+            if (a.classList.contains('snav-a')) a.classList.add('on');
+            else a.classList.add('act');
+          }
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    setTimeout(() => {
+      sections.forEach(s => navObs.observe(s));
+    }, 50);
+  </script>
+</body>
+</html>
