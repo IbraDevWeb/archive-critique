@@ -346,9 +346,27 @@ const fonts = "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&
       line-height: 1.7;
     }
 
-    /* Curseur */
-    .cur { border: 2px solid var(--gramsci-red) !important; background: transparent !important; }
-    .cur.expand { background: rgba(166, 28, 28, 0.1) !important; }
+    /* ─── SURCHARGE CURSEUR GLOBAL ─── */
+    .cur { 
+      width: 12px; 
+      height: 12px; 
+      border: 2px solid var(--gramsci-red) !important; 
+      background: transparent !important; 
+      border-radius: 50%;
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      pointer-events: none; 
+      z-index: 9999; 
+      transform: translate(-50%, -50%);
+      transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    }
+    .cur.expand, .cur.big { 
+      width: 44px !important; 
+      height: 44px !important; 
+      background: rgba(166, 28, 28, 0.15) !important; 
+      border-color: var(--gramsci-red) !important; 
+    }
     #prog { background: var(--gramsci-red) !important; }
 
     /* Sidebar */
