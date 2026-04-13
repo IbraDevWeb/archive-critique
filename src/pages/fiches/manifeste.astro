@@ -1535,8 +1535,26 @@ const fonts = "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,w
     }
 
     /* ─── SURCHARGE CURSEUR GLOBAL ─── */
-    .cur { border: 2px solid var(--neon) !important; background: transparent !important; }
-    .cur.expand, .cur.big { width: 44px !important; height: 44px !important; background: rgba(200,168,75,0.1) !important; border-color: var(--neon) !important; }
+    .cur { 
+      width: 12px; 
+      height: 12px; 
+      border: 2px solid var(--neon) !important; 
+      background: transparent !important; 
+      border-radius: 50%;
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      pointer-events: none; 
+      z-index: 9999; 
+      transform: translate(-50%, -50%);
+      transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    }
+    .cur.expand, .cur.big { 
+      width: 44px !important; 
+      height: 44px !important; 
+      background: rgba(200,168,75,0.15) !important; 
+      border-color: var(--neon) !important; 
+    }
     #prog { background: var(--neon) !important; }
 
     /* ═══ SIDEBAR (NAVIGATION) ═══ */
