@@ -75,23 +75,35 @@ const corpusIslamique = [
   
   body { 
     background-color: var(--void-bg) !important; 
+    color: var(--paper-text) !important;
     font-family: 'Inter', sans-serif !important; 
   }
 
-  /* ─── HACK ANTI-BASELAYOUT : On force le contraste ─── */
+  /* ─── 1. HACK CONTRASTE CORPUS ─── */
   .page-main h1, .page-main h2, .page-main h3, 
-  .page-main p, .page-main span, .page-main li {
-    color: var(--paper-text) !important;
-  }
+  .page-main p, .page-main span, .page-main li { color: var(--paper-text) !important; }
   .page-main .hero-desc { color: #57534e !important; }
   .page-main .work { color: #4b5563 !important; }
   .page-main .year { color: #9ca3af !important; }
   .page-main .badge-cert { color: #059669 !important; background: #f3f4f6 !important; }
-  /* ──────────────────────────────────────────────────── */
   
-  .cur-base { width: 10px; height: 10px; background: transparent !important; border: 1px solid rgba(28, 25, 23, 0.4) !important; }
-  .cur-base.big { background: rgba(28, 25, 23, 0.05) !important; border-color: rgba(28, 25, 23, 0.1) !important; }
+  /* ─── 2. LE CURSEUR (Géométrie complète) ─── */
+  .cur-base { 
+    position: fixed !important; top: 0 !important; left: 0 !important;
+    pointer-events: none !important; z-index: 9999 !important;
+    transform: translate(-50%, -50%) !important; border-radius: 50% !important;
+    width: 12px !important; height: 12px !important; 
+    background: transparent !important; 
+    border: 2px solid rgba(28, 25, 23, 0.5) !important; 
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease !important;
+  }
+  .cur-base.big { 
+    width: 44px !important; height: 44px !important; 
+    background: rgba(28, 25, 23, 0.08) !important; 
+    border-color: rgba(28, 25, 23, 0.2) !important; 
+  }
 
+  /* ─── 3. LAYOUT ─── */
   .page-main { max-width: 800px; margin: 0 auto; padding: 6rem 2rem; }
   .page-hero { text-align: center; margin-bottom: 5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 3rem; }
   .hero-title { font-family: 'Newsreader', serif; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
