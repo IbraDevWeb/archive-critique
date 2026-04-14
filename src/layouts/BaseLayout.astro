@@ -15,12 +15,15 @@ const { title, description = "Archive Critique — Vulgarisation radicale et des
   <meta name="description" content={description} />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div id="cur" class="cur-base"></div>
+  <body>
+    <Navbar />
 
-  <slot />
+    <div id="cur" class="cur-base"></div>
 
-  <script>
+    <slot />
+
+    <script>
+ 
     import { initCursor } from '../components/CustomCursor.js';
 
     // 1. Initialisation du curseur personnalisé
