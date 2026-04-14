@@ -1,0 +1,239 @@
+---
+import FicheLayout from '../../layouts/FicheLayout.astro';
+
+const title = "L'Incohérence des Philosophes — Al-Ghazâlî";
+const description = "Analyse critique de la Falsafa par Abû Hâmid Al-Ghazâlî : les 20 questions et les 3 hérésies.";
+const fonts = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cinzel:wght@400;500;600;700;900&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap";
+---
+
+<FicheLayout title={title} description={description} fonts={fonts}>
+  <nav class="snav">
+    <div class="snav-brand">
+      <div class="snav-arabic">تهافت الفلاسفة</div>
+      <div class="snav-kicker">Fiche de lecture</div>
+      <div class="snav-title">L'Incohérence des Philosophes</div>
+      <div class="snav-authors">Abû Hâmid Al-Ghazâlî</div>
+      <div class="snav-year">◆ 488 H / 1095 C</div>
+    </div>
+
+    <span class="snav-lbl">Navigation</span>
+    <a href="#bio" class="snav-a on"><span class="snav-bullet"></span>Biographie</a>
+    <a href="#contexte" class="snav-a"><span class="snav-bullet"></span>Contexte & Acteurs</a>
+    <a href="#questions" class="snav-a"><span class="snav-bullet"></span>Les 20 Questions</a>
+    <a href="#heresies" class="snav-a"><span class="snav-bullet"></span>Les 3 Hérésies</a>
+    <a href="#concepts" class="snav-a"><span class="snav-bullet"></span>Concepts Clefs</a>
+    <a href="#heritage" class="snav-a"><span class="snav-bullet"></span>Héritage & Réception</a>
+
+    <div class="snav-score">
+      <div class="snav-score-title">Analyse du texte</div>
+      <div class="score-label"><span>Questions critiques</span><span>20</span></div>
+      <div class="score-bar"><div class="score-fill" style="width:100%; background:var(--gold)"></div></div>
+      <div class="score-label" style="margin-top:.6rem"><span>Hérésies (Kufr)</span><span>3</span></div>
+      <div class="score-bar"><div class="score-fill" style="width:15%; background:var(--ruby)"></div></div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <section id="hero" class="hero-ghazali">
+      <div class="hero-diag"></div>
+      <div class="hero-content">
+        <div class="hero-tag">Philosophie islamique médiévale · Kalâm & Falsafa</div>
+        <div class="hero-arabic-title">تهافت الفلاسفة</div>
+        <h1 class="hero-h1">
+          <span class="line1">L'Incohérence</span>
+          <span class="line2">des</span>
+          <span class="line3">Philosophes</span>
+        </h1>
+        <div class="hero-rule"></div>
+        <p class="hero-sub">
+          L'œuvre où <strong>Al-Ghazâlî</strong> utilise la logique contre elle-même pour démontrer l'incapacité de la raison à trancher les questions métaphysiques.
+        </p>
+        <div class="hero-chips">
+          <span class="chip">Asharisme</span>
+          <span class="chip">Réfutation d'Avicenne</span>
+          <span class="chip">Occasionnalisme</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="bio" class="sec">
+      <div class="sec-eyebrow">
+        <span class="sec-num">01</span>
+        <h2 class="sec-h2">Abû Hâmid Al-Ghazâlî</h2>
+      </div>
+      <div class="bio-grid">
+        <div class="bio-card">
+          <h3>La crise de Baghdâd</h3>
+          <p>Au sommet de sa gloire à la Nizâmiya, il est frappé par une aphasie psychosomatique en 1095. Il abandonne tout pour une vie d'errance soufie pendant 10 ans.</p>
+        </div>
+        <div class="bio-card">
+          <h3>La méthode interne</h3>
+          <p>Ghazâlî ne rejette pas la logique. Il l'étudie en profondeur (<em>Maqâsid al-Falâsifa</em>) avant de la retourner contre les philosophes grecs (<em>Tahâfut</em>).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="heresies" class="sec alt" style="background: var(--ruby2); color: white;">
+      <div class="sec-eyebrow">
+        <span class="sec-num" style="color: var(--gold)">02</span>
+        <h2 class="sec-h2" style="color: white">Les 3 points de rupture (Kufr)</h2>
+      </div>
+      <div class="heresies-container">
+        <div class="heresy-item">
+          <span class="heresy-num">01</span>
+          <h4>L'Éternité du monde</h4>
+          <p>L'affirmation que l'univers n'a pas de commencement temporel, niant la création <em>ex nihilo</em>.</p>
+        </div>
+        <div class="heresy-item">
+          <span class="heresy-num">02</span>
+          <h4>L'Omniscience limitée</h4>
+          <p>La thèse d'Avicenne selon laquelle Dieu ne connaît les particuliers que de manière universelle.</p>
+        </div>
+        <div class="heresy-item">
+          <span class="heresy-num">03</span>
+          <h4>Négation de la résurrection</h4>
+          <p>Le refus d'admettre la résurrection physique des corps, réduite à une métaphore.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="concepts" class="sec">
+      <div class="sec-eyebrow">
+        <span class="sec-num">03</span>
+        <h2 class="sec-h2">Le feu et le coton</h2>
+      </div>
+      <div class="concept-focus">
+        <p class="pq">
+          "Le lien entre ce qu'on appelle habituellement la cause et ce qu'on appelle l'effet n'est pas nécessaire."
+          <cite>— Question 17, Sur la causalité naturelle</cite>
+        </p>
+        <div class="concept-explanation">
+          <p>C'est ici que Ghazâlî pose les bases de l'<strong>occasionnalisme</strong>. Le coton ne brûle pas <em>parce que</em> le feu le touche, mais parce que Dieu crée la brûlure <em>au moment</em> du contact. Ce principe préfigure les critiques de David Hume sur l'induction.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</FicheLayout>
+
+<style>
+  /* Variables spécifiques extraites du design system */
+  :root {
+    --parch: #f5eed8;
+    --lapis2: #0f2040;
+    --gold: #c89a20;
+    --ruby: #8b1a1a;
+    --ruby2: #6a1010;
+    --ink: #0d0a05;
+  }
+
+  .main {
+    margin-left: 280px;
+    background: var(--parch);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .hero-ghazali {
+    min-height: 80vh;
+    background: var(--lapis2);
+    color: white;
+    padding: 4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-arabic-title {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    text-align: right;
+  }
+
+  .hero-h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    line-height: 0.9;
+  }
+
+  .hero-h1 .line3 { color: var(--gold); }
+
+  .hero-rule {
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin: 2rem 0;
+  }
+
+  .sec { padding: 5rem 4rem; border-bottom: 1px solid rgba(0,0,0,0.1); }
+  
+  .sec-num {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    opacity: 0.1;
+    display: block;
+  }
+
+  .sec-h2 {
+    font-family: 'Cinzel', serif;
+    margin-top: -2rem;
+    font-size: 2rem;
+  }
+
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .bio-card {
+    background: white;
+    padding: 2rem;
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+
+  .heresies-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .heresy-item {
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .heresy-num {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: var(--gold);
+  }
+
+  .pq {
+    font-style: italic;
+    font-size: 1.5rem;
+    border-left: 4px solid var(--gold);
+    padding-left: 2rem;
+    margin: 2rem 0;
+  }
+
+  .chip {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-right: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .main { margin-left: 0; }
+    .bio-grid, .heresies-container { grid-template-columns: 1fr; }
+  }
+</style>
