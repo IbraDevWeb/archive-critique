@@ -85,38 +85,99 @@ const themes = [
 </BaseLayout>
 
 <style is:global>
-  /* ─── REDÉFINITION DES VARIABLES POUR UN THÈME CLAIR ET LISIBLE ─── */
+  /* ─── THÈME "DARK EDITORIAL" (SOMBRE & ÉLÉGANT) ─── */
   :root {
-    --void-bg: #fcfcfc;      /* Fond très légèrement chaud pour reposer l'œil */
-    --paper-text: #1c1917;   /* Texte gris très foncé (plus doux que le noir pur) */
-    --accent-color: #1c1917; /* Accents assortis au texte */
+    --bg-dark: #0a0a0a;       /* Fond noir profond, mais pas pur */
+    --text-main: #f3f4f6;     /* Blanc cassé très lisible */
+    --text-muted: #9ca3af;    /* Gris doux pour les descriptions */
+    --border-subtle: #27272a; /* Bordures à peine visibles */
   }
 
   body {
-    background-color: var(--void-bg);
-    color: var(--paper-text);
-    font-family: 'Inter', sans-serif; /* Police de lecture moderne */
+    background-color: var(--bg-dark) !important;
+    color: var(--text-main) !important;
+    font-family: 'Inter', sans-serif !important;
   }
 
-  /* Rendre le curseur global élégant et discret */
+  /* ─── CORRECTION DU CURSEUR GLOBAL ─── */
   .cur-base {
-    width: 10px; height: 10px;
+    width: 12px !important; 
+    height: 12px !important;
     background: transparent !important;
-    border: 1px solid rgba(28, 25, 23, 0.4) !important;
+    border: 2px solid #ffffff !important; /* Bordure blanche bien visible */
+    border-radius: 50% !important;
+    opacity: 0.7 !important;
+    mix-blend-mode: normal !important;
   }
   .cur-base.big {
-    background: rgba(28, 25, 23, 0.05) !important;
-    border-color: rgba(28, 25, 23, 0.1) !important;
+    width: 44px !important; 
+    height: 44px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
   }
 
-  /* ─── LAYOUT DE LA PAGE ─── */
+  /* ─── REDESIGN DES CARTES (Contraste parfait) ─── */
+  :global(.fiche-card) {
+    background: #111111 !important; /* Carte très légèrement plus claire que le fond */
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 6px !important;
+    padding: 2rem !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+  }
+
+  :global(.fiche-card:hover) {
+    border-color: #52525b !important;
+    background: #18181b !important;
+    transform: translateY(-3px) !important;
+  }
+
+  /* Désactiver le fond coloré brutaliste */
+  :global(.fiche-card .fc-bg) { 
+    display: none !important; 
+  }
+
+  /* Textes internes de la carte */
+  :global(.fiche-card .fc-title) {
+    font-family: 'Newsreader', serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important; /* Titre blanc pur */
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  :global(.fiche-card .fc-author) {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-style: normal !important;
+    color: var(--text-muted) !important;
+  }
+
+  :global(.fiche-card .fc-year) {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    color: #e5e7eb !important;
+    background: #27272a !important; /* Badge gris sombre */
+    padding: 0.2rem 0.6rem !important;
+    border-radius: 100px !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  :global(.fiche-card .fc-icon) {
+    color: #52525b !important;
+  }
+
+  /* ─── LAYOUT DE LA PAGE D'ACCUEIL ─── */
   .clean-main {
     max-width: 1000px;
     margin: 0 auto;
     padding: 8rem 2rem 6rem;
   }
 
-  /* ─── HERO HEADER ─── */
   .clean-hero {
     text-align: center;
     margin-bottom: 6rem;
@@ -126,7 +187,7 @@ const themes = [
     font-family: 'Newsreader', serif;
     font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 400;
-    color: var(--paper-text);
+    color: #ffffff;
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
   }
@@ -135,13 +196,12 @@ const themes = [
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     font-weight: 300;
-    color: #57534e;
+    color: var(--text-muted);
     line-height: 1.6;
     max-width: 550px;
     margin: 0 auto;
   }
 
-  /* ─── SECTIONS THÉMATIQUES ─── */
   .clean-content {
     display: flex;
     flex-direction: column;
@@ -154,7 +214,7 @@ const themes = [
 
   .theme-header {
     margin-bottom: 2rem;
-    border-bottom: 1px solid #e7e5e4;
+    border-bottom: 1px solid var(--border-subtle);
     padding-bottom: 1rem;
   }
 
@@ -162,7 +222,7 @@ const themes = [
     font-family: 'Newsreader', serif;
     font-size: 2rem;
     font-weight: 500;
-    color: var(--paper-text);
+    color: #ffffff;
     margin-bottom: 0.2rem;
   }
 
@@ -170,7 +230,7 @@ const themes = [
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 300;
-    color: #78716c;
+    color: var(--text-muted);
   }
 
   .theme-grid {
@@ -179,60 +239,18 @@ const themes = [
     gap: 1.5rem;
   }
 
-  /* ─── FORÇAGE DU DESIGN DES FICHECARDS (POUR LE THÈME CLAIR) ─── */
-  .fiche-card {
-    background: #ffffff !important;
-    border: 1px solid #e7e5e4 !important;
-    border-radius: 8px !important;
-    padding: 2rem !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02) !important;
-    transition: all 0.3s ease !important;
+  /* Animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out forwards;
   }
 
-  .fiche-card:hover {
-    border-color: #d6d3d1 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04) !important;
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Désactiver le fond coloré brutaliste */
-  .fiche-card .fc-bg { display: none !important; }
-
-  /* Typographie interne des cartes */
-  .fiche-card .fc-title {
-    font-family: 'Newsreader', serif !important;
-    font-size: 1.4rem !important;
-    font-weight: 500 !important;
-    color: var(--paper-text) !important;
-    text-transform: none !important; /* Retire les majuscules agressives */
-    letter-spacing: normal !important;
-    line-height: 1.3 !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  .fiche-card .fc-author {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.95rem !important;
-    font-style: normal !important;
-    color: #57534e !important;
-  }
-
-  .fiche-card .fc-year {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.75rem !important;
-    font-weight: 500 !important;
-    color: #78716c !important;
-    letter-spacing: 0.05em !important;
-    background: #f5f5f4 !important;
-    padding: 0.2rem 0.6rem !important;
-    border-radius: 100px !important;
-  }
-
-  .fiche-card .fc-icon {
-    color: #d6d3d1 !important;
-  }
-
-  /* Responsive */
   @media (max-width: 768px) {
     .clean-main { padding: 4rem 1.5rem; }
     .theme-grid { grid-template-columns: 1fr; }
