@@ -68,58 +68,61 @@ const corpusIslamique = [
 </BaseLayout>
 
 <style is:global>
+  /* ─── 1. THÈME CLAIR GLOBAL ─── */
   :root {
     --void-bg: #fcfcfc;
     --paper-text: #1c1917;
   }
   
-  body { 
+  body, main, section { 
     background-color: var(--void-bg) !important; 
-    color: var(--paper-text) !important;
     font-family: 'Inter', sans-serif !important; 
   }
 
-  /* ─── 1. HACK CONTRASTE CORPUS ─── */
+  /* ─── 2. HACK CONTRASTE (Forçage du texte en sombre) ─── */
   .page-main h1, .page-main h2, .page-main h3, 
-  .page-main p, .page-main span, .page-main li { color: var(--paper-text) !important; }
+  .page-main p, .page-main span, .page-main li {
+    color: var(--paper-text) !important;
+  }
   .page-main .hero-desc { color: #57534e !important; }
   .page-main .work { color: #4b5563 !important; }
   .page-main .year { color: #9ca3af !important; }
   .page-main .badge-cert { color: #059669 !important; background: #f3f4f6 !important; }
   
-  /* ─── 2. LE CURSEUR (Géométrie complète) ─── */
-  .cur-base { 
-    position: fixed !important; top: 0 !important; left: 0 !important;
-    pointer-events: none !important; z-index: 9999 !important;
-    transform: translate(-50%, -50%) !important; border-radius: 50% !important;
-    width: 12px !important; height: 12px !important; 
+  /* ─── 3. LE CURSEUR (Géométrie et couleur sombre) ─── */
+  #cur, .cur-base { 
+    width: 12px !important; 
+    height: 12px !important; 
+    border: 2px solid #1c1917 !important; /* Bordure gris très foncé */
     background: transparent !important; 
-    border: 2px solid rgba(28, 25, 23, 0.5) !important; 
-    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease !important;
+    position: fixed !important; 
+    top: 0 !important; left: 0 !important;
+    z-index: 99999 !important; 
+    pointer-events: none !important; 
+    border-radius: 50% !important; 
+    transform: translate(-50%, -50%) !important; 
+    transition: width 0.2s, height 0.2s, background 0.2s !important; 
   }
-  .cur-base.big { 
-    width: 44px !important; height: 44px !important; 
-    background: rgba(28, 25, 23, 0.08) !important; 
-    border-color: rgba(28, 25, 23, 0.2) !important; 
+  #cur.big, #cur.expand, .cur-base.big, .cur-base.expand { 
+    width: 44px !important; 
+    height: 44px !important; 
+    background: rgba(28, 25, 23, 0.1) !important; /* Remplissage léger au survol */
+    border-color: #1c1917 !important;
   }
 
-  /* ─── 3. LAYOUT ─── */
+  /* ─── 4. LAYOUT DE LA PAGE ─── */
   .page-main { max-width: 800px; margin: 0 auto; padding: 6rem 2rem; }
   .page-hero { text-align: center; margin-bottom: 5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 3rem; }
   .hero-title { font-family: 'Newsreader', serif; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
   .hero-desc { font-size: 1.1rem; font-weight: 300; line-height: 1.6; max-width: 550px; margin: 0 auto; }
-
   .corpus-content { display: flex; flex-direction: column; gap: 4rem; }
   .section-title { font-family: 'Newsreader', serif; font-size: 1.8rem; font-weight: 500; margin-bottom: 2rem; }
-  
   .biblio-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.2rem; }
   .biblio-list li { border-left: 2px solid #e5e7eb; padding-left: 1rem; line-height: 1.5; transition: border-color 0.2s; }
   .biblio-list li:hover { border-left-color: #a8a29e; }
-  
   .author { font-weight: 500; display: block; margin-bottom: 0.2rem; }
   .work { font-family: 'Newsreader', serif; font-style: italic; font-size: 1.1rem; margin-right: 0.5rem; }
   .year { font-size: 0.9rem; }
-  
   .badge-cert { display: inline-block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.1rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; vertical-align: middle; }
 
   .reveal { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out forwards; animation-delay: var(--delay, 0s); }

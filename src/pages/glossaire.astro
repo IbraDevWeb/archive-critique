@@ -63,43 +63,52 @@ const terms = [
 </BaseLayout>
 
 <style is:global>
+  /* ─── 1. THÈME CLAIR GLOBAL ─── */
   :root {
     --void-bg: #fcfcfc;
     --paper-text: #1c1917;
   }
 
-  body {
+  body, main, section {
     background-color: var(--void-bg) !important;
     font-family: 'Inter', sans-serif !important;
-    color: var(--paper-text) !important;
   }
 
-  /* ─── 1. HACK CONTRASTE GLOSSAIRE (Forçage des composants) ─── */
-  .glossaire-main h1, .glossaire-main h2, .glossaire-main p { color: var(--paper-text) !important; }
+  /* ─── 2. HACK CONTRASTE (Forçage du texte en sombre) ─── */
+  .glossaire-main h1, .glossaire-main h2, .glossaire-main h3, 
+  .glossaire-main p, .glossaire-main span, .glossaire-main div {
+    color: var(--paper-text) !important;
+  }
   .glossaire-main .hero-desc { color: #57534e !important; }
   
+  /* Forçage à l'intérieur du composant GlossaireCard */
   :global(.glossaire-card) { background: #ffffff !important; border-color: #e5e7eb !important; }
   :global(.gc-term) { color: #111827 !important; }
   :global(.gc-def) { color: #4b5563 !important; }
   :global(.gc-author) { color: #6b7280 !important; background: #f3f4f6 !important; }
 
-  /* ─── 2. LE CURSEUR (Géométrie complète) ─── */
-  .cur-base { 
-    position: fixed !important; top: 0 !important; left: 0 !important;
-    pointer-events: none !important; z-index: 9999 !important;
-    transform: translate(-50%, -50%) !important; border-radius: 50% !important;
-    width: 12px !important; height: 12px !important; 
+  /* ─── 3. LE CURSEUR (Géométrie et couleur sombre) ─── */
+  #cur, .cur-base { 
+    width: 12px !important; 
+    height: 12px !important; 
+    border: 2px solid #1c1917 !important; /* Bordure gris très foncé */
     background: transparent !important; 
-    border: 2px solid rgba(28, 25, 23, 0.5) !important; 
-    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease !important;
+    position: fixed !important; 
+    top: 0 !important; left: 0 !important;
+    z-index: 99999 !important; 
+    pointer-events: none !important; 
+    border-radius: 50% !important; 
+    transform: translate(-50%, -50%) !important; 
+    transition: width 0.2s, height 0.2s, background 0.2s !important; 
   }
-  .cur-base.big { 
-    width: 44px !important; height: 44px !important; 
-    background: rgba(28, 25, 23, 0.08) !important; 
-    border-color: rgba(28, 25, 23, 0.2) !important; 
+  #cur.big, #cur.expand, .cur-base.big, .cur-base.expand { 
+    width: 44px !important; 
+    height: 44px !important; 
+    background: rgba(28, 25, 23, 0.1) !important; /* Remplissage léger au survol */
+    border-color: #1c1917 !important;
   }
 
-  /* ─── 3. LAYOUT ─── */
+  /* ─── 4. LAYOUT DE LA PAGE ─── */
   .glossaire-main { max-width: 800px; margin: 0 auto; padding: 6rem 2rem; }
   .glossaire-hero { text-align: center; margin-bottom: 4rem; }
   .hero-title { font-family: 'Newsreader', serif; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
