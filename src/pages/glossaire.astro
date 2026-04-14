@@ -1,0 +1,127 @@
+---
+// src/pages/glossaire.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlossaireCard from '../components/GlossaireCard.astro';
+
+// Ta base de données locale pour le glossaire
+const terms = [
+  {
+    id: "biopolitique",
+    term: "Biopolitique",
+    author: "Michel Foucault",
+    definition: "Forme de pouvoir qui s'exerce non plus sur des territoires, mais sur la vie elle-même (corps, santé, natalité). Le pouvoir ne menace plus de mort, il administre la vie pour la rendre productive et contrôlable."
+  },
+  {
+    id: "hegemonie",
+    term: "Hégémonie Culturelle",
+    author: "Antonio Gramsci",
+    definition: "Domination d'une classe sociale qui s'exerce par le consentement (via la culture, l'école, les médias) plutôt que par la force coercitive. La vision du monde des dominants devient alors le « sens commun »."
+  },
+  {
+    id: "reification",
+    term: "Réification",
+    author: "Lukács / Marx",
+    definition: "Processus par lequel des rapports sociaux entre des personnes prennent la forme de rapports entre des choses. Les individus sont traités, mesurés et optimisés comme des marchandises ou du capital humain."
+  },
+  {
+    id: "spectacle",
+    term: "Société du Spectacle",
+    author: "Guy Debord",
+    definition: "Stade du capitalisme où tout ce qui était directement vécu s'est éloigné dans une représentation. Le rapport social n'est plus médiatisé par des objets, mais par des images et des apparences."
+  },
+  {
+    id: "asabiya",
+    term: "'Asabiya",
+    author: "Ibn Khaldoun",
+    definition: "Solidarité sociale ou cohésion de groupe. C'est le moteur de l'histoire humaine : elle permet à un groupe de conquérir le pouvoir, mais tend inévitablement à se dissoudre dans le confort et la sédentarisation."
+  }
+].sort((a, b) => a.term.localeCompare(b.term)); // Cette fonction trie automatiquement tes mots par ordre alphabétique !
+---
+
+<BaseLayout title="Glossaire Critique" description="Dictionnaire des concepts de la théorie critique.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+  </style>
+
+  <main class="glossaire-main">
+    <header class="glossaire-hero reveal">
+      <h1 class="hero-title">Glossaire</h1>
+      <p class="hero-desc">Dictionnaire des concepts fondamentaux mobilisés dans l'Archive. De l'Hégémonie à la Biopolitique, l'arsenal théorique décodé.</p>
+    </header>
+
+    <div class="glossaire-content reveal" style="--delay: 0.1s">
+      {terms.map((item) => (
+        <GlossaireCard 
+          id={item.id}
+          term={item.term}
+          author={item.author}
+          definition={item.definition}
+        />
+      ))}
+    </div>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  /* Application du thème éditorial clair (identique à l'index) */
+  :root {
+    --void-bg: #fcfcfc;
+    --paper-text: #1c1917;
+  }
+
+  body {
+    background-color: var(--void-bg) !important;
+    color: var(--paper-text) !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+
+  .cur-base {
+    width: 10px; height: 10px; background: transparent !important; border: 1px solid rgba(28, 25, 23, 0.4) !important;
+  }
+  .cur-base.big {
+    background: rgba(28, 25, 23, 0.05) !important; border-color: rgba(28, 25, 23, 0.1) !important;
+  }
+
+  .glossaire-main {
+    max-width: 800px; /* Légèrement plus étroit que l'accueil pour un meilleur confort de lecture */
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+
+  .glossaire-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .hero-title {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 400;
+    color: var(--paper-text);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #57534e;
+    line-height: 1.6;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  /* Animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: var(--delay, 0s);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

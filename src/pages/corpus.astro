@@ -1,0 +1,98 @@
+---
+// src/pages/corpus.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const corpusOccidental = [
+  { author: "Arendt, Hannah", work: "La Condition de l'homme moderne", year: "1958" },
+  { author: "Baudrillard, Jean", work: "La Société de consommation", year: "1970" },
+  { author: "Bauman, Zygmunt", work: "L'Amour liquide", year: "2003" },
+  { author: "Bourdieu, Pierre", work: "La Distinction", year: "1979" },
+  { author: "Dardot, P. & Laval, C.", work: "La nouvelle raison du monde", year: "2009" },
+  { author: "Debord, Guy", work: "La Société du Spectacle", year: "1967" },
+  { author: "Foucault, Michel", work: "Surveiller et punir", year: "1975" },
+  { author: "Graeber, David", work: "Dette : 5000 ans d'histoire", year: "2011" },
+  { author: "Han, Byung-Chul", work: "La Société de la fatigue", year: "2010" },
+  { author: "La Boétie, Étienne de", work: "Discours de la servitude volontaire", year: "1576" }
+];
+
+const corpusIslamique = [
+  { author: "Al-Ghazali", work: "Ihya' 'Ulum al-Din (Revivification des sciences de la religion)", cert: true },
+  { author: "Al-Qarafi", work: "Al-Furuq (Anwar al-Buruq fi Anwa' al-Furuq)", cert: true },
+  { author: "Al-Shatibi", work: "Al-Muwafaqat fi Usul al-Shari'a", cert: false },
+  { author: "Ibn al-Qayyim", work: "Zad al-Ma'ad fi Hady Khayr al-'Ibad", cert: false },
+  { author: "Ibn Khaldoun", work: "Al-Muqaddima (Prolégomènes)", cert: false },
+  { author: "Ibn Taymiyya", work: "Majmu' al-Fatawa", cert: false },
+  { author: "Sahnun (Malik / Ibn al-Qasim)", work: "Al-Mudawwana al-Kubra", cert: true }
+];
+---
+
+<BaseLayout title="Corpus & Sources" description="Bibliographie et références de l'Archive Critique.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+  </style>
+
+  <main class="page-main">
+    <header class="page-hero reveal">
+      <h1 class="hero-title">Corpus</h1>
+      <p class="hero-desc">L'infrastructure théorique de l'Archive. La mise en tension dialectique de la pensée critique occidentale et de l'épistémologie islamique classique.</p>
+    </header>
+
+    <div class="corpus-content reveal" style="--delay: 0.1s">
+      <section class="corpus-section">
+        <h2 class="section-title">Sociologie & Théorie Critique</h2>
+        <ul class="biblio-list">
+          {corpusOccidental.map((item) => (
+            <li>
+              <span class="author">{item.author}</span>
+              <span class="work">{item.work}</span>
+              <span class="year">({item.year})</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="corpus-section">
+        <h2 class="section-title">Épistémologie & Fiqh Classique</h2>
+        <ul class="biblio-list">
+          {corpusIslamique.map((item) => (
+            <li>
+              <span class="author">{item.author}</span>
+              <span class="work">{item.work}</span>
+              {item.cert && <span class="badge-cert">Vérifié v6.0</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  /* Purge du thème sombre pour l'esthétique éditoriale */
+  :root { --void-bg: #fcfcfc; --paper-text: #1c1917; }
+  body { background-color: var(--void-bg) !important; color: var(--paper-text) !important; font-family: 'Inter', sans-serif !important; }
+  
+  .cur-base { width: 10px; height: 10px; background: transparent !important; border: 1px solid rgba(28, 25, 23, 0.4) !important; }
+  .cur-base.big { background: rgba(28, 25, 23, 0.05) !important; border-color: rgba(28, 25, 23, 0.1) !important; }
+
+  .page-main { max-width: 800px; margin: 0 auto; padding: 6rem 2rem; }
+  .page-hero { text-align: center; margin-bottom: 5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 3rem; }
+  .hero-title { font-family: 'Newsreader', serif; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 1.1rem; font-weight: 300; color: #57534e; line-height: 1.6; max-width: 550px; margin: 0 auto; }
+
+  .corpus-content { display: flex; flex-direction: column; gap: 4rem; }
+  .section-title { font-family: 'Newsreader', serif; font-size: 1.8rem; font-weight: 500; margin-bottom: 2rem; color: #1c1917; }
+  
+  .biblio-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.2rem; }
+  .biblio-list li { border-left: 2px solid #e5e7eb; padding-left: 1rem; line-height: 1.5; transition: border-color 0.2s; }
+  .biblio-list li:hover { border-left-color: #a8a29e; }
+  
+  .author { font-weight: 500; color: #1c1917; display: block; margin-bottom: 0.2rem; }
+  .work { font-family: 'Newsreader', serif; font-style: italic; font-size: 1.1rem; color: #4b5563; margin-right: 0.5rem; }
+  .year { font-size: 0.9rem; color: #9ca3af; }
+  
+  .badge-cert { display: inline-block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; background: #f3f4f6; color: #059669; padding: 0.1rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; vertical-align: middle; }
+
+  .reveal { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out forwards; animation-delay: var(--delay, 0s); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>

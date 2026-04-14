@@ -1,0 +1,72 @@
+---
+// src/components/Navbar.astro
+const pathname = new URL(Astro.request.url).pathname;
+---
+
+<nav class="sys-nav">
+  <div class="nav-left">
+    <a href="/" class="nav-brand">SYS // ARCHIVE_CRITIQUE</a>
+  </div>
+  <div class="nav-right">
+    <a href="/" class={pathname === '/' ? 'active' : ''}>Index</a>
+    <a href="/fiches/manifeste" class={pathname.includes('/manifeste') ? 'active' : ''}>Manifeste</a>
+    <a href="/glossaire" class={pathname.includes('/glossaire') ? 'active' : ''}>Glossaire</a>
+    <a href="/corpus" class={pathname.includes('/corpus') ? 'active' : ''}>Corpus</a>
+  </div>
+</nav>
+
+<style>
+  .sys-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #050505;
+    color: #f0ebe1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    font-family: 'JetBrains Mono', monospace, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    z-index: 10000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-brand {
+    color: #c0231b; /* Rouge brutaliste de ton identité */
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-right a {
+    color: rgba(240,236,227,0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav-right a:hover, 
+  .nav-right a.active {
+    color: #f0ebe1;
+  }
+
+  /* Pousse le contenu de toutes les pages vers le bas pour ne pas être caché par la barre */
+  :global(body) {
+    padding-top: 40px !important;
+  }
+
+  /* Responsive : sur mobile, on cache le logo pour laisser la place aux liens */
+  @media (max-width: 600px) {
+    .sys-nav { padding: 0 1rem; }
+    .nav-right { gap: 1rem; width: 100%; justify-content: space-between; }
+    .nav-brand { display: none; }
+  }
+</style>

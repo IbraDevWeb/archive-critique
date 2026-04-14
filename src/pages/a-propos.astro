@@ -1,0 +1,63 @@
+---
+// src/pages/a-propos.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="À Propos & Méthode" description="La méthode de l'Archive Critique.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+  </style>
+
+  <main class="page-main">
+    <header class="page-hero reveal">
+      <h1 class="hero-title">La Méthode</h1>
+      <p class="hero-desc">La même lame, les deux bords.</p>
+    </header>
+
+    <article class="propos-content reveal" style="--delay: 0.1s">
+      <p class="lead">Ce projet n'est pas une défense de l'islam contre ses critiques. Il n'est pas non plus une attaque de l'Occident depuis un prisme religieux. C'est une enquête sur les conditions de la dignité humaine effective.</p>
+      
+      <h2>L'outil critique</h2>
+      <p>La modernité capitaliste a produit des pathologies que ses propres penseurs diagnostiquent sans pouvoir les guérir : réification des rapports humains, tyrannie de l'image, auto-exploitation, surveillance généralisée. La sociologie critique occidentale nous fournit les mots pour nommer ces maux avec une précision clinique.</p>
+      
+      <h2>Le dépassement épistémologique</h2>
+      <p>L'hypothèse de cette archive est que la pensée islamique classique disposait des outils conceptuels pour penser ces pathologies, et ce, de façon plus profonde. Là où la critique moderne s'arrête souvent aux symptômes, l'épistémologie classique descend jusqu'aux racines ontologiques (l'ego, l'intention, le matérialisme spirituel).</p>
+
+      <h2>La double critique</h2>
+      <p>L'honnêteté intellectuelle de ce projet repose sur une double exigence. Si nous utilisons la tradition islamique pour dépasser les apories de la modernité, nous devons également utiliser ces outils analytiques pour démontrer comment les sociétés qui se réclament de l'islam ont elles-mêmes trahi leur propre héritage, en substituant la domination à l'émancipation.</p>
+      
+      <div class="manifesto-link">
+        <a href="/fiches/manifeste">→ Lire le Manifeste (Plan d'Action v6.0)</a>
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  /* Purge du thème sombre pour l'esthétique éditoriale */
+  :root { --void-bg: #fcfcfc; --paper-text: #1c1917; }
+  body { background-color: var(--void-bg) !important; color: var(--paper-text) !important; font-family: 'Inter', sans-serif !important; }
+  
+  .cur-base { width: 10px; height: 10px; background: transparent !important; border: 1px solid rgba(28, 25, 23, 0.4) !important; }
+  .cur-base.big { background: rgba(28, 25, 23, 0.05) !important; border-color: rgba(28, 25, 23, 0.1) !important; }
+
+  .page-main { max-width: 700px; /* Largeur de lecture optimale */ margin: 0 auto; padding: 6rem 2rem; }
+  .page-hero { text-align: center; margin-bottom: 4rem; }
+  .hero-title { font-family: 'Newsreader', serif; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1rem; }
+  .hero-desc { font-size: 1.2rem; font-style: italic; color: #78716c; font-family: 'Newsreader', serif; }
+
+  .propos-content { display: flex; flex-direction: column; gap: 1.5rem; }
+  
+  .propos-content .lead { font-family: 'Newsreader', serif; font-size: 1.4rem; line-height: 1.6; color: #1c1917; padding-bottom: 2rem; border-bottom: 1px solid #e5e7eb; margin-bottom: 1rem; }
+  
+  .propos-content h2 { font-family: 'Newsreader', serif; font-size: 1.6rem; font-weight: 500; margin-top: 2rem; margin-bottom: 0.5rem; color: #1c1917; }
+  
+  .propos-content p { font-size: 1.05rem; line-height: 1.8; color: #4b5563; }
+
+  .manifesto-link { margin-top: 3rem; padding: 2rem; background: #f3f4f6; border-radius: 8px; text-align: center; }
+  .manifesto-link a { font-family: 'Inter', sans-serif; font-weight: 500; color: #1c1917; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 0.1rem; transition: color 0.2s, border-color 0.2s; }
+  .manifesto-link a:hover { color: #6b7280; border-color: #6b7280; }
+
+  .reveal { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out forwards; animation-delay: var(--delay, 0s); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>

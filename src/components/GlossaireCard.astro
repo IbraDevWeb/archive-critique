@@ -1,0 +1,71 @@
+---
+// src/components/GlossaireCard.astro
+const { term, definition, author, id } = Astro.props;
+---
+
+<div class="glossaire-card" id={id}>
+  <div class="gc-header">
+    <h3 class="gc-term">{term}</h3>
+    {author && <span class="gc-author">{author}</span>}
+  </div>
+  <p class="gc-def">{definition}</p>
+</div>
+
+<style>
+  .glossaire-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    /* scroll-margin-top est vital : il évite que la navbar fixe ne cache le titre quand on clique sur un lien ancre (#) */
+    scroll-margin-top: 80px; 
+  }
+
+  .glossaire-card:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  }
+
+  .gc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 0.8rem;
+  }
+
+  .gc-term {
+    font-family: 'Newsreader', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #111827;
+    margin: 0;
+  }
+
+  .gc-author {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+  }
+
+  .gc-def {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .gc-header { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+  }
+</style>
