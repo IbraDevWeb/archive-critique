@@ -83,5 +83,12 @@ const { title, description, fonts } = Astro.props;
       sections.forEach(s => navObs.observe(s));
     }, 50);
   </script>
+
+<style is:global>
+  /* On pousse la page et la barre latérale vers le bas pour laisser la place à la Navbar de 40px */
+  body { padding-top: 40px !important; }
+  .snav { top: 40px !important; }
+</style>
+
 </body>
 </html>
