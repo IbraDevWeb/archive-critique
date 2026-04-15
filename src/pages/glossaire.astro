@@ -99,26 +99,6 @@ const terms = [
   .reveal { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out forwards; animation-delay: var(--delay, 0s); }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* ─── 3. LE CURSEUR (Géométrie et couleur sombre) ─── */
-  #cur, .cur-base { 
-    width: 12px !important; 
-    height: 12px !important; 
-    border: 2px solid #1c1917 !important; /* Bordure gris très foncé */
-    background: transparent !important; 
-    position: fixed !important; 
-    top: 0 !important; left: 0 !important;
-    z-index: 99999 !important; 
-    pointer-events: none !important; 
-    border-radius: 50% !important; 
-    transform: translate(-50%, -50%) !important; 
-    transition: width 0.2s, height 0.2s, background 0.2s !important; 
-  }
-  #cur.big, #cur.expand, .cur-base.big, .cur-base.expand { 
-    width: 44px !important; 
-    height: 44px !important; 
-    background: rgba(28, 25, 23, 0.1) !important; /* Remplissage léger au survol */
-    border-color: #1c1917 !important;
-  }
 
   /* ─── 4. LAYOUT DE LA PAGE ─── */
   .glossaire-main { max-width: 800px; margin: 0 auto; padding: 6rem 2rem; }
