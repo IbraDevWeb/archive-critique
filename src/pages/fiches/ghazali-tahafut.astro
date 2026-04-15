@@ -2,250 +2,2006 @@
 import FicheLayout from '../../layouts/FicheLayout.astro';
 
 const title = "L'Incohérence des Philosophes — Al-Ghazâlî";
-const description = "Analyse critique de la Falsafa par Abû Hâmid Al-Ghazâlî : les 20 questions et les 3 hérésies.";
+const description = "Un pamphlet philosophique magistral démontrant l'incapacité des philosophes gréco-arabes à prouver leurs thèses fondamentales.";
 const fonts = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cinzel:wght@400;500;600;700;900&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap";
 ---
 
 <FicheLayout title={title} description={description} fonts={fonts}>
+
+  <div id="cur"></div>
+  <div id="prog"></div>
+
   <nav class="snav">
     <div class="snav-brand">
       <div class="snav-arabic">تهافت الفلاسفة</div>
       <div class="snav-kicker">Fiche de lecture</div>
       <div class="snav-title">L'Incohérence des Philosophes</div>
       <div class="snav-authors">Abû Hâmid Al-Ghazâlî</div>
-      <div class="snav-year">◆ 488 H / 1095 C</div>
+      <div class="snav-year">◆ 488&nbsp;H / 1095&nbsp;C</div>
     </div>
 
-    <span class="snav-lbl">Navigation</span>
-    <a href="#bio" class="snav-a on"><span class="snav-bullet"></span>Biographie</a>
-    <a href="#contexte" class="snav-a"><span class="snav-bullet"></span>Contexte & Acteurs</a>
-    <a href="#questions" class="snav-a"><span class="snav-bullet"></span>Les 20 Questions</a>
-    <a href="#heresies" class="snav-a"><span class="snav-bullet"></span>Les 3 Hérésies</a>
-    <a href="#concepts" class="snav-a"><span class="snav-bullet"></span>Concepts Clefs</a>
-    <a href="#heritage" class="snav-a"><span class="snav-bullet"></span>Héritage & Réception</a>
+    <div class="snav-lbl">Navigation</div>
+
+    <a href="#bio"       class="snav-a"><span class="snav-bullet"></span>Biographie</a>
+    <a href="#contexte"  class="snav-a"><span class="snav-bullet"></span>Contexte &amp; acteurs</a>
+    <a href="#questions" class="snav-a"><span class="snav-bullet"></span>Les 20 questions</a>
+    <a href="#heresies"  class="snav-a"><span class="snav-bullet"></span>Les 3 hérésies</a>
+    <a href="#concepts"  class="snav-a"><span class="snav-bullet"></span>Concepts clefs</a>
+    <a href="#heritage"  class="snav-a"><span class="snav-bullet"></span>Héritage &amp; réception</a>
+    <a href="#quiz"      class="snav-a"><span class="snav-bullet"></span>Quiz d'évaluation</a>
 
     <div class="snav-score">
-      <div class="snav-score-title">Analyse du texte</div>
-      <div class="score-label"><span>Questions critiques</span><span>20</span></div>
-      <div class="score-bar"><div class="score-fill" style="width:100%; background:var(--gold)"></div></div>
-      <div class="score-label" style="margin-top:.6rem"><span>Hérésies (Kufr)</span><span>3</span></div>
-      <div class="score-bar"><div class="score-fill" style="width:15%; background:var(--ruby)"></div></div>
+      <div class="snav-score-title">Progression de la fiche</div>
+
+      <div class="score-label">
+        <span>Questions explorées</span>
+        <span id="conceptCount">0/8</span>
+      </div>
+      <div class="score-bar">
+        <div class="score-fill" id="conceptFill" style="width:0%;background:var(--gold)"></div>
+      </div>
+
+      <div class="score-label" style="margin-top:.6rem">
+        <span>Score quiz</span>
+        <span id="sidebarScore">0/7</span>
+      </div>
+      <div class="score-bar">
+        <div class="score-fill" id="sidebarFill" style="width:0%;background:var(--lapis3)"></div>
+      </div>
     </div>
   </nav>
 
-  <main class="main">
-    <section id="hero" class="hero-ghazali">
-      <div class="hero-diag"></div>
-      <div class="hero-content">
-        <div class="hero-tag">Philosophie islamique médiévale · Kalâm & Falsafa</div>
-        <div class="hero-arabic-title">تهافت الفلاسفة</div>
-        <h1 class="hero-h1">
-          <span class="line1">L'Incohérence</span>
-          <span class="line2">des</span>
-          <span class="line3">Philosophes</span>
-        </h1>
-        <div class="hero-rule"></div>
-        <p class="hero-sub">
-          L'œuvre où <strong>Al-Ghazâlî</strong> utilise la logique contre elle-même pour démontrer l'incapacité de la raison à trancher les questions métaphysiques.
+  <div class="main">
+
+  <section style="padding:0;border-bottom:none;">
+  <div class="hero">
+    <svg class="hero-geo" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+          <polygon points="40,4 47,20 63,14 56,30 72,37 56,44 63,60 47,53 40,70 33,53 17,60 24,44 8,37 24,30 17,14 33,20" fill="none" stroke="#c89a20" stroke-width=".6" opacity=".8"/>
+          <rect x="28" y="28" width="24" height="24" transform="rotate(45 40 40)" fill="none" stroke="#c89a20" stroke-width=".4" opacity=".5"/>
+        </pattern>
+      </defs>
+      <rect width="800" height="600" fill="url(#geo)"/>
+    </svg>
+
+    <div class="hero-diag"></div>
+
+    <div>
+      <div class="hero-tag">Philosophie islamique médiévale · Kalâm &amp; Falsafa · ابن حامد الغزالي</div>
+      <div class="hero-arabic-title">تهافت الفلاسفة</div>
+      <h1 class="hero-h1">
+        <span class="line1">L'Incohérence</span>
+        <span class="line2">des</span>
+        <span class="line3">Philosophes</span>
+      </h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">
+        Un pamphlet philosophique magistral dans lequel <strong>Abû Hâmid Al-Ghazâlî</strong>
+        (1058–1111) démontre, en vingt questions précises, que les philosophes
+        gréco-arabes — Avicenne et Alpharabius en tête — sont <strong>incapables de prouver</strong>
+        leurs thèses les plus fondamentales et que trois d'entre elles constituent une
+        hérésie au regard de l'islam.
+      </p>
+      <div class="hero-chips">
+        <span class="chip chip-lapis">Kalâm (scolastique islamique)</span>
+        <span class="chip chip-gold">Critique de la raison</span>
+        <span class="chip chip-lapis">Soufisme</span>
+        <span class="chip chip-gold">Réfutation d'Avicenne</span>
+        <span class="chip chip-lapis">Métaphysique</span>
+        <span class="chip chip-gold">Philosophie comparée</span>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-stat">
+        <div class="hero-stat-num">20</div>
+        <div class="hero-stat-lbl">Questions critiques</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-lbl">Accusations d'hérésie</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">488H</div>
+        <div class="hero-stat-lbl">Muharram — jan. 1095</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">↺</div>
+        <div class="hero-stat-lbl">Répondu par Averroès</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-lbl">Siècles de débat</div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section id="bio" data-num="01">
+    <div class="sec-kicker">Vie &amp; formation</div>
+    <h2 class="sec-h2">Abû Hâmid Al-Ghazâlî<br><small style="font-size:.55em;opacity:.5">450–505&nbsp;H &nbsp;/&nbsp; 1058–1111&nbsp;C</small></h2>
+    
+        
+    <p class="sec-lead reveal">
+      Théologien, juriste, philosophe et mystique, Al-Ghazâlî est considéré comme
+      l'une des figures intellectuelles les plus importantes de l'islam médiéval.
+      Sa pensée traverse les frontières du kalâm, de la falsafa et du soufisme.
+    </p>
+
+    <div class="bio-grid reveal">
+      <div class="bio-card">
+        <div class="bio-card-label">Formation encyclopédique</div>
+        <div class="bio-card-content">
+          Né à Tûs (Perse), il maîtrise le Coran, les sciences islamiques, puis la philosophie
+          grecque sous la direction d'<strong>Al-Juwaynî</strong>, maître des deux Saintes-Mosquées.
+          Nommé à 34 ans professeur à la prestigieuse école <em>Nizâmiya</em> de Baghdâd,
+          il est au sommet de sa gloire intellectuelle quand une profonde crise spirituelle
+          l'oblige à tout abandonner.
+        </div>
+      </div>
+      <div class="bio-card">
+        <div class="bio-card-label">La crise &amp; la conversion soufie</div>
+        <div class="bio-card-content">
+          En 488&nbsp;H (1095), il compose le <em>Tahâfut</em> puis quitte Baghdâd pour une
+          retraite de dix ans. Il traverse la Syrie, la Palestine, l'Arabie.
+          Cette errance mystique le conduit au soufisme : la certitude qu'il cherchait
+          en vain dans la raison, il la trouve dans le <strong>kashf</strong> — l'illumination
+          spirituelle directe.
+        </div>
+      </div>
+      <div class="bio-card">
+        <div class="bio-card-label">L'œuvre capitale</div>
+        <div class="bio-card-content">
+          Son œuvre comprend plus de 70 ouvrages. Le <em>Ihyâ' 'Ulûm al-Dîn</em>
+          (Revivification des sciences religieuses) est son chef-d'œuvre tardif.
+          Le <em>Tahâfut al-Falâsifa</em> (L'Incohérence des Philosophes) représente
+          l'apogée de sa période rationnelle, avant le tournant mystique.
+          Le <em>Munqid min al-Dalâl</em> (Délivrance de l'erreur) est son autobiographie
+          spirituelle, souvent comparée aux Confessions d'Augustin.
+        </div>
+      </div>
+      <div class="bio-card">
+        <div class="bio-card-label">Méthode philosophique inédite</div>
+        <div class="bio-card-content">
+          Renan reconnaît que Ghazâlî est « le seul philosophe musulman qui a inventé
+          un procédé philosophique inédit ». Sa méthode consiste à battre les philosophes
+          <em>avec leurs propres armes</em> : il maîtrise la logique aristotélicienne pour
+          en montrer les limites dans le domaine métaphysique et théologique.
+          Il n'est pas anti-rationaliste — il est <strong>méta-rationaliste</strong>.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline reveal" style="margin-top:3rem">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">450 H · 1058</div>
+        <div class="tl-body">
+          <div class="tl-title">Naissance à Tûs (Khorasan, Perse)</div>
+          <div class="tl-text">Dans une famille modeste et pieuse. Orphelin très jeune, confié à un soufi.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">470–478 H</div>
+        <div class="tl-body">
+          <div class="tl-title">Formation auprès d'Al-Juwaynî à Nichapour</div>
+          <div class="tl-text">Maîtrise des sciences islamiques, du kalâm asharite et de la philosophie grecque.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">484 H · 1091</div>
+        <div class="tl-body">
+          <div class="tl-title">Professeur à l'école Nizâmiya de Baghdâd</div>
+          <div class="tl-text">Nommé par le vizir Nizâm al-Mulk. Enseignement à 300 étudiants. Apogée mondain.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--ruby);box-shadow:0 0 0 3px var(--parch),0 0 0 4px var(--ruby2)"></div>
+        <div class="tl-date">488 H · 1095</div>
+        <div class="tl-body">
+          <div class="tl-title">Composition du <em>Tahâfut al-Falâsifa</em></div>
+          <div class="tl-text">Le 11 Muharram 488 H. Simultanément : crise spirituelle, abandon de la chaire, retraite.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">489–499 H</div>
+        <div class="tl-body">
+          <div class="tl-title">Retraite mystique &amp; composition du <em>Ihyâ'</em></div>
+          <div class="tl-text">Errance en Syrie, Palestine, Arabie. Composition de son œuvre maîtresse soufie.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">505 H · 1111</div>
+        <div class="tl-body">
+          <div class="tl-title">Mort à Tûs</div>
+          <div class="tl-text">À 53 ans. Son œuvre exercera une influence décisive sur la scolastique latine médiévale.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contexte" data-num="02">
+    <div class="sec-kicker">Contexte historique &amp; intellectuel</div>
+    <h2 class="sec-h2">Trois siècles de conflit entre<br>Kalâm et Falsafa</h2>
+    <p class="sec-lead reveal">
+      Le <em>Tahâfut</em> n'est pas un écrit isolé. Il est l'aboutissement d'un débat
+      de trois siècles entre les théologiens musulmans (<em>mutakallimûn</em>) et
+      les philosophes (<em>falâsifa</em>) formés à la tradition aristotélicienne grecque.
+    </p>
+
+    <div class="actors-grid reveal">
+      <div class="actor-card" data-letter="G">
+        <div class="actor-arabic">أبو حامد الغزالي</div>
+        <div class="actor-name">Al-Ghazâlî</div>
+        <div class="actor-dates">1058 — 1111 C</div>
+        <div class="actor-role role-ally">Auteur du Tahâfut</div>
+        <div class="actor-desc">
+          Théologien asharite, juriste shafi'ite, mystique soufi. Maîtrise la philosophie
+          grecque qu'il utilise contre elle-même. Son objectif : <em>non pas détruire
+          la philosophie, mais protéger les néophytes</em> de la fascination pour les
+          philosophes sur des questions théologiques.
+        </div>
+      </div>
+
+      <div class="actor-card" data-letter="A">
+        <div class="actor-arabic">ابن سينا</div>
+        <div class="actor-name">Avicenne (Ibn Sînâ)</div>
+        <div class="actor-dates">980 — 1037 C</div>
+        <div class="actor-role role-target">Cible principale</div>
+        <div class="actor-desc">
+          Philosophe et médecin perse, le plus grand représentant de la falsafa.
+          Son néoplatonisme aristotélicien — éternité du monde, Dieu comme
+          Premier Moteur nécessaire, immortalité spirituelle — constitue la cible
+          centrale du <em>Tahâfut</em>.
+        </div>
+      </div>
+
+      <div class="actor-card" data-letter="F">
+        <div class="actor-arabic">أبو نصر الفارابي</div>
+        <div class="actor-name">Alpharabius (Al-Fârâbî)</div>
+        <div class="actor-dates">870 — 950 C</div>
+        <div class="actor-role role-target">Cible secondaire</div>
+        <div class="actor-desc">
+          «&nbsp;Le Deuxième Maître&nbsp;» (après Aristote). Fondateur de la philosophie
+          politique islamique. Sa doctrine de l'émanation nécessaire du monde à partir
+          de l'Un est vivement attaquée par Ghazâlî dans les premières questions du <em>Tahâfut</em>.
+        </div>
+      </div>
+
+      <div class="actor-card" data-letter="R">
+        <div class="actor-arabic">ابن رشد</div>
+        <div class="actor-name">Averroès (Ibn Rushd)</div>
+        <div class="actor-dates">1126 — 1198 C</div>
+        <div class="actor-role role-debater">Répondant</div>
+        <div class="actor-desc">
+          Philosophe andalou, Grand Commentateur d'Aristote. Il rédige le
+          <em>Tahâfut al-Tahâfut</em> (L'Incohérence de l'Incohérence) pour défendre
+          la philosophie. Ce dialogue à distance (un siècle d'écart) est l'un des plus
+          grands débats de la pensée médiévale.
+        </div>
+      </div>
+
+      <div class="actor-card" data-letter="J">
+        <div class="actor-arabic">إمام الحرمين الجويني</div>
+        <div class="actor-name">Al-Juwaynî</div>
+        <div class="actor-dates">1028 — 1085 C</div>
+        <div class="actor-role role-ally">Maître de Ghazâlî</div>
+        <div class="actor-desc">
+          «&nbsp;Imam des deux Saintes-Mosquées&nbsp;». Théologien asharite de Nichapour.
+          Il transmet à Ghazâlî la rigueur scolastique et la méthode d'argumentation
+          rationnelle au service de la théologie islamique.
+        </div>
+      </div>
+
+      <div class="actor-card" data-letter="K">
+        <div class="actor-arabic">الكندي</div>
+        <div class="actor-name">Al-Kindî</div>
+        <div class="actor-dates">801 — 873 C</div>
+        <div class="actor-role role-ally">Précurseur critique</div>
+        <div class="actor-desc">
+          Premier philosophe arabe, encyclopédiste. Contrairement à Avicenne, il
+          défend la création du monde à partir du néant (<em>creatio ex nihilo</em>),
+          ce qui le rapproche de la position théologique. Cité par Ghazâlî comme
+          précurseur dans la réfutation de l'éternité du monde.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="questions" data-num="03">
+    <div class="sec-kicker">Structure de l'œuvre</div>
+    <h2 class="sec-h2">Les vingt questions<br>du Tahâfut</h2>
+    <p class="sec-lead reveal">
+      Ghazâlî structure sa réfutation en vingt problèmes précis,
+      divisés en deux catégories : ceux qui constituent une hérésie
+      (<em>kufr</em>) et ceux qui constituent une innovation blâmable (<em>bid'a</em>).
+      Cliquez sur une question pour en voir l'enjeu.
+    </p>
+
+    <div class="qs-intro reveal">
+      <div class="qs-categories">
+        <div class="qs-cat qs-cat-cosmo">
+          <div>
+            <div class="qs-cat-label">Cosmologie</div>
+            <div class="qs-cat-title">L'Univers</div>
+          </div>
+          <div class="qs-cat-qs">Q. 1–2</div>
+        </div>
+        <div class="qs-cat qs-cat-theo">
+          <div>
+            <div class="qs-cat-label">Théologie naturelle</div>
+            <div class="qs-cat-title">Dieu &amp; ses attributs</div>
+          </div>
+          <div class="qs-cat-qs">Q. 3–10</div>
+        </div>
+        <div class="qs-cat qs-cat-gnose">
+          <div>
+            <div class="qs-cat-label">Gnoséologie divine</div>
+            <div class="qs-cat-title">La Connaissance de Dieu</div>
+          </div>
+          <div class="qs-cat-qs">Q. 11–13</div>
+        </div>
+        <div class="qs-cat qs-cat-sphes">
+          <div>
+            <div class="qs-cat-label">Cosmologie céleste</div>
+            <div class="qs-cat-title">Les Sphères &amp; les Âmes</div>
+          </div>
+          <div class="qs-cat-qs">Q. 14–16</div>
+        </div>
+        <div class="qs-cat qs-cat-natur">
+          <div>
+            <div class="qs-cat-label">Science de la nature</div>
+            <div class="qs-cat-title">Causalité, Âme &amp; Corps</div>
+          </div>
+          <div class="qs-cat-qs">Q. 17–20</div>
+        </div>
+      </div>
+
+      <div style="background:var(--lapis2);padding:2rem;border:1px solid rgba(200,154,32,.15)">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Méthode du Tahâfut</div>
+        <p style="font-size:.95rem;line-height:1.8;color:rgba(255,255,255,.55)">
+          Ghazâlî ne combat pas les philosophes en leur opposant des textes révélés.
+          Il les combat <em style="color:rgba(255,255,255,.75)">sur leur propre terrain</em> :
+          il démontre que, selon leurs propres normes logiques, ils ne peuvent pas prouver
+          leurs thèses. C'est une réfutation <em style="color:rgba(255,255,255,.75)">interne</em>,
+          ad hominem philosophique.
         </p>
-        <div class="hero-chips">
-          <span class="chip">Asharisme</span>
-          <span class="chip">Réfutation d'Avicenne</span>
-          <span class="chip">Occasionnalisme</span>
-        </div>
       </div>
-    </section>
+    </div>
 
-    <section id="bio" class="sec">
-      <div class="sec-eyebrow">
-        <span class="sec-num">01</span>
-        <h2 class="sec-h2">Abû Hâmid Al-Ghazâlî</h2>
+    <div class="q-grid reveal" id="qGrid">
       </div>
-      <div class="bio-grid">
-        <div class="bio-card">
-          <h3>La crise de Baghdâd</h3>
-          <p>Au sommet de sa gloire à la Nizâmiya, il est frappé par une aphasie psychosomatique en 1095. Il abandonne tout pour une vie d'errance soufie pendant 10 ans.</p>
-        </div>
-        <div class="bio-card">
-          <h3>La méthode interne</h3>
-          <p>Ghazâlî ne rejette pas la logique. Il l'étudie en profondeur (<em>Maqâsid al-Falâsifa</em>) avant de la retourner contre les philosophes grecs (<em>Tahâfut</em>).</p>
-        </div>
-      </div>
-    </section>
+  </section>
 
-    <section id="heresies" class="sec alt" style="background: var(--ruby2); color: white;">
-      <div class="sec-eyebrow">
-        <span class="sec-num" style="color: var(--gold)">02</span>
-        <h2 class="sec-h2" style="color: white">Les 3 points de rupture (Kufr)</h2>
-      </div>
-      <div class="heresies-container">
-        <div class="heresy-item">
-          <span class="heresy-num">01</span>
-          <h4>L'Éternité du monde</h4>
-          <p>L'affirmation que l'univers n'a pas de commencement temporel, niant la création <em>ex nihilo</em>.</p>
-        </div>
-        <div class="heresy-item">
-          <span class="heresy-num">02</span>
-          <h4>L'Omniscience limitée</h4>
-          <p>La thèse d'Avicenne selon laquelle Dieu ne connaît les particuliers que de manière universelle.</p>
-        </div>
-        <div class="heresy-item">
-          <span class="heresy-num">03</span>
-          <h4>Négation de la résurrection</h4>
-          <p>Le refus d'admettre la résurrection physique des corps, réduite à une métaphore.</p>
-        </div>
-      </div>
-    </section>
+  <section id="heresies" data-num="04">
+    <div class="sec-kicker">Accusations capitales</div>
+    <h2 class="sec-h2">Les trois chefs d'hérésie</h2>
+    <p class="sec-lead reveal">
+      Sur les vingt questions, trois seulement constituent, selon Ghazâlî,
+      une hérésie (<em>kufr</em>) qui implique de taxer les philosophes
+      d'apostasie. Ce sont les points d'irréductible incompatibilité
+      entre la falsafa et la foi islamique.
+    </p>
 
-    <section id="concepts" class="sec">
-      <div class="sec-eyebrow">
-        <span class="sec-num">03</span>
-        <h2 class="sec-h2">Le feu et le coton</h2>
-      </div>
-      <div class="concept-focus">
-        <p class="pq">
-          "Le lien entre ce qu'on appelle habituellement la cause et ce qu'on appelle l'effet n'est pas nécessaire."
-          <cite>— Question 17, Sur la causalité naturelle</cite>
-        </p>
-        <div class="concept-explanation">
-          <p>C'est ici que Ghazâlî pose les bases de l'<strong>occasionnalisme</strong>. Le coton ne brûle pas <em>parce que</em> le feu le touche, mais parce que Dieu crée la brûlure <em>au moment</em> du contact. Ce principe préfigure les critiques de David Hume sur l'induction.</p>
+    <div class="heresies-grid reveal">
+      <div class="heresy-card">
+        <div class="heresy-num">01</div>
+        <div class="heresy-q">Question 1</div>
+        <div class="heresy-title">L'Éternité de l'Univers</div>
+        <div class="heresy-charge">Charge : négation de la Création</div>
+        <div class="heresy-desc">
+          Les philosophes affirment que le monde est éternel <em>a parte ante</em>
+          — qu'il a toujours existé et existera toujours. Pour Ghazâlî, c'est
+          nier la Création libre de Dieu à partir du néant (<em>creatio ex nihilo</em>),
+          doctrine fondamentale de l'islam, du judaïsme et du christianisme.
+          Cela annule aussi la volonté divine : un Dieu dont la création est
+          <em>nécessaire</em> n'est plus un Dieu libre.
+        </div>
+        <div class="heresy-quote">
+          « Supposer que l'univers est précurseur à la volonté divine impose
+          une transformation dans la nature du Premier — ce qui est absurde. »
         </div>
       </div>
-    </section>
 
-  </main>
-</FicheLayout>
+      <div class="heresy-card">
+        <div class="heresy-num">02</div>
+        <div class="heresy-q">Question 13</div>
+        <div class="heresy-title">Dieu ne connaît pas les particuliers</div>
+        <div class="heresy-charge">Charge : négation de l'Omniscience</div>
+        <div class="heresy-desc">
+          Avicenne soutient que Dieu, connaissant universellement toutes choses,
+          ne connaît les particuliers (individus, événements singuliers) que
+          <em>sub specie universali</em> — de manière universelle et non individuelle.
+          Pour Ghazâlî, cela implique que Dieu ignore les prières, les actes
+          individuels, et l'histoire singulière de chaque âme. C'est nier la
+          Providence et rendre la révélation impossible.
+        </div>
+        <div class="heresy-quote">
+          « S'il n'a pas conscience de l'individu particulier, comment
+          peut-il lui parler par la bouche d'un prophète ? »
+        </div>
+      </div>
 
-<style is:global>
-  /* ─── VARIABLES AL-GHAZALI ─── */
+      <div class="heresy-card">
+        <div class="heresy-num">03</div>
+        <div class="heresy-q">Question 20</div>
+        <div class="heresy-title">Négation de la Résurrection corporelle</div>
+        <div class="heresy-charge">Charge : négation du Jour Dernier</div>
+        <div class="heresy-desc">
+          Les philosophes n'admettent qu'une immortalité spirituelle de l'âme.
+          Ils nient la résurrection physique du corps et la réalité concrète
+          du Paradis et de l'enfer tels que le Coran les décrit. Ils
+          réinterprètent ces réalités comme des <em>métaphores</em> pédagogiques
+          pour les masses. Ghazâlî y voit une accusation de mensonge adressée
+          aux prophètes.
+        </div>
+        <div class="heresy-quote">
+          « Dieu est capable d'offrir les deux béatitudes, physique et
+          spirituelle, pour que l'homme atteigne le maximum de la félicité promise. »
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="concepts" data-num="05">
+    <div class="sec-kicker">Lexique philosophique</div>
+    <h2 class="sec-h2">Concepts clefs du Tahâfut</h2>
+    <p class="sec-lead reveal">
+      La pensée de Ghazâlî s'articule autour d'un vocabulaire
+      philosophico-théologique précis, hérité du kalâm et de la falsafa,
+      mais retravaillé de manière originale. Cliquez pour déplier chaque concept.
+    </p>
+
+    <div class="cc-grid reveal" id="ccGrid">
+      </div>
+  </section>
+
+  <section id="heritage" data-num="06">
+    <div class="sec-kicker">Postérité &amp; débat</div>
+    <h2 class="sec-h2">Héritage &amp; réception du Tahâfut</h2>
+    <p class="sec-lead reveal">
+      L'impact du <em>Tahâfut</em> dépasse les frontières de l'islam médiéval.
+      Il a influencé la scolastique latine, suscité la grande réponse d'Averroès,
+      et continue aujourd'hui de faire débat sur le rapport entre foi et raison.
+    </p>
+
+    <div class="heritage-cols reveal">
+      <div>
+        <div class="hcol-title">Réceptions positives</div>
+        <div class="heritage-item">
+          <div class="hi-dot hi-dot-for"></div>
+          <div>
+            <div class="hi-name">Averroès — <em>Tahâfut al-Tahâfut</em> (1180)</div>
+            <div class="hi-detail">
+              Paradoxalement, le plus grand répondant de Ghazâlî lui offre aussi la
+              meilleure consécration : en consacrant un ouvrage entier à le réfuter,
+              Averroès reconnaît l'extrême sérieux de ses arguments.
+            </div>
+          </div>
+        </div>
+        <div class="heritage-item">
+          <div class="hi-dot hi-dot-for"></div>
+          <div>
+            <div class="hi-name">Thomas d'Aquin &amp; la scolastique latine</div>
+            <div class="hi-detail">
+              Via les traductions tolédanes, la critique de l'éternité du monde
+              par Ghazâlî nourrit les débats sur la création dans la scolastique chrétienne.
+            </div>
+          </div>
+        </div>
+        <div class="heritage-item">
+          <div class="hi-dot hi-dot-for"></div>
+          <div>
+            <div class="hi-name">Ernest Renan — reconnaissance philosophique</div>
+            <div class="hi-detail">
+              Malgré sa vision coloniale de la philosophie, Renan reconnaît que
+              Ghazâlî est « le seul philosophe musulman ayant inventé un procédé inédit ».
+            </div>
+          </div>
+        </div>
+        <div class="heritage-item">
+          <div class="hi-dot hi-dot-for"></div>
+          <div>
+            <div class="hi-name">Philosophie analytique contemporaine</div>
+            <div class="hi-detail">
+              La critique de la causalité naturelle (Q.17) préfigure le débat humien
+              sur la causalité et le débat contemporain sur le « principe de raison suffisante ».
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="hcol-title">Critiques &amp; controverses</div>
+        <div class="heritage-item">
+          <div class="hi-dot hi-dot-against"></div>
+          <div>
+            <div class="hi-name">Al-Jabiri — « philosophie démissionnaire »</div>
+            <div class="hi-detail">
+              Le philosophe marocain contemporain accuse Ghazâlî d'avoir
+              causé la « sclérose philosophique arabe » en disqualifiant la raison
+              dans les questions métaphysiques. Traducteur : cette lecture est contestée.
+            </div>
+          </div>
+        </div>
+        <div class="heritage-item">
+          <div class="hi-dot hi-dot-against"></div>
+          <div>
+            <div class="hi-name">Orientalisme — Deport &amp; alii</div>
+            <div class="hi-detail">
+              Nombre d'orientalistes ont vu en Ghazâlî « le destructeur de la philosophie
+              en Orient », en prenant la philosophie grecque comme seule mesure
+              du développement philosophique légitime.
+            </div>
+          </div>
+        </div>
+        <div class="heritage-item">
+          <div class="hi-dot hi-dot-against"></div>
+          <div>
+            <div class="hi-name">Averroès — défense de la philosophie</div>
+            <div class="hi-detail">
+              Le philosophe andalou défend que la raison et la révélation sont
+              conciliables et que Ghazâlî a trahi la philosophie aristotélicienne
+              en la jugeant sur des critères théologiques exogènes.
+            </div>
+          </div>
+        </div>
+        <div class="heritage-item">
+          <div class="hi-dot hi-dot-against"></div>
+          <div>
+            <div class="hi-name">Débat sur le comparatisme Ghazâlî–Descartes</div>
+            <div class="hi-detail">
+              Certains orientalistes ont rapproché le doute de Ghazâlî du doute
+              cartésien. Abd al-Rahmân Badawi réfute vigoureusement ce parallèle :
+              le doute ghazalien est mystique et théologique, non méthodologique.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" data-num="07">
+    <div class="sec-kicker">Auto-évaluation</div>
+    <h2 class="sec-h2">Quiz — Maîtrisez-vous<br>le Tahâfut&nbsp;?</h2>
+    <p class="sec-lead reveal">
+      Sept questions pour tester votre compréhension des thèses,
+      des arguments et des enjeux philosophiques du <em>Tahâfut al-Falâsifa</em>.
+    </p>
+
+    <div class="quiz-shell reveal">
+      <div class="quiz-topbar">
+        <div class="quiz-counter">Q&nbsp;<span id="qNum">1</span><span style="font-size:.9rem;opacity:.4">/7</span></div>
+        <div class="quiz-status-pill" id="qStatus">Sélectionnez une réponse</div>
+      </div>
+      <div class="quiz-pgbar"><div class="quiz-pgfill" id="quizProgressFill" style="width:0%"></div></div>
+      <div class="quiz-q" id="qText"></div>
+      <div class="quiz-opts" id="qOptions"></div>
+      <div class="quiz-feedback" id="qFeedback"></div>
+      <div class="quiz-footer">
+        <div class="quiz-score">Score : <span id="scoreDisplay">0</span></div>
+        <button class="qbtn" id="qNext" onclick="window.nextQuestion()" disabled>Question suivante →</button>
+      </div>
+    </div>
+  </section>
+
+  </div><div class="footer">
+    Fiche pédagogique · <em>L'Incohérence des Philosophes</em> · Abû Hâmid Al-Ghazâlî · 488&nbsp;H / 1095&nbsp;C
+    &nbsp;·&nbsp; Tahar Mahdi (traduction annotée)
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-score" id="modalScore">0/7</div>
+      <div class="modal-label">Score final</div>
+      <div class="modal-msg" id="modalMsg"></div>
+      <button class="modal-close" onclick="window.closeModal()">Recommencer</button>
+    </div>
+  </div>
+
+  <style is:global>
+  /* ═══════════════════════════════════════════════════════
+     DESIGN SYSTEM — Manuscrit islamique illuminé
+     Palette : lapis / or / parchemin / encre profonde
+     ═══════════════════════════════════════════════════════ */
   :root {
-    --parch: #f5eed8;
-    --lapis2: #0f2040;
-    --gold: #c89a20;
-    --ruby: #8b1a1a;
-    --ruby2: #6a1010;
-    --ink: #0d0a05;
+    --parch:       #f5eed8;
+    --parch2:      #ede4c8;
+    --parch3:      #e0d4b0;
+    --ink:         #0d0a05;
+    --ink2:        #1c1508;
+    --ink3:        #2e2510;
+    --lapis:       #1a3560;
+    --lapis2:      #0f2040;
+    --lapis3:      #2a4a7a;
+    --lapis-pale:  #d8e4f4;
+    --gold:        #c89a20;
+    --gold2:       #a07810;
+    --gold3:       #e8c050;
+    --gold-pale:   #fdf6dc;
+    --ruby:        #8b1a1a;
+    --ruby2:       #6a1010;
+    --ruby-pale:   #f8e8e8;
+    --teal:        #1a5555;
+    --teal-pale:   #d0eaea;
+    --dust:        #8a7a5a;
+    --rule:        #c8b880;
     --sidebar: 280px;
   }
 
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--parch);
     color: var(--ink);
     font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    overflow-x: hidden;
+    cursor: none;
   }
 
-/* ─── SURCHARGE CURSEUR AL-GHAZALI (OR) ─── */
-  .cur { 
-    width: 12px !important; 
-    height: 12px !important; 
-    border: 2px solid var(--gold) !important; 
-    background: transparent !important; 
-    border-radius: 50% !important;
-    position: fixed !important; 
-    top: 0 !important; 
-    left: 0 !important; 
-    pointer-events: none !important; 
-    z-index: 99999 !important; 
-    transform: translate(-50%, -50%) !important;
-    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease !important;
+  /* ─── CURSOR ─── */
+  #cur {
+    width: 12px; height: 12px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width .2s, height .2s, background .2s, border-color .2s;
+    mix-blend-mode: multiply;
   }
-  .cur.expand, .cur.big { 
-    width: 44px !important; 
-    height: 44px !important; 
-    background: rgba(200, 154, 32, 0.15) !important; /* Or translucide au survol */
-    border-color: var(--gold) !important; 
-  }
-  #prog { background: var(--gold) !important; } /* Barre de progression en or */
+  #cur.expand { width: 36px; height: 36px; background: rgba(200,154,32,.12); border-color: var(--lapis); }
 
-  /* ─── SIDEBAR (MENU LATÉRAL) ─── */
+  /* ─── PROGRESS ─── */
+  #prog {
+    position: fixed; top: 0; left: 0; height: 2px;
+    background: linear-gradient(90deg, var(--lapis), var(--gold));
+    transform-origin: left; transform: scaleX(0);
+    z-index: 1002; transition: transform .08s linear;
+  }
+
+  /* ═══ SIDEBAR ═══ */
   .snav {
-    position: fixed;
+    position: fixed; left: 0; top: 0; bottom: 0;
     width: var(--sidebar);
-    top: 40px !important; /* Laisse la place à la Navbar globale */
-    bottom: 0;
-    left: 0;
     background: var(--lapis2);
-    color: var(--parch);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
     z-index: 100;
-    border-right: 1px solid rgba(200, 154, 32, 0.2);
-  }
-  .snav-brand { padding: 2.5rem 2rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .snav-arabic { font-family: 'Noto Naskh Arabic', serif; font-size: 1.5rem; color: var(--gold); text-align: right; margin-bottom: 0.5rem; }
-  .snav-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; }
-  .snav-title { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; }
-  .snav-authors { font-style: italic; font-size: 0.9rem; color: rgba(255,255,255,0.5); }
-  .snav-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; color: var(--gold); letter-spacing: 0.1em; margin-top: 0.5rem; text-transform: uppercase; }
-
-  .snav-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.2); padding: 1.5rem 2rem 0.5rem; }
-  .snav-a { display: flex; align-items: center; gap: 0.8rem; padding: 0.5rem 2rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.5); text-decoration: none; text-transform: uppercase; transition: all 0.2s; border-left: 2px solid transparent; }
-  .snav-a:hover { color: #fff; background: rgba(255,255,255,0.02); }
-  .snav-a.on { color: #fff; border-left-color: var(--gold); background: rgba(200,154,32,0.1); }
-  .snav-bullet { width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
-
-  .snav-score { margin-top: auto; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
-  .snav-score-title { font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1rem; }
-  .score-label { display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
-  .score-bar { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; }
-  .score-fill { height: 100%; transition: width 0.4s ease; }
-
-  /* ─── MAIN & CONTENU ─── */
-  .main {
-    margin-left: var(--sidebar);
-    background: var(--parch);
-    color: var(--ink);
-    font-family: 'Cormorant Garamond', serif;
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold2) transparent;
   }
 
-  .hero-ghazali {
-    min-height: 80vh;
-    background: var(--lapis2);
-    color: white;
-    padding: 4rem;
+  /* Geometric border on right side of sidebar */
+  .snav::after {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 4px;
+    background: repeating-linear-gradient(
+      180deg,
+      var(--gold) 0px,
+      var(--gold) 8px,
+      transparent 8px,
+      transparent 14px
+    );
+  }
+
+  .snav-brand {
+    padding: 2rem 1.6rem 1.5rem;
+    border-bottom: 1px solid rgba(200,154,32,.15);
     position: relative;
-    display: flex;
-    align-items: center;
   }
 
-  .hero-arabic-title { font-family: 'Noto Naskh Arabic', serif; font-size: 3rem; color: var(--gold); margin-bottom: 1rem; text-align: left; }
-  .hero-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 2rem; }
-  .hero-h1 { font-family: 'Cinzel', serif; font-size: 4rem; line-height: 0.9; margin-bottom: 1.5rem; }
-  .hero-h1 .line3 { color: var(--gold); }
-  .hero-rule { width: 80px; height: 3px; background: var(--gold); margin: 2rem 0; }
-  .hero-sub { font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 700px; line-height: 1.6; font-style: italic; }
-  .hero-sub strong { color: #fff; font-style: normal; }
-  
-  .hero-chips { display: flex; gap: 0.8rem; margin-top: 2rem; flex-wrap: wrap; }
-  .chip { font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; padding: 0.3rem 0.8rem; border: 1px solid var(--gold); color: var(--gold); background: rgba(200,154,32,0.1); text-transform: uppercase; letter-spacing: 0.1em; }
+  .snav-arabic {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 1.4rem;
+    color: var(--gold3);
+    text-align: right;
+    direction: rtl;
+    margin-bottom: .6rem;
+    opacity: .8;
+  }
 
-  .sec { padding: 5rem 4rem; border-bottom: 1px solid rgba(0,0,0,0.1); }
-  .sec-eyebrow { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
-  .sec-num { font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 900; opacity: 0.1; color: var(--ink); line-height: 1;}
-  .sec-h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 800; color: var(--ink); }
+  .snav-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .48rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: .6rem;
+  }
 
-  .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-  .bio-card { background: white; padding: 2rem; border-top: 3px solid var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-  .bio-card h3 { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--lapis2); margin-bottom: 1rem; }
-  .bio-card p { font-size: 1.1rem; line-height: 1.6; }
+  .snav-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; font-weight: 700; line-height: 1.15;
+    color: #fff; letter-spacing: .03em;
+  }
 
-  .heresies-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
-  .heresy-item { padding: 2rem; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); }
-  .heresy-num { font-family: 'Cinzel', serif; font-size: 2.5rem; color: var(--gold); display: block; margin-bottom: 1rem; line-height: 1;}
-  .heresy-item h4 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 1rem; }
-  .heresy-item p { font-size: 1.1rem; line-height: 1.6; opacity: 0.9;}
+  .snav-authors {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: .8rem;
+    color: rgba(255,255,255,.38); margin-top: .35rem;
+  }
 
-  .pq { font-style: italic; font-size: 1.5rem; border-left: 4px solid var(--gold); padding-left: 2rem; margin: 2rem 0; line-height: 1.5;}
-  .pq cite { display: block; margin-top: 1rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; text-transform: uppercase; color: var(--gold); font-style: normal; }
-  .concept-explanation { font-size: 1.1rem; line-height: 1.7; max-width: 800px; }
+  .snav-year {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .5rem; color: var(--gold);
+    letter-spacing: .12em; margin-top: .4rem;
+  }
 
-  @media (max-width: 900px) {
+  .snav-lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .42rem; letter-spacing: .24em; text-transform: uppercase;
+    color: rgba(255,255,255,.15);
+    padding: .85rem 1.6rem .25rem;
+  }
+
+  .snav-a {
+    display: flex; align-items: center; gap: .6rem;
+    padding: .38rem 1.6rem;
+    font-family: 'Cinzel', serif;
+    font-size: .62rem; font-weight: 400; letter-spacing: .06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: all .2s;
+  }
+  .snav-a:hover { color: rgba(255,255,255,.8); border-left-color: var(--gold3); padding-left: 1.9rem; }
+  .snav-a.on { color: var(--gold3); border-left-color: var(--gold); background: rgba(200,154,32,.06); }
+
+  .snav-bullet {
+    width: 4px; height: 4px; border-radius: 50%;
+    background: currentColor; opacity: .5; flex-shrink: 0;
+  }
+
+  .snav-div { height: 1px; background: rgba(255,255,255,.04); margin: .5rem 1.6rem; }
+
+  .snav-score {
+    margin-top: auto; padding: 1.2rem 1.6rem;
+    border-top: 1px solid rgba(200,154,32,.15);
+  }
+
+  .snav-score-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .44rem; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(255,255,255,.18); margin-bottom: .7rem;
+  }
+
+  .score-bar {
+    height: 3px; background: rgba(255,255,255,.06);
+    border-radius: 2px; margin: .4rem 0; overflow: hidden;
+  }
+  .score-fill { height: 100%; border-radius: 2px; transition: width 1.5s cubic-bezier(.16,1,.3,1); }
+  .score-label {
+    display: flex; justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .44rem; letter-spacing: .1em;
+    color: rgba(255,255,255,.22); margin-bottom: .15rem;
+  }
+
+  /* ═══ MAIN ═══ */
+  .main { margin-left: var(--sidebar); }
+
+  /* ═══ HERO ═══ */
+  .hero {
+    min-height: 100vh;
+    background: var(--lapis2);
+    color: #fff;
+    padding: 5rem 6rem 4rem;
+    position: relative; overflow: hidden;
+    display: grid; grid-template-rows: 1fr auto;
+  }
+
+  /* Islamic geometric pattern SVG background */
+  .hero-geo {
+    position: absolute; inset: 0;
+    opacity: .07;
+    pointer-events: none;
+  }
+
+  /* Gold diagonal accent */
+  .hero-diag {
+    position: absolute; top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: linear-gradient(135deg, transparent 30%, rgba(200,154,32,.08) 100%);
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+    pointer-events: none;
+  }
+
+  /* Ornamental top border */
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--lapis2), var(--gold), var(--gold3), var(--gold), var(--lapis2));
+  }
+
+  .hero-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .54rem; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--gold3); margin-bottom: 2rem;
+    opacity: 0; animation: fadeUp .7s ease forwards .1s;
+  }
+
+  .hero-arabic-title {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--gold3);
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 1rem;
+    opacity: 0; animation: fadeUp .8s ease forwards .2s;
+    text-shadow: 0 0 40px rgba(200,154,32,.3);
+  }
+
+  .hero-h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3rem, 6vw, 7.5rem);
+    font-weight: 900; line-height: .9;
+    letter-spacing: -.01em;
+    opacity: 0; animation: fadeUp .9s ease forwards .3s;
+  }
+
+  .hero-h1 .line1 { display: block; color: #fff; }
+  .hero-h1 .line2 { display: block; color: #fff; }
+  .hero-h1 .line3 { display: block; color: var(--gold3); }
+
+  .hero-rule {
+    width: 100px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold3), transparent);
+    margin: 2rem 0 1.8rem;
+    opacity: 0; animation: fadeUp .7s ease forwards .55s;
+  }
+
+  .hero-sub {
+    max-width: 640px;
+    font-size: 1.1rem; font-weight: 300; font-style: italic;
+    color: rgba(255,255,255,.6); line-height: 1.9;
+    opacity: 0; animation: fadeUp .8s ease forwards .45s;
+  }
+  .hero-sub strong { color: rgba(255,255,255,.9); font-style: normal; font-weight: 500; }
+
+  .hero-chips {
+    display: flex; flex-wrap: wrap; gap: .5rem;
+    margin-top: 1.8rem;
+    opacity: 0; animation: fadeUp .7s ease forwards .7s;
+  }
+
+  .chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .5rem; letter-spacing: .16em; text-transform: uppercase;
+    padding: .35rem .8rem;
+    border: 1px solid;
+    border-radius: 2px;
+  }
+  .chip-lapis { border-color: rgba(200,154,32,.35); color: var(--gold3); background: rgba(200,154,32,.06); }
+  .chip-gold { border-color: rgba(255,255,255,.2); color: rgba(255,255,255,.55); background: rgba(255,255,255,.04); }
+
+  .hero-bottom {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(200,154,32,.12);
+    opacity: 0; animation: fadeUp .7s ease forwards .9s;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem; font-weight: 700;
+    color: var(--gold3); line-height: 1;
+  }
+  .hero-stat-lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .44rem; letter-spacing: .2em; text-transform: uppercase;
+    color: rgba(255,255,255,.3); margin-top: .3rem;
+  }
+
+  /* ═══ SECTIONS COMMUNES ═══ */
+  section {
+    padding: 5rem 6rem;
+    border-bottom: 1px solid var(--parch3);
+    position: relative;
+  }
+
+  section::before {
+    content: attr(data-num);
+    position: absolute; top: 3rem; right: 6rem;
+    font-family: 'Cinzel', serif;
+    font-size: 6rem; font-weight: 900;
+    color: var(--parch3);
+    line-height: 1; pointer-events: none;
+    z-index: 0;
+  }
+
+  .sec-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .5rem; letter-spacing: .26em; text-transform: uppercase;
+    color: var(--gold2); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: .8rem;
+  }
+  .sec-kicker::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--gold2), transparent);
+  }
+
+  .sec-h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700; line-height: 1.1;
+    color: var(--lapis2); margin-bottom: 1.5rem;
+    position: relative; z-index: 1;
+  }
+
+  .sec-lead {
+    font-size: 1.15rem; font-weight: 300; font-style: italic;
+    color: var(--dust); max-width: 760px;
+    margin-bottom: 2.5rem; line-height: 1.9;
+  }
+
+  /* ═══ BIOGRAPHIE — section alternée ═══ */
+  #bio { background: var(--parch); }
+
+  .bio-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3rem; margin-top: 2rem;
+  }
+
+  .bio-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--lapis);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .bio-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold2), transparent);
+  }
+
+  .bio-card-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .46rem; letter-spacing: .24em; text-transform: uppercase;
+    color: var(--lapis3); margin-bottom: .7rem;
+  }
+
+  .bio-card-content {
+    font-size: 1rem; line-height: 1.85;
+    color: var(--ink3);
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline {
+    position: relative; margin-top: 3rem;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--lapis), var(--gold), var(--lapis));
+  }
+
+  .tl-item {
+    display: flex; gap: 2rem;
+    margin-bottom: 2rem;
+    opacity: 0; transform: translateX(-20px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  .tl-item.visible { opacity: 1; transform: translateX(0); }
+
+  .tl-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--gold); flex-shrink: 0;
+    margin-top: .35rem;
+    margin-left: -2.35rem;
+    box-shadow: 0 0 0 3px var(--parch), 0 0 0 4px var(--gold2);
+    z-index: 1; position: relative;
+  }
+
+  .tl-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .52rem; letter-spacing: .14em;
+    color: var(--gold2); text-transform: uppercase;
+    flex-shrink: 0; width: 90px;
+    padding-top: .2rem;
+  }
+
+  .tl-body {}
+  .tl-title {
+    font-family: 'Cinzel', serif;
+    font-size: .9rem; font-weight: 600;
+    color: var(--lapis2); margin-bottom: .2rem;
+  }
+  .tl-text { font-size: .95rem; color: var(--dust); line-height: 1.7; }
+
+  /* ═══ CONTEXTE ═══ */
+  #contexte { background: var(--lapis2); color: #fff; }
+  #contexte .sec-h2 { color: var(--gold3); }
+  #contexte .sec-lead { color: rgba(255,255,255,.55); }
+  #contexte::before { color: rgba(255,255,255,.04); }
+  #contexte .sec-kicker { color: var(--gold3); }
+  #contexte .sec-kicker::after { background: linear-gradient(90deg, var(--gold3), transparent); }
+
+  .actors-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+
+  .actor-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(200,154,32,.15);
+    padding: 1.8rem;
+    position: relative; overflow: hidden;
+    cursor: default;
+    transition: background .2s, border-color .2s;
+  }
+  .actor-card:hover { background: rgba(200,154,32,.07); border-color: rgba(200,154,32,.35); }
+
+  .actor-card::before {
+    content: attr(data-letter);
+    position: absolute; top: -1rem; right: 1rem;
+    font-family: 'Cinzel', serif;
+    font-size: 5rem; font-weight: 900;
+    color: rgba(200,154,32,.05); line-height: 1;
+  }
+
+  .actor-arabic {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 1.1rem; color: var(--gold3);
+    direction: rtl; text-align: right;
+    margin-bottom: .4rem;
+  }
+
+  .actor-name {
+    font-family: 'Cinzel', serif;
+    font-size: .9rem; font-weight: 600;
+    color: #fff; margin-bottom: .3rem;
+  }
+
+  .actor-dates {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .46rem; letter-spacing: .14em;
+    color: var(--gold); text-transform: uppercase;
+    margin-bottom: .7rem;
+  }
+
+  .actor-role {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .42rem; letter-spacing: .14em; text-transform: uppercase;
+    padding: .2rem .6rem;
+    border: 1px solid; border-radius: 1px;
+    margin-bottom: .7rem;
+  }
+  .role-target { border-color: rgba(200,80,80,.5); color: rgba(200,80,80,.8); }
+  .role-ally { border-color: rgba(80,180,160,.5); color: rgba(80,180,160,.8); }
+  .role-debater { border-color: rgba(200,154,32,.4); color: rgba(200,154,32,.8); }
+
+  .actor-desc {
+    font-size: .9rem; line-height: 1.7;
+    color: rgba(255,255,255,.45);
+  }
+
+  /* ═══ 20 QUESTIONS ═══ */
+  #questions { background: #fff; }
+
+  .qs-intro {
+    display: grid; grid-template-columns: 2fr 1fr;
+    gap: 3rem; margin-bottom: 3rem;
+    align-items: start;
+  }
+
+  .qs-categories {
+    display: flex; flex-direction: column; gap: .8rem;
+  }
+
+  .qs-cat {
+    display: flex; align-items: center; gap: 1rem;
+    padding: .8rem 1rem;
+    border-left: 3px solid;
+  }
+  .qs-cat-cosmo { border-color: var(--teal); }
+  .qs-cat-theo { border-color: var(--lapis); }
+  .qs-cat-gnose { border-color: var(--gold2); }
+  .qs-cat-sphes { border-color: var(--ruby); }
+  .qs-cat-natur { border-color: var(--dust); }
+
+  .qs-cat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .46rem; letter-spacing: .18em; text-transform: uppercase;
+  }
+  .qs-cat-cosmo .qs-cat-label { color: var(--teal); }
+  .qs-cat-theo .qs-cat-label { color: var(--lapis); }
+  .qs-cat-gnose .qs-cat-label { color: var(--gold2); }
+  .qs-cat-sphes .qs-cat-label { color: var(--ruby); }
+  .qs-cat-natur .qs-cat-label { color: var(--dust); }
+
+  .qs-cat-title {
+    font-family: 'Cinzel', serif;
+    font-size: .8rem; font-weight: 600; color: var(--ink2);
+  }
+  .qs-cat-qs {
+    margin-left: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .44rem; color: var(--dust); letter-spacing: .1em;
+  }
+
+  /* Grid des 20 questions */
+  .q-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: .8rem; margin-top: 1.5rem;
+  }
+
+  .q-card {
+    border: 1px solid var(--parch3);
+    padding: 1rem;
+    cursor: pointer;
+    transition: all .2s;
+    position: relative;
+    background: var(--parch);
+  }
+  .q-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+  .q-card.open { background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+
+  /* Color top border by category */
+  .q-card[data-cat="cosmo"] { border-top: 3px solid var(--teal); }
+  .q-card[data-cat="theo"]  { border-top: 3px solid var(--lapis); }
+  .q-card[data-cat="gnose"] { border-top: 3px solid var(--gold2); }
+  .q-card[data-cat="sphes"] { border-top: 3px solid var(--ruby); }
+  .q-card[data-cat="natur"] { border-top: 3px solid var(--dust); }
+
+  .q-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem; font-weight: 900;
+    line-height: 1; margin-bottom: .4rem;
+    opacity: .15;
+  }
+  .q-card[data-cat="cosmo"] .q-num { color: var(--teal); opacity: .4; }
+  .q-card[data-cat="theo"]  .q-num { color: var(--lapis); opacity: .4; }
+  .q-card[data-cat="gnose"] .q-num { color: var(--gold2); opacity: .4; }
+  .q-card[data-cat="sphes"] .q-num { color: var(--ruby); opacity: .4; }
+  .q-card[data-cat="natur"] .q-num { color: var(--dust); opacity: .4; }
+
+  /* Heresy badge */
+  .q-card.heresy::after {
+    content: '⚡ HÉRÉSIE';
+    position: absolute; top: .5rem; right: .5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .38rem; letter-spacing: .12em;
+    padding: .18rem .4rem;
+    background: var(--ruby);
+    color: #fff;
+    border-radius: 1px;
+  }
+
+  .q-title {
+    font-family: 'Cinzel', serif;
+    font-size: .72rem; font-weight: 600; line-height: 1.3;
+    color: var(--ink2); margin-bottom: .5rem;
+  }
+
+  .q-expand {
+    max-height: 0; overflow: hidden;
+    transition: max-height .3s ease;
+    font-size: .88rem; line-height: 1.7;
+    color: var(--dust);
+  }
+  .q-expand.open { max-height: 200px; }
+
+  .q-toggle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .42rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold2); margin-top: .5rem;
+    cursor: pointer;
+    display: flex; align-items: center; gap: .4rem;
+  }
+
+  /* ═══ TROIS HÉRÉSIES ═══ */
+  #heresies { background: var(--ruby2); color: #fff; overflow: hidden; }
+  #heresies::before { color: rgba(255,255,255,.03); }
+  #heresies .sec-h2 { color: var(--gold3); }
+  #heresies .sec-lead { color: rgba(255,255,255,.5); }
+  #heresies .sec-kicker { color: var(--gold3); }
+  #heresies .sec-kicker::after { background: linear-gradient(90deg, var(--gold3), transparent); }
+
+  /* Ornamental arabesque behind section */
+  #heresies::after {
+    content: '';
+    position: absolute; right: -100px; top: 50%;
+    transform: translateY(-50%);
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,154,32,.08);
+    pointer-events: none;
+  }
+
+  .heresies-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; margin-top: 2rem;
+    position: relative; z-index: 1;
+  }
+
+  .heresy-card {
+    border: 1px solid rgba(200,154,32,.2);
+    padding: 2rem;
+    background: rgba(0,0,0,.2);
+    position: relative;
+  }
+
+  .heresy-num {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem; font-weight: 900;
+    color: var(--gold3); opacity: .3; line-height: 1;
+    margin-bottom: .5rem;
+  }
+
+  .heresy-q {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .46rem; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: .7rem;
+  }
+
+  .heresy-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: #fff; margin-bottom: .8rem; line-height: 1.2;
+  }
+
+  .heresy-charge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .46rem; letter-spacing: .14em; text-transform: uppercase;
+    color: rgba(200,100,100,.8);
+    padding: .25rem .6rem;
+    border: 1px solid rgba(200,100,100,.3);
+    display: inline-block; margin-bottom: .8rem;
+  }
+
+  .heresy-desc {
+    font-size: .95rem; line-height: 1.75;
+    color: rgba(255,255,255,.5);
+  }
+
+  .heresy-quote {
+    margin-top: 1rem;
+    padding: .8rem 1rem;
+    border-left: 2px solid var(--gold);
+    background: rgba(200,154,32,.05);
+    font-style: italic;
+    font-size: .9rem;
+    color: rgba(255,255,255,.65);
+  }
+
+  /* ═══ CONCEPTS ═══ */
+  #concepts { background: var(--parch2); }
+
+  .cc-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; margin-top: 2rem;
+  }
+
+  .cc {
+    background: #fff;
+    border: 1px solid var(--rule);
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow .2s;
+  }
+  .cc:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+
+  .cc-head {
+    display: flex; align-items: center;
+    padding: 1.5rem 1.8rem; gap: 1rem;
+  }
+
+  .cc-icon {
+    width: 44px; height: 44px;
+    background: var(--lapis2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+
+  .cc-term {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--lapis2); margin-bottom: .1rem;
+  }
+  .cc-arabic-term {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: .9rem; color: var(--gold2);
+    direction: rtl;
+  }
+
+  .cc-toggle {
+    margin-left: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .42rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold2);
+    display: flex; align-items: center; gap: .4rem;
+    flex-shrink: 0;
+  }
+  .cc-toggle.open-arrow { color: var(--lapis); }
+
+  .cc-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height .4s ease;
+    padding: 0 1.8rem;
+  }
+  .cc-body.open { max-height: 400px; padding: 0 1.8rem 1.5rem; }
+
+  .cc-def {
+    font-size: 1rem; line-height: 1.85;
+    color: var(--ink3);
+    border-top: 1px solid var(--parch3);
+    padding-top: 1rem; margin-top: .2rem;
+  }
+
+  .cc-def strong { color: var(--lapis2); font-weight: 600; }
+  .cc-def em { color: var(--ruby); font-style: italic; }
+
+  /* ═══ HERITAGE / RÉCEPTION ═══ */
+  #heritage { background: #fff; }
+
+  .heritage-cols {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3rem; margin-top: 2.5rem;
+  }
+
+  .hcol-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--lapis2); margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: .8rem;
+  }
+  .hcol-title::before {
+    content: '';
+    width: 20px; height: 2px;
+    background: var(--gold);
+  }
+
+  .heritage-item {
+    display: flex; gap: 1rem;
+    padding: .9rem 0;
+    border-bottom: 1px solid var(--parch3);
+    align-items: flex-start;
+  }
+
+  .hi-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%; flex-shrink: 0;
+    margin-top: .55rem;
+  }
+  .hi-dot-for { background: var(--teal); }
+  .hi-dot-against { background: var(--ruby); }
+
+  .hi-name {
+    font-family: 'Cinzel', serif;
+    font-size: .78rem; font-weight: 600;
+    color: var(--ink2); margin-bottom: .15rem;
+  }
+  .hi-detail { font-size: .9rem; color: var(--dust); line-height: 1.65; }
+
+  /* ═══ QUIZ ═══ */
+  #quiz { background: var(--lapis2); color: #fff; }
+  #quiz::before { color: rgba(255,255,255,.03); }
+  #quiz .sec-h2 { color: var(--gold3); }
+  #quiz .sec-lead { color: rgba(255,255,255,.5); }
+  #quiz .sec-kicker { color: var(--gold3); }
+  #quiz .sec-kicker::after { background: linear-gradient(90deg, var(--gold3), transparent); }
+
+  .quiz-shell {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(200,154,32,.12);
+    padding: 2.5rem;
+    max-width: 780px; margin-top: 2rem;
+  }
+
+  .quiz-topbar {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .quiz-counter {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem; font-weight: 700; color: var(--gold3);
+  }
+
+  .quiz-status-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .46rem; letter-spacing: .16em; text-transform: uppercase;
+    padding: .3rem .8rem;
+    border: 1px solid rgba(200,154,32,.3);
+    color: rgba(255,255,255,.4);
+  }
+
+  .quiz-pgbar {
+    height: 2px; background: rgba(255,255,255,.07);
+    margin-bottom: 2rem; overflow: hidden;
+  }
+  .quiz-pgfill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--lapis3), var(--gold));
+    transition: width .4s ease;
+  }
+
+  .quiz-q {
+    font-size: 1.1rem; font-weight: 300; font-style: italic;
+    line-height: 1.85; margin-bottom: 1.5rem;
+    color: rgba(255,255,255,.85);
+  }
+
+  .quiz-opts { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.5rem; }
+
+  .qopt {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+    color: rgba(255,255,255,.65);
+    padding: .9rem 1.2rem;
+    text-align: left; cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .95rem; line-height: 1.5;
+    transition: all .15s;
+  }
+  .qopt:hover { background: rgba(200,154,32,.07); border-color: rgba(200,154,32,.3); color: #fff; }
+  .qopt.correct { background: rgba(26,85,85,.3); border-color: var(--teal); color: #fff; }
+  .qopt.wrong { background: rgba(139,26,26,.25); border-color: var(--ruby); color: rgba(255,255,255,.6); }
+  .qopt.reveal { opacity: .35; pointer-events: none; }
+
+  .quiz-feedback {
+    font-size: .95rem; line-height: 1.8;
+    color: rgba(255,255,255,.6);
+    padding: .9rem 1.2rem;
+    background: rgba(200,154,32,.06);
+    border-left: 2px solid var(--gold);
+    opacity: 0; max-height: 0; overflow: hidden;
+    transition: opacity .3s ease, max-height .4s ease;
+  }
+  .quiz-feedback.show { opacity: 1; max-height: 200px; }
+
+  .quiz-footer {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-top: 1.5rem;
+  }
+
+  .quiz-score {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; color: var(--gold3);
+  }
+  .quiz-score span {
+    font-size: 1.6rem; font-weight: 700;
+  }
+
+  .qbtn {
+    font-family: 'Cinzel', serif;
+    font-size: .72rem; letter-spacing: .08em;
+    padding: .7rem 1.8rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold3);
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .qbtn:hover:not(:disabled) { background: var(--gold); color: var(--lapis2); }
+  .qbtn:disabled { opacity: .3; cursor: not-allowed; }
+
+  /* ═══ MODAL ═══ */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10,15,35,.85);
+    z-index: 500;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s ease;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.show { opacity: 1; pointer-events: all; }
+
+  .modal {
+    background: var(--lapis2);
+    border: 1px solid var(--gold);
+    border-top: 4px solid var(--gold);
+    padding: 3rem;
+    max-width: 480px; width: 90%;
+    text-align: center;
+    position: relative;
+  }
+
+  .modal-score {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem; font-weight: 900;
+    color: var(--gold3); line-height: 1;
+    margin-bottom: .5rem;
+  }
+  .modal-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .5rem; letter-spacing: .22em; text-transform: uppercase;
+    color: rgba(255,255,255,.3); margin-bottom: 1.5rem;
+  }
+  .modal-msg {
+    font-size: 1rem; line-height: 1.8;
+    color: rgba(255,255,255,.6);
+    font-style: italic; margin-bottom: 2rem;
+  }
+  .modal-close {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: .72rem; letter-spacing: .08em;
+    padding: .7rem 2rem;
+    background: transparent; border: 1px solid var(--gold);
+    color: var(--gold3); cursor: pointer;
+    transition: all .2s;
+  }
+  .modal-close:hover { background: var(--gold); color: var(--lapis2); }
+
+  /* ═══ FOOTER ═══ */
+  .footer {
+    background: var(--ink2);
+    color: rgba(255,255,255,.3);
+    text-align: center;
+    padding: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .48rem; letter-spacing: .2em; text-transform: uppercase;
+    margin-left: var(--sidebar);
+  }
+
+  /* ═══ ANIMATIONS ═══ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* ─── INTERSECTION OBSERVER reveals ─── */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ═══ RESPONSIVE MINIMAL ═══ */
+  @media (max-width: 1100px) {
+    :root { --sidebar: 220px; }
+    .actors-grid { grid-template-columns: 1fr 1fr; }
+    .heresies-grid { grid-template-columns: 1fr; }
+    .q-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 860px) {
     :root { --sidebar: 0px; }
     .snav { display: none; }
     .main { margin-left: 0; }
-    .bio-grid, .heresies-container { grid-template-columns: 1fr; }
-    .hero-ghazali { padding: 3rem 1.5rem; }
-    .sec { padding: 4rem 1.5rem; }
+    .footer { margin-left: 0; }
+    section { padding: 3rem 2rem; }
+    .hero { padding: 3rem 2rem; }
+    .bio-grid, .actors-grid, .heritage-cols, .cc-grid { grid-template-columns: 1fr; }
+    .q-grid { grid-template-columns: repeat(2, 1fr); }
+    .qs-intro { grid-template-columns: 1fr; }
   }
-</style>
+  </style>
+
+  <script>
+  /* ─── CURSOR ─── */
+  const cur = document.getElementById('cur');
+  if (cur) {
+    document.addEventListener('mousemove', e => {
+      cur.style.left = e.clientX + 'px';
+      cur.style.top  = e.clientY + 'px';
+    });
+    document.addEventListener('mouseover', e => {
+      const target = e.target as HTMLElement;
+      if (target.matches('a,button,.q-card,.cc,.actor-card')) cur.classList.add('expand');
+      else cur.classList.remove('expand');
+    });
+  }
+
+  /* ─── PROGRESS BAR ─── */
+  const prog = document.getElementById('prog');
+  if (prog) {
+    window.addEventListener('scroll', () => {
+      const s = document.documentElement;
+      const pct = s.scrollTop / (s.scrollHeight - s.clientHeight);
+      prog.style.transform = `scaleX(${pct})`;
+    });
+  }
+
+  /* ─── ACTIVE NAV ─── */
+  const secs  = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.snav-a');
+  const navo = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('on'));
+        const a = document.querySelector(`.snav-a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('on');
+      }
+    });
+  }, { threshold: 0.25 });
+  secs.forEach(s => navo.observe(s));
+
+  /* ─── SCROLL REVEALS ─── */
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        const target = e.target as HTMLElement;
+        target.style.transitionDelay = (i % 4) * 0.08 + 's';
+        target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => ro.observe(r));
+
+  /* ─── TIMELINE ─── */
+  const tlItems = document.querySelectorAll('.tl-item');
+  const tlo = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 120);
+      }
+    });
+  }, { threshold: 0.15 });
+  tlItems.forEach(t => tlo.observe(t));
+
+  /* ═══════════════════════════════════════
+     20 QUESTIONS DATA
+     ═══════════════════════════════════════ */
+  const questions20 = [
+    { num: 1,  cat: 'cosmo', heresy: true,  title: "L'éternité de l'univers", desc: "Les philosophes affirment que le monde est éternel — sans commencement ni fin. Ghazâlî démontre qu'ils ne peuvent pas prouver cette thèse sans tomber dans des contradictions insurmontables." },
+    { num: 2,  cat: 'cosmo', heresy: false, title: "L'incorruptibilité de l'univers dans le futur", desc: "Corollaire de Q.1 : si le monde est éternel dans le passé, il doit l'être aussi dans le futur. Ghazâlî réfute ce dédoublement de l'éternité." },
+    { num: 3,  cat: 'theo',  heresy: false, title: "L'incapacité à prouver l'existence du Créateur", desc: "Malgré leurs déclarations, les philosophes ne peuvent pas démontrer l'existence de Dieu selon leurs propres principes philosophiques." },
+    { num: 4,  cat: 'theo',  heresy: false, title: "L'incapacité à prouver la causalité divine", desc: "Ils affirment que Dieu est la cause du monde, mais leur système d'émanation nécessaire détruit la notion même de causalité libre." },
+    { num: 5,  cat: 'theo',  heresy: false, title: "L'incapacité à prouver l'unicité de Dieu", desc: "Les prémisses des philosophes ne leur permettent pas de démontrer qu'il n'existe qu'un seul Dieu plutôt qu'une pluralité de principes." },
+    { num: 6,  cat: 'theo',  heresy: false, title: "La négation des attributs divins", desc: "Avicenne nie les attributs réels de Dieu (savoir, puissance, volonté) pour éviter la multiplicité en Dieu. Ghazâlî réfute cette dépossession divine." },
+    { num: 7,  cat: 'theo',  heresy: false, title: "La transcendance divine", desc: "Comment concilier la transcendance absolue de Dieu avec son action dans le monde ? Les philosophes échouent à résoudre cette tension." },
+    { num: 8,  cat: 'theo',  heresy: false, title: "L'essence divine", desc: "La question de ce qu'est Dieu en son essence — sujet sur lequel les philosophes prétendent avoir des certitudes que Ghazâlî conteste." },
+    { num: 9,  cat: 'theo',  heresy: false, title: "L'incorporalité de Dieu", desc: "Les philosophes nient que Dieu puisse avoir quelque rapport que ce soit avec la corporéité, mais leur démonstration est jugée insuffisante." },
+    { num: 10, cat: 'theo',  heresy: false, title: "L'athéisme des philosophes", desc: "En niant les attributs divins et la création libre, les philosophes basculent dans une forme de déisme vide qui revient à l'athéisme pratique." },
+    { num: 11, cat: 'gnose', heresy: false, title: "L'omniscience divine (universaux)", desc: "Dieu connaît-il les universaux ? Les philosophes admettent une connaissance universelle, mais cette concession reste insuffisante selon Ghazâlî." },
+    { num: 12, cat: 'gnose', heresy: false, title: "La connaissance divine de soi-même", desc: "La connaissance que Dieu a de sa propre essence — question où l'argument des philosophes est jugé circulaire." },
+    { num: 13, cat: 'gnose', heresy: true,  title: "Dieu ne connaît pas les particuliers", desc: "Charge d'hérésie : Avicenne soutient que Dieu ne connaît les choses singulières que de manière universelle. Ghazâlî y voit la négation de la Providence." },
+    { num: 14, cat: 'sphes', heresy: false, title: "L'animation des sphères célestes", desc: "Les philosophes attribuent des âmes aux sphères célestes qui les meuvent. Ghazâlî conteste les fondements de cette cosmologie animiste." },
+    { num: 15, cat: 'sphes', heresy: false, title: "La finalité du mouvement des sphères", desc: "Pourquoi les sphères se meuvent-elles ? La téléologie astronomique des philosophes est mise en cause." },
+    { num: 16, cat: 'sphes', heresy: false, title: "La connaissance sublunaire des âmes sphériques", desc: "Les âmes des sphères auraient-elles conscience du monde d'ici-bas ? Ghazâlî démonte cet angélisme cosmologique." },
+    { num: 17, cat: 'natur', heresy: true,  title: "La causalité naturelle", desc: "Question capitale : les philosophes affirment un lien nécessaire entre cause et effet dans la nature. Ghazâlî soutient que le feu ne brûle pas par lui-même mais par la volonté de Dieu — thèse occasionnaliste qui préfigure Hume." },
+    { num: 18, cat: 'natur', heresy: false, title: "La substantialité spirituelle de l'âme", desc: "L'âme est-elle une substance spirituelle autarcique, indépendante du corps ? Les philosophes l'affirment sans pouvoir le démontrer selon Ghazâlî." },
+    { num: 19, cat: 'natur', heresy: false, title: "L'immortalité de l'âme", desc: "Les philosophes soutiennent l'immortalité de l'âme sur des bases rationnelles. Ghazâlî montre que leurs arguments sont insuffisants et contradictoires." },
+    { num: 20, cat: 'natur', heresy: true,  title: "La négation de la résurrection corporelle", desc: "Charge d'hérésie : les philosophes nient la résurrection physique et n'admettent qu'une immortalité spirituelle, traitant les descriptions coraniques de métaphores." },
+  ];
+
+  /* Render q-grid */
+  const qGrid = document.getElementById('qGrid');
+  let openedQs = new Set();
+  if (qGrid) {
+    questions20.forEach(q => {
+      const card = document.createElement('div');
+      card.className = 'q-card' + (q.heresy ? ' heresy' : '');
+      card.dataset.cat = q.cat;
+      card.innerHTML = `
+        <div class="q-num">${String(q.num).padStart(2,'0')}</div>
+        <div class="q-title">${q.title}</div>
+        <div class="q-expand" id="qe${q.num}">${q.desc}</div>
+        <div class="q-toggle" id="qt${q.num}">▸ Voir l'enjeu</div>
+      `;
+      card.addEventListener('click', () => {
+        const exp = document.getElementById('qe' + q.num);
+        const tog = document.getElementById('qt' + q.num);
+        if (exp && tog) {
+          const isOpen = exp.classList.toggle('open');
+          tog.textContent = isOpen ? '▾ Réduire' : '▸ Voir l\'enjeu';
+          if (isOpen) {
+            openedQs.add(q.num);
+            updateConceptCount();
+          }
+        }
+      });
+      qGrid.appendChild(card);
+    });
+  }
+
+  /* ═══════════════════════════════════════
+     CONCEPTS DATA
+     ═══════════════════════════════════════ */
+  const concepts = [
+    {
+      icon: '∞', term: 'Éternité / Qidam', arabic: 'قِدَم',
+      def: 'Le <strong>qidam</strong> désigne l\'éternité <em>a parte ante</em> — l\'absence de commencement. Les philosophes l\'attribuent à l\'univers (hérésie selon Ghazâlî). Dans le kalâm, seul Dieu est qadîm (éternel). Le monde, lui, est <em>hâdith</em> — advenu, créé.'
+    },
+    {
+      icon: '⬡', term: 'Emanation / Fayd', arabic: 'فَيْض',
+      def: 'Le <strong>fayd</strong> est la doctrine néoplatonicienne selon laquelle le monde procède nécessairement de Dieu comme la lumière du soleil. Cette émanation est <em>nécessaire</em> (non libre). Ghazâlî y voit la destruction de la volonté divine : un Dieu dont la création est forcée n\'est pas le Dieu de l\'islam.'
+    },
+    {
+      icon: '◎', term: 'Occasionnalisme / ʿâda', arabic: 'العادة',
+      def: 'Dans la Q.17 sur la causalité, Ghazâlî défend que Dieu est la seule cause réelle de tous les événements. Le feu ne brûle pas par lui-même — c\'est <em>l\'habitude divine</em> (<strong>ʿâda</strong>) de faire coïncider feu et brûlure. Ghazâlî peut donc maintenir les miracles comme simples <em>ruptures de l\'habitude</em>.'
+    },
+    {
+      icon: '◈', term: 'Kalâm', arabic: 'كَلَام',
+      def: 'La <strong>falsafa</strong> désigne la philosophie gréco-arabe (Avicenne, Alpharabius), héritière d\'Aristote. Le <strong>kalâm</strong> est la théologie spéculative islamique, qui utilise la raison pour défendre les dogmes. Ghazâlî appartient au kalâm asharite, mais le dépasse par sa maîtrise de la falsafa qu\'il combat de l\'intérieur.'
+    },
+    {
+      icon: '✦', term: 'Kashf (illumination soufie)', arabic: 'كَشْف',
+      def: 'Le <strong>kashf</strong> est la connaissance directe, intuitive, acquise par la purification spirituelle soufie. C\'est la réponse de Ghazâlî à l\'échec de la raison dans les questions ultimes : là où la démonstration s\'arrête, la lumière divine prend le relais. C\'est le fondement épistémologique de son tournant mystique.'
+    },
+    {
+      icon: '⬛', term: 'Taqlîd (imitation servile)', arabic: 'تَقْلِيد',
+      def: 'Le <strong>taqlîd</strong> est l\'imitation aveugle d\'une autorité sans examen critique. Ghazâlî le combat dans les deux sens : il refuse le taqlîd religieux naïf <em>et</em> le taqlîd philosophique (suivre Avicenne sans critique). La liberté intellectuelle est pour lui une condition de la vérité : <em>«&nbsp;celui qui ne doute pas ne réfléchit pas&nbsp;»</em>.'
+    },
+    {
+      icon: '◇', term: 'Hâdith (adventicité)', arabic: 'حُدُوث',
+      def: 'L\'<strong>adventicité</strong> (hudûth) désigne le fait d\'être créé, d\'avoir un commencement dans le temps. Pour la théologie islamique, le monde est hâdith — il a commencé par un acte créateur libre de Dieu. S\'y oppose le <em>qidam</em> (éternité). La preuve de l\'existence de Dieu dans le kalâm part souvent de l\'adventicité du monde.'
+    },
+    {
+      icon: '⚡', term: 'Kufr (hérésie / apostasie)', arabic: 'كُفْر',
+      def: 'Le <strong>kufr</strong> désigne le rejet des principes fondamentaux de la foi islamique. Ghazâlî est très précis : seules <em>trois</em> des vingt questions relèvent du kufr (hérésie formelle). Les autres constituent au pire une <em>bid\'a</em> (innovation blâmable). Cette distinction montre sa rigueur catégorielle : il ne pratique pas l\'excommunication à la légère.'
+    },
+  ];
+
+  let openedConcepts = new Set();
+  const ccGrid = document.getElementById('ccGrid');
+  if (ccGrid) {
+    concepts.forEach((c, i) => {
+      const div = document.createElement('div');
+      div.className = 'cc';
+      div.innerHTML = `
+        <div class="cc-head">
+          <div class="cc-icon">${c.icon}</div>
+          <div class="cc-meta">
+            <div class="cc-term">${c.term}</div>
+            <div class="cc-arabic-term">${c.arabic}</div>
+          </div>
+          <div class="cc-toggle" id="cct${i}">▸ <span>Définir</span></div>
+        </div>
+        <div class="cc-body" id="ccb${i}">
+          <div class="cc-def">${c.def}</div>
+        </div>
+      `;
+      div.addEventListener('click', () => {
+        const body = document.getElementById('ccb' + i);
+        const tog  = document.getElementById('cct' + i);
+        if (body && tog) {
+          const span = tog.querySelector('span');
+          const isOpen = body.classList.toggle('open');
+          tog.classList.toggle('open-arrow', isOpen);
+          if (tog.firstChild) tog.firstChild.textContent = isOpen ? '▾ ' : '▸ ';
+          if (span) span.textContent = isOpen ? 'Réduire' : 'Définir';
+          if (isOpen) { openedConcepts.add(i); updateConceptCount(); }
+        }
+      });
+      ccGrid.appendChild(div);
+    });
+  }
+
+  function updateConceptCount() {
+    const total = openedQs.size + openedConcepts.size;
+    const max = 8;
+    const shown = Math.min(total, max);
+    const conceptCount = document.getElementById('conceptCount');
+    const conceptFill = document.getElementById('conceptFill');
+    if (conceptCount) conceptCount.textContent = `${shown}/${max}`;
+    if (conceptFill) conceptFill.style.width = `${(shown/max)*100}%`;
+  }
+
+  /* ═══════════════════════════════════════
+     QUIZ DATA
+     ═══════════════════════════════════════ */
+  const quizData = [
+    {
+      q: "Quelle est la méthode principale du Tahâfut ? Ghazâlî réfute les philosophes en :",
+      opts: [
+        "Opposant des textes coraniques à leurs arguments",
+        "Invoquant l'autorité des hadith prophétiques",
+        "Démontrant l'infériorité de la philosophie grecque face à la philosophie islamique",
+        "Les battant sur leur propre terrain logique, montrant leurs contradictions internes"
+      ],
+      correct: 3,
+      feedback: "Exact. La force du Tahâfut est précisément sa méthode interne : Ghazâlî maîtrise la philosophie aristotélicienne et démontre, avec ses propres outils logiques, qu'Avicenne et Alpharabius ne peuvent pas prouver leurs thèses métaphysiques selon leurs propres critères. C'est une réfutation ad hominem philosophique, non une réfutation scripturaire."
+    },
+    {
+      q: "Pour Ghazâlî, combien des vingt questions constituent une hérésie (<em>kufr</em>) justifiant de taxer les philosophes d'apostasie ?",
+      opts: [
+        "Trois questions seulement",
+        "Les vingt questions toutes entières",
+        "Dix questions — la moitié",
+        "Une seule question — l'éternité du monde"
+      ],
+      correct: 0,
+      feedback: "Précisément. Ghazâlî est très rigoureux dans sa catégorisation : seules trois questions relèvent du kufr (Q.1 : éternité du monde ; Q.13 : Dieu ne connaît pas les particuliers ; Q.20 : négation de la résurrection corporelle). Les autres constituent des erreurs ou des innovations blâmables, mais pas des hérésies formelles. Cette précision montre qu'il ne pratique pas l'excommunication à la légère."
+    },
+    {
+      q: "Dans la Question 17 sur la causalité naturelle, quelle est la thèse de Ghazâlî concernant le rapport entre le feu et la brûlure ?",
+      opts: [
+        "Le feu brûle par une nécessité naturelle propre à sa nature",
+        "Il n'y a pas de lien nécessaire entre feu et brûlure : Dieu crée la brûlure à chaque fois par habitude divine (ʿâda)",
+        "Le feu ne brûle que si un être humain l'allume — causalité humaine",
+        "La brûlure est une illusion des sens — seule la forme intelligible de la chaleur est réelle"
+      ],
+      correct: 1,
+      feedback: "Parfait. C'est l'un des passages les plus célèbres et les plus influents du Tahâfut. Ghazâlî défend une position occasionnaliste : Dieu est la seule cause réelle de tous les événements. Ce qu'on appelle 'causalité naturelle' est en réalité l'habitude (ʿâda) de Dieu de faire coïncider certains événements. Cela lui permet de maintenir la possibilité des miracles comme simples 'ruptures de l'habitude divine'. Cette thèse a fasciné Hume et les philosophes analytiques contemporains."
+    },
+    {
+      q: "Quelle est la doctrine d'Avicenne sur la connaissance divine des particuliers, que Ghazâlî classe comme hérésie ?",
+      opts: [
+        "Dieu ignore totalement l'existence du monde individuel",
+        "Dieu connaît les particuliers avec une précision absolue et individualisée",
+        "Dieu ne connaît que l'avenir, non le présent ni le passé",
+        "Dieu connaît les particuliers seulement de manière universelle, non dans leur singularité"
+      ],
+      correct: 3,
+      feedback: "Exact. Avicenne soutient que Dieu connaît les choses singulières (individus, événements particuliers) seulement sub specie universali — de manière universelle et non individuelle. Pour Ghazâlî, cette position implique que Dieu ignore les prières de chaque individu, les actes particuliers de chaque croyant, et l'histoire singulière de chaque âme. C'est nier la Providence et rendre la révélation prophétique impossible."
+    },
+    {
+      q: "Comment Ghazâlî se distingue-t-il de Descartes dans son usage du doute, selon Abd al-Rahmân Badawi ?",
+      opts: [
+        "Le doute de Ghazâlî est plus radical car il remet en cause même les vérités mathématiques",
+        "Ghazâlî et Descartes ont exactement la même méthode du doute — seules leurs conclusions diffèrent",
+        "Le doute de Ghazâlî est mystique et théologique — une profusion de lumière dépassant la raison. Le doute cartésien est méthodologique et conduit au cogito",
+        "Ghazâlî doute de l'existence du monde extérieur, Descartes non"
+      ],
+      correct: 2,
+      feedback: "Précisément. Badawi réfute vigoureusement le parallèle Ghazâlî-Descartes, souvent établi par des orientalistes. Le doute de Ghazâlî est une situation psychologique temporaire qui l'a conduit à chercher une certitude au-delà de la raison — dans la lumière divine. Le doute cartésien est une méthode délibérée pour reconstruire le savoir sur des bases rationnelles indubitables. Les deux démarches sont inverses dans leur finalité."
+    },
+    {
+      q: "Que signifie l'accusation centrale du Tahâfut sur l'éternité du monde ?",
+      opts: [
+        "Que l'univers finira un jour, contrairement à ce qu'enseigne le Coran",
+        "Que l'univers n'a pas de début dans le temps, ce qui contredit la Création libre de Dieu",
+        "Que Dieu a créé plusieurs univers successifs, non un seul",
+        "Que la matière est éternelle mais que la forme cosmique est adventice"
+      ],
+      correct: 1,
+      feedback: "Exact. Si l'univers est éternel — sans commencement — alors il n'a pas été créé. Or la doctrine islamique (et les autres monothéismes) affirme la création libre (creatio ex nihilo) : Dieu a choisi librement de créer le monde à partir du néant. Si la création est éternelle et nécessaire (comme dans la doctrine de l'émanation d'Avicenne), la volonté divine est annulée — Dieu ne choisit pas, il émane nécessairement. Pour Ghazâlî, cela détruit le concept même de Dieu créateur."
+    },
+    {
+      q: "Le Tahâfut a suscité une réfutation célèbre. Laquelle ?",
+      opts: [
+        "La Métaphysique d'Avicenne, révisée en réponse à Ghazâlî",
+        "La Critique de la raison pure de Kant, traduite en arabe au XIXe siècle",
+        "Le Tahâfut al-Tahâfut d'Averroès (L'Incohérence de l'Incohérence), 1180",
+        "Le Discours de la méthode de Descartes, inspiré par le Munqid"
+      ],
+      correct: 2,
+      feedback: "Très bien. Au XIIe siècle, le philosophe andalou Averroès (Ibn Rushd, 1126–1198) rédige le Tahâfut al-Tahâfut (L'Incohérence de l'Incohérence) pour défendre la philosophie aristotélicienne contre les critiques de Ghazâlî. Ce dialogue à distance — un siècle d'écart — est l'un des grands débats de la pensée médiévale. Ironiquement, en lui consacrant un ouvrage entier, Averroès reconnaît l'extrême sérieux des arguments ghazaliens."
+    }
+  ];
+
+  let currentQ = 0, score = 0, answered = false;
+
+  window.renderQuestion = function() {
+    const q = quizData[currentQ];
+    const qNum = document.getElementById('qNum');
+    const qText = document.getElementById('qText');
+    const qFeedback = document.getElementById('qFeedback');
+    const qNext = document.getElementById('qNext') as HTMLButtonElement;
+    const qStatus = document.getElementById('qStatus');
+    const quizProgressFill = document.getElementById('quizProgressFill');
+
+    if (qNum) qNum.textContent = String(currentQ + 1);
+    if (qText) qText.innerHTML = q.q;
+    if (qFeedback) {
+      qFeedback.className = 'quiz-feedback';
+      qFeedback.textContent = '';
+    }
+    if (qNext) qNext.disabled = true;
+    if (qStatus) qStatus.textContent = 'Sélectionnez une réponse';
+    answered = false;
+    
+    if (quizProgressFill) {
+      quizProgressFill.style.width = ((currentQ / quizData.length) * 100) + '%';
+    }
+
+    const opts = document.getElementById('qOptions');
+    if (opts) {
+      opts.innerHTML = '';
+      q.opts.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'qopt';
+        btn.innerHTML = `<span>${opt}</span>`;
+        btn.onclick = () => window.selectAnswer(i);
+        opts.appendChild(btn);
+      });
+    }
+  }
+
+  window.selectAnswer = function(idx: number) {
+    if (answered) return;
+    answered = true;
+    const q = quizData[currentQ];
+    
+    document.querySelectorAll('.qopt').forEach((o, i) => {
+      if (i === q.correct) o.classList.add('correct');
+      else if (i === idx && i !== q.correct) o.classList.add('wrong');
+      else o.classList.add('reveal');
+    });
+
+    const fb = document.getElementById('qFeedback');
+    if (fb) {
+      fb.textContent = q.feedback;
+      fb.classList.add('show');
+    }
+
+    const qStatus = document.getElementById('qStatus');
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const sidebarScore = document.getElementById('sidebarScore');
+    const sidebarFill = document.getElementById('sidebarFill');
+    const qNext = document.getElementById('qNext') as HTMLButtonElement;
+
+    if (idx === q.correct) {
+      score++;
+      if (scoreDisplay) scoreDisplay.textContent = String(score);
+      if (qStatus) qStatus.textContent = '✓ Bonne réponse';
+    } else {
+      if (qStatus) qStatus.textContent = '✗ Réponse incorrecte';
+    }
+    
+    if (qNext) qNext.disabled = false;
+    
+    const pct = Math.round((score / quizData.length) * 100);
+    if (sidebarScore) sidebarScore.textContent = `${score}/${quizData.length}`;
+    if (sidebarFill) sidebarFill.style.width = pct + '%';
+    
+    if (currentQ === quizData.length - 1 && qNext) {
+      qNext.textContent = 'Voir mon score →';
+    }
+  }
+
+  window.nextQuestion = function() {
+    currentQ++;
+    if (currentQ >= quizData.length) { window.showModal(); return; }
+    window.renderQuestion();
+  }
+
+  window.showModal = function() {
+    const msgs = [
+      [0, 1, "Le Tahâfut demande encore votre attention. Revenez sur les 3 hérésies et la méthode de Ghazâlî."],
+      [2, 3, "Bonne base. Les nuances entre kufr et bid'a, et la position sur la causalité, méritent relecture."],
+      [4, 5, "Solide compréhension. Vous maîtrisez les grandes lignes du Tahâfut."],
+      [6, 6, "Excellent. Vous connaissez les thèses, les méthodes et les enjeux du Tahâfut avec précision."],
+      [7, 7, "Maîtrise remarquable. Vous êtes prêt(e) à débattre de Ghazâlî avec rigueur philosophique."]
+    ];
+    const msg = msgs.find(m => score >= m[0] && score <= (m[1] as number));
+    
+    const modalScore = document.getElementById('modalScore');
+    const modalMsg = document.getElementById('modalMsg');
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    if (modalScore) modalScore.textContent = `${score}/7`;
+    if (modalMsg) modalMsg.textContent = msg ? String(msg[2]) : '';
+    if (modalOverlay) modalOverlay.classList.add('show');
+  }
+
+  window.closeModal = function() {
+    const modalOverlay = document.getElementById('modalOverlay');
+    if (modalOverlay) modalOverlay.classList.remove('show');
+    
+    currentQ = 0; score = 0; answered = false;
+    
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const quizProgressFill = document.getElementById('quizProgressFill');
+    const qNext = document.getElementById('qNext');
+
+    if (scoreDisplay) scoreDisplay.textContent = '0';
+    if (quizProgressFill) quizProgressFill.style.width = '0%';
+    if (qNext) qNext.textContent = 'Question suivante →';
+    
+    window.renderQuestion();
+  }
+
+  // Initialisation
+  window.renderQuestion();
+  </script>
+</FicheLayout>
