@@ -67,15 +67,19 @@ const themes = [
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
   </style>
 
-  <main class="clean-main">
-    <header class="clean-hero reveal">
+  <div class="ambient-background"></div>
+
+  <main class="editorial-main">
+    <header class="editorial-hero reveal">
+      <div class="hero-badge">Index — v6.0</div>
       <h1 class="hero-title">Archive Critique</h1>
       <p class="hero-desc">Une cartographie des mécanismes de pouvoir, de domination et de subjectivation. Base de données théorique en accès libre.</p>
+      <div class="hero-separator"></div>
     </header>
 
-    <div class="clean-content">
+    <div class="editorial-content">
       {themes.map((theme, index) => (
-        <section class="theme-section reveal" style={`--delay: ${index * 0.1}s`}>
+        <section class="theme-section reveal" style={`--delay: ${index * 0.15}s`}>
           <div class="theme-header">
             <h2 class="theme-title">{theme.title}</h2>
             <p class="theme-desc">{theme.description}</p>
@@ -83,13 +87,15 @@ const themes = [
           
           <div class="theme-grid">
             {theme.fiches.map((fiche) => (
-              <FicheCard 
-                title={fiche.title} 
-                author={fiche.author} 
-                year={fiche.year} 
-                href={fiche.href} 
-                color={fiche.color} 
-              />
+              <div class="card-wrapper">
+                <FicheCard 
+                  title={fiche.title} 
+                  author={fiche.author} 
+                  year={fiche.year} 
+                  href={fiche.href} 
+                  color={fiche.color} 
+                />
+              </div>
             ))}
           </div>
         </section>
@@ -99,157 +105,204 @@ const themes = [
 </BaseLayout>
 
 <style is:global>
-  /* ─── THÈME "DARK EDITORIAL" (SOMBRE & ÉLÉGANT) ─── */
+  /* ─── FONDATION SOMBRE & ÉLÉGANTE ─── */
   :root {
-    --bg-dark: #0a0a0a;       /* Fond noir profond, mais pas pur */
-    --text-main: #f3f4f6;     /* Blanc cassé très lisible */
-    --text-muted: #9ca3af;    /* Gris doux pour les descriptions */
-    --border-subtle: #27272a; /* Bordures à peine visibles */
+    --bg-base: #050505;
+    --text-primary: #f0ebe1;
+    --text-secondary: #a3a3a3;
+    --border-dim: rgba(255, 255, 255, 0.06);
+    --border-glow: rgba(255, 255, 255, 0.15);
+    --card-bg: rgba(20, 20, 20, 0.6);
   }
 
   body {
-    background-color: var(--bg-dark) !important;
-    color: var(--text-main) !important;
+    background-color: var(--bg-base) !important;
+    color: var(--text-primary) !important;
     font-family: 'Inter', sans-serif !important;
+    position: relative;
+    overflow-x: hidden;
   }
 
-  /* ─── REDESIGN DES CARTES (Contraste parfait) ─── */
+  /* Gradient de fond subtil pour la profondeur */
+  .ambient-background {
+    position: fixed;
+    top: -20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 60vh;
+    background: radial-gradient(ellipse at top, rgba(30, 30, 35, 0.4) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* ─── LAYOUT DE LA PAGE ─── */
+  .editorial-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10rem 2rem 8rem;
+  }
+
+  .editorial-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 8rem;
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+    font-family: 'JetBrains Mono', monospace, sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-dim);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .hero-separator {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--border-glow), transparent);
+    margin-top: 4rem;
+  }
+
+  .editorial-content {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+  }
+
+  /* ─── SECTIONS THÉMATIQUES ─── */
+  .theme-header {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .theme-title {
+    font-family: 'Newsreader', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .theme-desc {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    max-width: 600px;
+  }
+
+  .theme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ─── STYLISATION OVERRIDE DES CARTES (FicheCard) ─── */
   :global(.fiche-card) {
-    background: #111111 !important; /* Carte très légèrement plus claire que le fond */
-    border: 1px solid var(--border-subtle) !important;
-    border-radius: 6px !important;
-    padding: 2rem !important;
-    box-shadow: none !important;
-    transition: all 0.3s ease !important;
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid var(--border-dim) !important;
+    border-radius: 8px !important;
+    padding: 2.5rem 2rem !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
   }
 
+  /* Effet de survol élégant */
   :global(.fiche-card:hover) {
-    border-color: #52525b !important;
-    background: #18181b !important;
-    transform: translateY(-3px) !important;
+    border-color: var(--border-glow) !important;
+    background: rgba(30, 30, 30, 0.8) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
   }
 
-  /* Désactiver le fond coloré brutaliste */
+  /* Suppression du fond de couleur initial de la carte si existant */
   :global(.fiche-card .fc-bg) { 
-    display: none !important; 
+    display: none !important;
   }
 
   /* Textes internes de la carte */
   :global(.fiche-card .fc-title) {
     font-family: 'Newsreader', serif !important;
-    font-size: 1.5rem !important;
-    font-weight: 500 !important;
-    color: #ffffff !important; /* Titre blanc pur */
-    text-transform: none !important;
-    letter-spacing: normal !important;
+    font-size: 1.6rem !important;
+    font-weight: 400 !important;
+    color: #ffffff !important;
     line-height: 1.3 !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: -0.01em !important;
   }
 
   :global(.fiche-card .fc-author) {
     font-family: 'Inter', sans-serif !important;
     font-size: 0.95rem !important;
-    font-style: normal !important;
-    color: var(--text-muted) !important;
+    font-weight: 400 !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: auto !important; /* Pousse l'auteur/année vers le bas */
   }
 
   :global(.fiche-card .fc-year) {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.75rem !important;
-    font-weight: 500 !important;
-    color: #e5e7eb !important;
-    background: #27272a !important; /* Badge gris sombre */
-    padding: 0.2rem 0.6rem !important;
-    border-radius: 100px !important;
-    letter-spacing: 0.05em !important;
+    font-family: 'JetBrains Mono', monospace, sans-serif !important;
+    font-size: 0.7rem !important;
+    color: var(--text-secondary) !important;
+    background: transparent !important;
+    border: 1px solid var(--border-dim) !important;
+    padding: 0.3rem 0.6rem !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.1em !important;
+    display: inline-block !important;
   }
 
-  :global(.fiche-card .fc-icon) {
-    color: #52525b !important;
-  }
-
-  /* ─── LAYOUT DE LA PAGE D'ACCUEIL ─── */
-  .clean-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 8rem 2rem 6rem;
-  }
-
-  .clean-hero {
-    text-align: center;
-    margin-bottom: 6rem;
-  }
-
-  .hero-title {
-    font-family: 'Newsreader', serif;
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    font-weight: 400;
-    color: #ffffff;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-desc {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--text-muted);
-    line-height: 1.6;
-    max-width: 550px;
-    margin: 0 auto;
-  }
-
-  .clean-content {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-  }
-
-  .theme-section {
-    animation-delay: var(--delay);
-  }
-
-  .theme-header {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: 1rem;
-  }
-
-  .theme-title {
-    font-family: 'Newsreader', serif;
-    font-size: 2rem;
-    font-weight: 500;
-    color: #ffffff;
-    margin-bottom: 0.2rem;
-  }
-
-  .theme-desc {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--text-muted);
-  }
-
-  .theme-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  /* Animations */
+  /* ─── ANIMATIONS ─── */
   .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s ease-out forwards;
+    transform: translateY(30px);
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--delay, 0s);
   }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
-    .clean-main { padding: 4rem 1.5rem; }
-    .theme-grid { grid-template-columns: 1fr; }
+    .editorial-main { padding: 6rem 1.5rem; }
+    .hero-title { font-size: 2.8rem; }
+    .editorial-content { gap: 5rem; }
+    .theme-header { margin-bottom: 2rem; }
   }
 </style>
