@@ -90,5 +90,26 @@ const { title, description, fonts } = Astro.props;
   .snav { top: 40px !important; }
 </style>
 
+---
+// src/layouts/FicheLayout.astro
+// 1. Importer le composant
+import Navbar from '../components/Navbar.astro';
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+</head>
+<body>
+  <Navbar />
+  
+  <main>
+    <slot /> </main>
+
 </body>
 </html>
