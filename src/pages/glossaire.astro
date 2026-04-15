@@ -74,18 +74,30 @@ const terms = [
     font-family: 'Inter', sans-serif !important;
   }
 
-  /* ─── 2. HACK CONTRASTE (Forçage du texte en sombre) ─── */
-  .glossaire-main h1, .glossaire-main h2, .glossaire-main h3, 
-  .glossaire-main p, .glossaire-main span, .glossaire-main div {
-    color: var(--paper-text) !important;
-  }
-  .glossaire-main .hero-desc { color: #57534e !important; }
+  /* ─── 1. THÈME SOMBRE INTÉGRÉ ─── */
+  /* On retire le forçage du fond clair pour laisser le BaseLayout agir */
   
-  /* Forçage à l'intérieur du composant GlossaireCard */
-  :global(.glossaire-card) { background: #ffffff !important; border-color: #e5e7eb !important; }
-  :global(.gc-term) { color: #111827 !important; }
-  :global(.gc-def) { color: #4b5563 !important; }
-  :global(.gc-author) { color: #6b7280 !important; background: #f3f4f6 !important; }
+  /* Style des cartes pour le thème sombre */
+  :global(.glossaire-card) { 
+    background: rgba(255, 255, 255, 0.03) !important; 
+    border-color: rgba(255, 255, 255, 0.1) !important; 
+  }
+  :global(.gc-term) { color: #f9fafb !important; } /* Texte blanc cassé */
+  :global(.gc-def) { color: #d1d5db !important; } /* Gris clair pour la def */
+  :global(.gc-author) { 
+    color: #9ca3af !important; 
+    background: rgba(255, 255, 255, 0.1) !important; 
+  }
+
+  /* ─── 2. LAYOUT DE LA PAGE ─── */
+  .glossaire-main { max-width: 800px; margin: 0 auto; padding: 6rem 2rem; }
+  .glossaire-hero { text-align: center; margin-bottom: 4rem; }
+  .hero-title { font-family: 'Newsreader', serif; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.5rem; color: #ffffff; }
+  .hero-desc { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 300; line-height: 1.6; max-width: 550px; margin: 0 auto; color: #a8a29e; }
+
+  /* ─── 3. ANIMATIONS ─── */
+  .reveal { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s ease-out forwards; animation-delay: var(--delay, 0s); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
   /* ─── 3. LE CURSEUR (Géométrie et couleur sombre) ─── */
   #cur, .cur-base { 

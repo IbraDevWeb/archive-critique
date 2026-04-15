@@ -72,11 +72,26 @@ const { title, description = "Archive Critique — Vulgarisation radicale et des
       transition: width 0.3s, height 0.3s, background 0.3s;
     }
     
-    .cur-base.big {
-      width: 44px;
-      height: 44px;
-      background: rgba(192, 35, 27, 0.15);
-    }
-  </style>
+    <div id="cur"></div>
+
+<script>
+  import '../components/CustomCursor.js';
+</script>
+
+<style is:global>
+  #cur { 
+    width: 12px;
+    height: 12px; 
+    border: 2px solid #ffffff; /* Passé en blanc pour être visible sur fond noir */
+    background: transparent;
+    position: fixed; 
+    top: 0; left: 0;
+    z-index: 99999; 
+    pointer-events: none; 
+    border-radius: 50%;
+    transform: translate(-50%, -50%); 
+    transition: width 0.2s, height 0.2s, background 0.2s;
+  }
+</style>
 </body>
 </html>
