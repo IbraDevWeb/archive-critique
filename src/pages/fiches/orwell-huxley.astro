@@ -974,12 +974,13 @@ const fonts = "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,
 
   /* 2. Curseur (Géométrie complète) */
   .cur { 
-    width: 12px; height: 12px; border-radius: 50%; background: var(--gold) !important; 
+    width: 12px;
+    height: 12px; border-radius: 50%; background: var(--gold) !important; 
     position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; 
-    transform: translate(-50%,-50%); mix-blend-mode: multiply; 
+    transform: translate(-50%,-50%);
+    /* mix-blend-mode: multiply;  <--- LIGNE À SUPPRIMER */
     transition: width .3s, height .3s, background .3s; 
   }
-  .cur.big { width: 44px; height: 44px; background: rgba(200,168,75,.15) !important; }
 
   /* 3. Footer (Réintégration du style effacé) */
   footer { 
